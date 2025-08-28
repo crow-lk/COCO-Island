@@ -1,0 +1,36 @@
+/* Contact Page Custom Styles */
+.contact-section {
+  background: #f8f9fa;
+}
+.contact-form-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 40px 30px;
+}
+.contact-form label {
+  font-weight: 500;
+  color: #222;
+}
+.contact-form .form-control {
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+  font-size: 1rem;
+}
+.contact-form .form-control:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 2px rgba(37,211,102,0.08);
+}
+.contact-form button.btn-primary {
+  background: #25d366;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.contact-form button.btn-primary:hover {
+  background: #128c7e;
+}
