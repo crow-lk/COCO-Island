@@ -117,36 +117,7 @@
                         </div>
                     </div>
 
-                    <!-- Recent Posts Widget -->
-                    <div class="sidebar-widget mb-40">
-                        <div class="sidebar-widget-title mb-30">
-                            <h3 class="blog-right-line">RECENT POSTS</h3>
-                        </div>
-                        <div class="sidebar-widget-content">
-                            <div class="rc-post">
-                                <ul>
-                                    @foreach($recentPosts as $recentPost)
-                                    <li>
-                                        <div class="single-rc-post d-flex align-items-center">
-                                            <div class="rc-thumb mr-20">
-                                                <a href="{{ route('blog.show', $recentPost->slug) }}">
-                                                    <img src="{{ asset('storage/' . $recentPost->cover_photo_path) }}" alt="{{ $recentPost->photo_alt_text }}">
-                                                </a>
-                                            </div>
-                                            <div class="rc-content">
-                                                <div class="rc-meta">
-                                                    <span>{{ $recentPost->published_at ? $recentPost->published_at->format('M d Y') : 'Draft' }}</span>
-                                                </div>
-                                                <h6><a href="{{ route('blog.show', $recentPost->slug) }}">{{ Str::limit($recentPost->title, 60) }}</a></h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <!-- Tags Widget -->
                     <div class="sidebar-widget mb-40">
                         <div class="sidebar-widget-title mb-30">
@@ -157,27 +128,6 @@
                                 @foreach($tags as $tag)
                                 <a href="{{ route('blog.tag', $tag->slug) }}">{{ $tag->name }}</a>
                                 @endforeach
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Newsletter Widget -->
-                    <div class="sidebar-widget grey-bg-4 mb-40 pt-20 pl-20 pb-20">
-                        <div class="sidebar-widget-title mb-20">
-                            <h3 class="blog-right-line">Newsletter</h3>
-                        </div>
-                        <div class="sidebar-widget-content">
-                            <div class="news-letter">
-                                <p>Subscribe to our newsletter for the latest updates and travel tips!</p>
-                                <form action="{{ route('blog.newsletter.subscribe') }}" method="POST" class="mt-3">
-                                    @csrf
-                                    <div class="input-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Your email address" required>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
