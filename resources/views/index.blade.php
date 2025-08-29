@@ -56,19 +56,10 @@
         </a>
         <!-- Floating WhatsApp Button End -->
 
+        @php($transparentHeader = true)
         @include('components.header')
 
-        <!-- search bar area start -->
-        <div class="search-bar-wrapper">
-            <div class="search-inner">
-                <form action="#">
-                    <input type="text" placeholder="Enter Keyword...">
-                    <button type="submit"><i class="fal fa-search"></i></button>
-                </form>
-            </div>
-            <a href="javascript:void(0);" class="search-close"><i class="fal fa-times"></i></a>
-        </div>
-        <!-- search bar area end -->
+        
         
         <main>
             @include('components.hero')

@@ -28,11 +28,8 @@
         @stack('styles')
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->  
 
         <!-- pre loader area start -->
         <div id="loading">
@@ -48,65 +45,18 @@
 
         <!-- scroll up area start -->
         <div class="scroll-up" id="scroll" style="display: none;">
-            <a href="javascript:void(0);"><i class="far fa-angle-up"></i></a>
+            <a href="javascript:void(0);"><i class="fas fa-angle-up"></i></a>
         </div>
         <!-- scroll up area end -->
 
-        <!-- header area start -->
-        <header class="header-area header-2 header-transparent">
-            <div class="header-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
-                            <div class="logo logo-2">
-                                <a href="{{ route('home') }}"><img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" alt="COCO Island Holidays Logo"></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-md-8 col-sm-6 col-6">
-                            <div class="header-bottom-right d-flex justify-content-end align-items-center">
-                                <div class="main-menu">
-                                    <nav id="mobile-menu">
-                                        <ul>
-                                            <li><a href="{{ route('home') }}" class="arrow"> Home</a>
-                                                <ul class="submenu">
-                                                    <li><a href="#">Submenu 1</a></li>
-                                                    <li><a href="#">Submenu 2</a></li>
-                                                    <li><a href="#">Submenu 3</a></li>
-                                                    <li><a href="#">Submenu 4</a></li>
-                                                    <li><a href="#">Submenu 5</a></li>
-                                                    <li><a href="#">Submenu 6</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Packages</a></li>
-                                            <li><a href="#">Hotels</a></li>
-                                            <li><a href="#">Jobs</a></li>
-                                            <li><a href="#" class="arrow">NEWS</a>
-                                                <ul class="submenu">
-                                                    <li><a href="{{ route('blog.details') }}">News Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Life</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="search-box">
-                                    <a class="search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
-                                </div>
-                                <div class="header-btn ml-45 d-none d-sm-inline-block">
-                                    <a href="#" class="btn">Book Online</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="mobile-menu"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header area end -->
-        
+        <!-- Floating WhatsApp Button Start -->
+        <a href="https://wa.me/94776605054" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Floating WhatsApp Button End -->
+
+        @include('components.header')
+            
         <main>
             <!-- page title area start -->
             <section class="page-title" >
@@ -413,150 +363,7 @@
             <!-- blog area end -->
         </main>
 
-        <!-- footer area start -->
-        <footer class="footer-area grey-bg-2">
-            <div class="footer-top pt-95 pb-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-50">
-                                <div class="footer-title">
-                                    <h3>Get in Touch</h3>
-                                </div>
-                                <div class="footer-content">
-                                    <div class="footer-contact">
-                                        <p>Lorem ipsum dolor sit am co adipisicing elit, sed do eiusmod tempor</p>
-                                        <ul>
-                                            <li>
-                                                <div class="footer-contact-inner d-flex align-items-center">
-                                                    <div class="icon mr-20">
-                                                        <span><i class="fas fa-map-marker-alt"></i></span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>01, Wickramasinghepura, Ruwanmaga, Dodangoda, Kaluthara</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="footer-contact-inner d-flex align-items-center">
-                                                    <div class="icon mr-20">
-                                                        <span><i class="fas fa-phone-alt"></i></span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>+94 77 660 5054</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="footer-contact-inner d-flex align-items-center">
-                                                    <div class="icon mr-20">
-                                                        <span><i class="fal fa-envelope"></i></span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p> yourmail@gmail.com</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-50">
-                                <div class="footer-title">
-                                    <h3>Quick Links</h3>
-                                </div>
-                                <div class="footer-content">
-                                    <div class="quick-links">
-                                        <ul>
-                                            <li><a href="#">Wellness</a></li>
-                                            <li><a href="#">Vintage Stores</a></li>
-                                            <li><a href="#">Trekking</a></li>
-                                            <li><a href="#">Sightseeing</a></li>
-                                            <li><a href="#">Tours</a></li>
-                                            <li><a href="#">Sample Page</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-50">
-                            <div class="footer-widget">
-                                <div class="footer-title">
-                                    <h3>Follow Us</h3>
-                                </div>
-                                <div class="footer-content">
-                                    <div class="follow-us">
-                                        <ul>
-                                            <li><a href="#">Facebook </a></li>
-                                            <li><a href="#"> Affiliate</a></li>
-                                            <li><a href="#"> Twitter</a></li>
-                                            <li><a href="#">FAQ </a></li>
-                                            <li><a href="#"> Google+</a></li>
-                                            <li><a href="#"> Tutorial</a></li>
-                                            <li><a href="#">Youtube</a></li>
-                                            <li><a href="#">Groups</a></li>
-                                            <li><a href="#">Instagram</a></li>
-                                            <li><a href="#">USA</a></li>
-                                            <li><a href="#"> Delhi</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 offset-xl-1 col-lg-5 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-50">
-                                <div class="footer-title">
-                                    <h3>Subscribe</h3>
-                                </div>
-                                <div class="footer-content">
-                                    <div class="subscribe">
-                                        <p>Lorem ipsum dolor si  consectetur adipisicing elit, sed eiusmotempor incididunt ut labore et</p>
-                                        
-                                        <div class="subscribe-form">
-                                            <form action="#">
-                                                <input type="email" placeholder="Type Your Email">
-                                                <button class="sub-btn" type="submit"><i class="fas fa-location-arrow"></i></button>
-                                            </form>
-                                        </div>
-                                        <div class="social">
-                                            <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    <div class="footer-copyright-inner">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-12">
-                                <div class="copyright-text">
-                                    <p>Copyright © {{ date('Y') }} <a href="https://cocoislandholidays.com" target="_blank">COCO Island Holidays</a>. All Rights Reserved by <a href="https://crow.lk" target="_blank">Crow.lk</a></p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-12">
-                                <div class="footer-policy ">
-                                    <a href="#">Terms & Condition</a>
-                                    <a href="#"> Privacy</a>
-                                    <a href="#">Support</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-         <!-- footer area end -->
+        @include('components.footer')
 
 		<!-- JS here -->
         <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>

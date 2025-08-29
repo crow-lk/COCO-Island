@@ -9,13 +9,12 @@
     <div class="page-title-inner d-flex align-items-center text-center" data-background="{{ asset('frontend/assets/img/page_title/page-title.jpg') }}">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="page-breadcrumb">
                         <h1>BLOG</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
                                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
                             </ol>
                         </nav>
                     </div>

@@ -1,5 +1,5 @@
 <!-- header area start -->
-<header class="header-area header-transparent">
+<header class="header-area {{ ($transparentHeader ?? false) ? 'header-transparent' : '' }}">
     <div class="header-top">
         <div class="container">
             <div class="row align-items-center">
@@ -78,5 +78,17 @@
             </div>
         </div>
     </div>
+
+    <!-- search bar area start -->
+    <div class="search-bar-wrapper">
+        <div class="search-inner">
+            <form action="#">
+                <input type="text" placeholder="Enter Keyword...">
+                <button type="submit"><i class="fal fa-search"></i></button>
+            </form>
+        </div>
+        <a href="javascript:void(0);" class="search-close"><i class="fal fa-times"></i></a>
+    </div>
+    <!-- search bar area end -->
 </header>
 <!-- header area end -->
