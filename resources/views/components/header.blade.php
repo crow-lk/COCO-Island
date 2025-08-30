@@ -55,11 +55,7 @@
                                     <li><a href="#">Packages</a></li>
                                     <li><a href="#">Hotels</a></li>
                                     <li><a href="#">Jobs</a></li>
-                                    <li><a href="#" class="arrow">NEWS</a>
-                                        <ul class="submenu">
-                                            <li><a href="#">News Details</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="/blogs">Blogs</a></li>
                                     <li><a href="#">Life</a></li>
                                 </ul>
                             </nav>
