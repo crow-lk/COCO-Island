@@ -18,6 +18,19 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
+    
+    <!-- Additional CSS for header styling -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -77,6 +90,21 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
+        }
+        
+        /* Custom styles for Fblog navigation */
+        .hover-primary:hover {
+            color: #007bff !important;
+        }
+        
+        .fblog-nav-bar .dropdown-toggle::after {
+            border-top-color: currentColor;
+        }
+        
+        .fblog-nav-bar .dropdown-menu {
+            border-radius: 8px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
     </style>
     <style>
@@ -268,6 +296,13 @@
             </div>
         </div>
     </div>
+    
+    <!-- Bootstrap and other JS -->
+    <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+    
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
