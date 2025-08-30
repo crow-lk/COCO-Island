@@ -57,7 +57,7 @@
                                     <li><a href="#">Jobs</a></li>
                                     <li><a href="#" class="arrow">NEWS</a>
                                         <ul class="submenu">
-                                            <li><a href="{{ route('blog.details') }}">News Details</a></li>
+                                            <li><a href="#">News Details</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Life</a></li>
