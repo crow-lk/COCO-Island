@@ -99,7 +99,7 @@
                         <span>Blogs</span>
                     </a>
                     <div class="relative group">
-                        <button class="fw-semibold text-decoration-none btn btn-link p-0 d-flex align-items-center hover-primary">
+                        <button class="fw-semibold text-decoration-none btn btn-link d-inline-flex p-2 align-items-center hover-primary">
                             <span>Categories</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ms-1" style="width: 16px; height: 16px;" viewBox="0 0 24 24">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19 9l-7 6l-7-6" />

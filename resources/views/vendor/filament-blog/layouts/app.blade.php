@@ -203,74 +203,140 @@
         </main>
 
         <!-- Footer -->
-        <footer class="mt-10 w-full border-t px-5 py-12">
-            <div class="container mx-auto">
-                <div class="mb-4">
-                    <div class="grid justify-between gap-x-10 gap-y-10 sm:grid-cols-3">
-                        <div class="flex flex-col items-start gap-3 py-3">
-                            <h4 class="text-xl font-semibold">{{ $setting?->title }}</h4>
-                            <p class="text-base">
-                                {{ $setting?->description }}
-                            </p>
-                        </div>
-                        <div class="grid sm:grid-cols-2 col-span-2">
-                            <div class="md:flex md:flex-col grid gap-3 py-3 text-sm font-medium">
-                                <h4 class="text-xl font-semibold">Quick Links</h4>
-                                @forelse($setting->quick_links ?? [] as $link)
-                                    <a href="{{ $link['url'] }}"
-                                        class="transition duration-300 will-change-transform hover:translate-x-1 hover:text-black motion-reduce:transition-none motion-reduce:hover:transform-none">
-                                        {{ $link['label'] }}
-                                    </a>
-                                @empty
-                                    <p class="font-semibold text-gray-300">No links found</p>
-                                @endforelse
-                            </div>
-                            <div class="flex flex-col items-start gap-3 text-sm font-medium">
-                                <div class="relative overflow-hidden rounded-2xl bg-slate-100 px-6 py-4 text-black">
-                                    <div class="mb-3 pb-2 text-xl font-semibold">
-                                        Subscribe to our Newsletter
+        <footer class="footer-area grey-bg-2">
+            <div class="footer-top pt-95 pb-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="footer-widget mb-50">
+                                <div class="footer-title">
+                                    <h3>{{ $setting?->title ?? 'COCO Island Holidays' }}</h3>
+                                </div>
+                                <div class="footer-content">
+                                    <div class="footer-contact">
+                                        <p>{{ $setting?->description ?? 'Discover amazing destinations with COCO Island Holidays. Book your dream vacation today.' }}</p>
+                                        <ul>
+                                            <li>
+                                                <div class="footer-contact-inner d-flex align-items-center">
+                                                    <div class="icon mr-20">
+                                                        <span><i class="fas fa-map-marker-alt"></i></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>01, Wickramasinghepura, Ruwanmaga, Dodangoda, Kaluthara</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-contact-inner d-flex align-items-center">
+                                                    <div class="icon mr-20">
+                                                        <span><i class="fas fa-phone-alt"></i></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>+94 77 660 5054</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-contact-inner d-flex align-items-center">
+                                                    <div class="icon mr-20">
+                                                        <span><i class="fal fa-envelope"></i></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>yourmail@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <p class="mb-3 block text-slate-500">
-                                            Subscribe to our mailing list to receive daily updates direct to your inbox!
-                                        </p>
-                                        <div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-50">
+                            <div class="footer-widget">
+                                <div class="footer-title">
+                                    <h3>Quick Links</h3>
+                                </div>
+                                <div class="footer-content">
+                                    <div class="follow-us">
+                                        <ul>
+                                            @forelse($setting->quick_links ?? [] as $link)
+                                                <li><a href="{{ $link['url'] }}">{{ $link['label'] }}</a></li>
+                                            @empty
+                                                <li><a href="{{ route('filamentblog.post.index') }}">Blogs</a></li>
+                                                <li><a href="{{ route('home') }}">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Packages</a></li>
+                                            @endforelse
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-5 col-md-6 col-sm-6">
+                            <div class="footer-widget mb-50">
+                                <div class="footer-title">
+                                    <h3>Subscribe to Newsletter</h3>
+                                </div>
+                                <div class="footer-content">
+                                    <div class="subscribe">
+                                        <p>Subscribe to our mailing list to receive daily updates direct to your inbox!</p>
+                                        
+                                        <div class="subscribe-form">
                                             <form method="post" action="{{ route('filamentblog.post.subscribe') }}">
                                                 @csrf
-                                                <label hidden for="email-address">Email</label>
-                                                @error('email')
-                                                    <span class="text-xs text-red-500">{{ $message }}</span>
-                                                @enderror
-                                                <div class="w-100 relative">
-                                                    <input autocomplete="email"
-                                                        class="flex w-full items-center justify-between rounded-xl border bg-white px-6 py-5 font-medium text-black outline-none placeholder:text-black"
-                                                        name="email" value="{{ old('email') }}"
-                                                        placeholder="Enter your email" type="email">
-                                                    <button type="submit"
-                                                        class="absolute right-4 top-1/2 -translate-y-1/2">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-primary h-8 w-8"
-                                                            viewBox="0 0 256 256">
-                                                            <path fill="currentColor"
-                                                                d="m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                                @if (session('success'))
-                                                    <span class="text-green-500">{{ session('success') }}</span>
-                                                @endif
+                                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter your email" autocomplete="email" required>
+                                                <button class="sub-btn" type="submit"><i class="fas fa-location-arrow"></i></button>
                                             </form>
+                                            @error('email')
+                                                <span class="text-danger small mt-1">{{ $message }}</span>
+                                            @enderror
+                                            @if (session('success'))
+                                                <span class="text-success small mt-1">{{ session('success') }}</span>
+                                            @endif
                                         </div>
-                                        <i
-                                            class="bi bi-envelope pointer-events-none absolute -right-10 -top-20 text-[9rem] opacity-10"></i>
+                                        <div class="social">
+                                            <ul>
+                                                <li>
+                                                    <a href="https://www.facebook.com/share/15CgQahxzH/?mibextid=wwXIfr" target="_blank">
+                                                        <i class="fab fa-facebook-f social-icon-lg"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.instagram.com/cocoislandholidaysofficial?igsh=MWo5aHk3aDBoOWlxOA%3D%3D&utm_source=qr" target="_blank">
+                                                        <i class="fab fa-instagram social-icon-lg"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.tiktok.com/@coco.island.holidays?_t=ZS-8z223emMSIq&_r=1" target="_blank">
+                                                        <i class="fab fa-tiktok social-icon-lg"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-7 flex flex-wrap items-start justify-center gap-10 border-t border-slate-200 pt-5">
-                    <div class="text-hurricane/50 text-sm font-medium">
-                        © 2024 {{ $setting->organization_name ?? 'Firefly Blog' }}. All rights reserved.
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="footer-copyright-inner">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <div class="copyright-text">
+                                    <p>Copyright © {{ date('Y') }} {{ $setting->organization_name ?? 'COCO Island Holidays' }}. All Rights Reserved by <a href="https://crow.lk" target="_blank">Crow.lk</a></p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <div class="footer-policy">
+                                    <a href="#">Terms & Condition</a>
+                                    <a href="#">Privacy</a>
+                                    <a href="#">Support</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
