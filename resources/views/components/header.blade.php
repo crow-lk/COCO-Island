@@ -11,12 +11,17 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-7 col-6">
                     <div class="header-top-right d-flex justify-content-end align-items-center">
-                        <div class="header-lang d-none d-sm-inline-block">
-                            <span>English</span>
+                        <div class="header-lang d-none d-sm-inline-block mr-3" style="position: relative;">
+                            <select name="header-language" class="form-select border-0 bg-transparent p-0">
+                                <option value="en" selected>English</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="es">Español</option>
+                            </select>
                         </div>
                         <div class="header-currency d-none d-sm-inline-block">
-                            <select name="header-currency">
-                                <option value="1">$ USD</option>
+                            <select name="header-currency" class="form-select border-0 bg-transparent p-0">
+                                <option value="usd">USD</option>
                             </select>
                         </div>
                     </div>
@@ -39,18 +44,18 @@
                                 <ul>
                                     <li><a href="{{ route('home') }}"> Home</a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
-                                    <li><a href="{{ route('packages') }}">Packages</a></li>
-                                    <li><a href="#">Jobs</a></li>
+                                    {{-- <li><a href="{{ route('packages') }}">Packages</a></li> --}}
+                                    {{-- <li><a href="#">Jobs</a></li> --}}
                                     <li><a href="/blogs">Blogs</a></li>
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <div class="search-box">
+                        {{-- <div class="search-box">
                             <a class="search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
-                        </div>
+                        </div> --}}
                         <div class="header-btn ml-45 d-none d-sm-inline-block">
-                            <a href="#" class="btn">Book Online</a>
+                            <a href="#" class="btn">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +67,7 @@
     </div>
 
     <!-- search bar area start -->
-    <div class="search-bar-wrapper">
+    {{-- <div class="search-bar-wrapper">
         <div class="search-inner">
             <form action="#">
                 <input type="text" placeholder="Enter Keyword...">
@@ -70,7 +75,7 @@
             </form>
         </div>
         <a href="javascript:void(0);" class="search-close"><i class="fal fa-times"></i></a>
-    </div>
+    </div> --}}
     <!-- search bar area end -->
 </header>
 <!-- header area end -->
