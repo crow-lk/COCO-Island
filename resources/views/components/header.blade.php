@@ -17,10 +17,6 @@
                         <div class="header-currency d-none d-sm-inline-block">
                             <select name="header-currency">
                                 <option value="1">$ USD</option>
-                                <option value="2">$ USD</option>
-                                <option value="3">$ USD</option>
-                                <option value="4">$ USD</option>
-                                <option value="5">$ USD</option>
                             </select>
                         </div>
                     </div>
@@ -41,16 +37,7 @@
                         <div class="main-menu">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li><a href="{{ route('home') }}" class="arrow"> Home</a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Submenu 1</a></li>
-                                            <li><a href="#">Submenu 2</a></li>
-                                            <li><a href="#">Submenu 3</a></li>
-                                            <li><a href="#">Submenu 4</a></li>
-                                            <li><a href="#">Submenu 5</a></li>
-                                            <li><a href="#">Submenu 6</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="{{ route('home') }}"> Home</a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
                                     <li><a href="{{ route('packages') }}">Packages</a></li>
                                     <li><a href="#">Jobs</a></li>
