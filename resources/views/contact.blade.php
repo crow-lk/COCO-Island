@@ -25,7 +25,29 @@
 
     @stack('styles')
 </head>
+
 <body>
+    <!-- pre loader -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scroll up -->
+    <div class="scroll-up" id="scroll" style="display: none;">
+        <a href="javascript:void(0);"><i class="fas fa-angle-up"></i></a>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/94776605054" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     @php($transparentHeader = true)
     @include('components.header')
 

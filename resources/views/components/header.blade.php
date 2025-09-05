@@ -44,6 +44,13 @@
                                 <ul>
                                     <li><a href="{{ route('home') }}"> Home</a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('home') }}" class="arrow">Tours</a>
+                                        <ul class="submenu">
+                                            <li><a href="{{ route('tours.ramayana') }}">Trails of Ramayanaya: Eternal Legacy</a></li>
+                                            <li><a href="{{ route('tours.emerald-isle') }}">The Emerald Isle Expedition</a></li>
+                                            <li><a href="{{ route('tours.tropical-shores') }}">Tropical Shores & Golden Sunsets</a></li>
+                                        </ul>
+                                    </li>
                                     {{-- <li><a href="{{ route('packages') }}">Packages</a></li> --}}
                                     {{-- <li><a href="#">Jobs</a></li> --}}
                                     <li><a href="/blogs">Blogs</a></li>
