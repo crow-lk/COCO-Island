@@ -282,80 +282,80 @@
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
                                 <h1>Best Things to Do in the City</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                <p>From breathtaking landscapes to cultural landmarks and serene beaches, discover the most unforgettable experiences every traveller must enjoy in Sri Lanka.</p>
                             </div>
                         </div>
                     </div>
                     <div class="row grid">
                         <div class="col-xl-6 col-lg-6 col-md-6 grid-item">
                             <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-1.jpg') }}" alt="best-things">
+                                <img src="{{ asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="best-things">
                                 <div class="things-content">
-                                    <h4><a href="#">United States</a></h4>
-                                    <span>Starting from $1200</span>
+                                    <h4><a href="#">Thalawakale</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
+                                </div>
+                                <!-- <div class="things-btn transition-3">
+                                    <a href="#" class="btn btn-half-square">View More</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
+                            <div class="things-img fix mb-30 w-img">
+                                <img src="{{ asset('frontend/assets/img/best_things/Goyambokka-beach.jpg') }}" alt="best-things">
+                                <div class="things-content">
+                                    <h4><a href="#">Goyambokka Beach</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
                                 </div>
                                 <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
+                                    <!-- <a href="#" class="btn btn-half-square">View More</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                             <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-2.jpg') }}" alt="best-things">
+                                <img src="{{ asset('frontend/assets/img/best_things/Koneswaram Temple.jpg') }}" alt="best-things">
                                 <div class="things-content">
-                                    <h4><a href="#">Los Angeles</a></h4>
-                                    <span>Starting from $1200</span>
+                                    <h4><a href="#">Koneswaram Temple</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
                                 </div>
                                 <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
+                                    <!-- <a href="#" class="btn btn-half-square">View More</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                             <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-3.jpg') }}" alt="best-things">
+                                <img src="{{ asset('frontend/assets/img/best_things/Marble-Beach.jpg') }}" alt="best-things">
                                 <div class="things-content">
-                                    <h4><a href="#">Paris</a></h4>
-                                    <span>Starting from $1200</span>
+                                    <h4><a href="#">Marble Beach</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
                                 </div>
                                 <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
+                                    <!-- <a href="#" class="btn btn-half-square">View More</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
                             <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-4.jpg') }}" alt="best-things">
+                                <img src="{{ asset('frontend/assets/img/best_things/Munneswaram.jpg') }}" alt="best-things">
                                 <div class="things-content">
-                                    <h4><a href="#">Canada</a></h4>
-                                    <span>Starting from $1200</span>
+                                    <h4><a href="#">Munneswaram Temple</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
                                 </div>
                                 <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-5.jpg') }}" alt="best-things">
-                                <div class="things-content">
-                                    <h4><a href="#">London</a></h4>
-                                    <span>Starting from $1200</span>
-                                </div>
-                                <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
+                                    <!-- <a href="#" class="btn btn-half-square">View More</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 grid-item">
                             <div class="things-img fix mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/best_things/thing-6.jpg') }}" alt="best-things">
+                                <img src="{{ asset('frontend/assets/img/best_things/Ramboda-Waterfall.jpg') }}" alt="best-things">
                                 <div class="things-content">
-                                    <h4><a href="#">Taj Mahal</a></h4>
-                                    <span>Starting from $1200</span>
+                                    <h4><a href="#">Ramboda Waterfall</a></h4>
+                                    <!-- <span>Starting from $1200</span> -->
                                 </div>
                                 <div class="things-btn transition-3">
-                                    <a href="#" class="btn btn-half-square">View More</a>
+                                    <!-- <a href="#" class="btn btn-half-square">View More</a> -->
                                 </div>
                             </div>
                         </div>
@@ -466,7 +466,7 @@
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
                                 <h1>What Travellers Say About Us</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                <p>Discover how travellers from around the world experience Coco Island Holidays—authentic journeys, heartfelt moments, and memories to cherish forever.</p>
                             </div>
                         </div>
                     </div>
@@ -476,57 +476,57 @@
                                 <div class="testi-slider-active owl-carousel">
                                     <div class="single-testi white-bg transition-3">
                                         <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Borem ipsum dolor sit a consecteturyr adipisicing elit, sed do eiusmo tempor incididunt ut labore etdolore m aliqu enim ad minim veniam qui nostrud exercitation ulla</p>
+                                        <p>Walking the Ramayana trail with Coco Island Holidays was life-changing. Every site was steeped in history, and our guide brought the stories alive. Felt safe, spiritual, and deeply connected to my roots.</p>
 
                                         <div class="testi-person d-flex">
                                             <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/testi-1.jpg') }}" alt="testi-1">
+                                                <img src="{{ asset('frontend/assets/img/testimonial/Priya-Menon.jpg') }}" alt="testi-1">
                                             </div>
                                             <div class="testi-info">
-                                                <h4>Molly Robinson</h4>
-                                                <span>web Designer</span>
+                                                <h4>Priya Menon</h4>
+                                                <span>Web Designer</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="single-testi white-bg transition-3">
                                         <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Borem ipsum dolor sit a consecteturyr adipisicing elit, sed do eiusmo tempor incididunt ut labore etdolore m aliqu enim ad minim veniam qui nostrud exercitation ulla</p>
+                                        <p>Our honeymoon was like a dream! Candle-lit beach dinners, whale watching, and sunsets in Galle, every moment felt curated just for us. Thank you, Coco Island Holidays, for making it magical.</p>
 
                                         <div class="testi-person d-flex">
                                             <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/testi-2.jpg') }}" alt="testi-1">
+                                                <img src="{{ asset('frontend/assets/img/testimonial/Aarav-and-Meera-Kapoor.jpg') }}" alt="testi-1">
                                             </div>
                                             <div class="testi-info">
-                                                <h4>Stiven Smith</h4>
-                                                <span>CEO, stthemes</span>
+                                                <h4>Aarav and Meera Kapoor</h4>
+                                                <span>Company CEO</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="single-testi white-bg transition-3">
                                         <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Borem ipsum dolor sit a consecteturyr adipisicing elit, sed do eiusmo tempor incididunt ut labore etdolore m aliqu enim ad minim veniam qui nostrud exercitation ulla</p>
+                                        <p>From misty hills to coastal forts, this expedition gave me a true taste of Sri Lanka. I appreciated the care Coco Island Holidays put into every small detail, professional, seamless, unforgettable.</p>
 
                                         <div class="testi-person d-flex">
                                             <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/testi-3.jpg') }}" alt="testi-1">
+                                                <img src="{{ asset('frontend/assets/img/testimonial/David-Stein.jpg') }}" alt="testi-1">
                                             </div>
                                             <div class="testi-info">
-                                                <h4>Saidul Islam</h4>
-                                                <span>Design-expart260</span>
+                                                <h4>David Stein</h4>
+                                                <span>Designer</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="single-testi white-bg transition-3">
                                         <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Borem ipsum dolor sit a consecteturyr adipisicing elit, sed do eiusmo tempor incididunt ut labore etdolore m aliqu enim ad minim veniam qui nostrud exercitation ulla</p>
+                                        <p>I needed nature, silence, and a bit of luxury, and I found it here. The glamping sites were beautiful and eco-friendly, and I felt so grounded. Highly recommend for solo soul-searchers.</p>
 
                                         <div class="testi-person d-flex">
                                             <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/testi-4.jpg') }}" alt="testi-1">
+                                                <img src="{{ asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg') }}" alt="testi-1">
                                             </div>
                                             <div class="testi-info">
-                                                <h4>Shahnewaz Sakil</h4>
-                                                <span>Diploma Engineer</span>
+                                                <h4>Sofia Alvarez</h4>
+                                                <span>Software Engineer</span>
                                             </div>
                                         </div>
                                     </div>

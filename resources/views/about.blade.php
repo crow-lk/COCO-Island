@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="about-hero-content text-center">
-                                <h1 class="about-page-title sec-title text-center">About</h1>
+                                <h1 class="about-page-title sec-title text-center pt-150">About</h1>
                             </div>
                         </div>
                     </div>
@@ -97,13 +97,13 @@
                 <h2 class="sec-title text-center mb-40">Mission & Vision</h2>
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-30">
-                        <div class="single-feature text-center p-4 h-100 about-company-story-bg">
+                        <div class="single-feature text-center p-4 h-100 theme-bg text-white">
                             <h3 class="sec-title mb-20">Our Mission</h3>
                             <p>To deliver authentic, seamless, and memorable travel experiences across Sri Lanka by combining local expertise, personalized service, and a deep respect for culture, nature, and community.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 mb-30">
-                        <div class="single-feature text-center p-4 h-100 about-company-story-bg">
+                        <div class="single-feature text-center p-4 h-100 theme-bg text-white">
                             <h3 class="sec-title mb-20">Our Vision</h3>
                             <p>To be the most trusted and inspiring travel partner for discovering Sri Lanka—known globally for excellence, integrity, and unforgettable journeys that celebrate the island’s true spirit.</p>
                         </div>

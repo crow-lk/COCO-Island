@@ -164,7 +164,7 @@ body, .about-section, .about-company-story, .about-mission, .about-vision, .abou
     cursor: pointer;
     padding: 1rem 1.2rem;
     font-weight: 600;
-    color: #FDAE4B;
+    color: rgb(255, 102, 0);
     background: #f9fafb;
     display: flex;
     align-items: center;
