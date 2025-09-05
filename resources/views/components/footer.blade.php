@@ -115,9 +115,8 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="footer-policy ">
-                            <a href="#">Terms & Condition</a>
-                            <a href="#"> Privacy</a>
-                            <a href="#">Support</a>
+                            <a href="{{ route('terms.conditions') }}">Terms & Condition</a>
+                            <a href="{{ route('privacy.policy') }}"> Privacy</a>
                         </div>
                     </div>
                 </div>

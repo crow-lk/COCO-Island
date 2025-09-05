@@ -1,0 +1,235 @@
+/* Company Story section background */
+.about-company-story-bg {
+    background: linear-gradient(135deg, #FDAE4B 0%, #FFD59E 100%);
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px 0 rgba(253, 174, 75, 0.10);
+    padding: 2.5rem 2rem;
+    color: #4B2A01;
+    margin-bottom: 0;
+}
+.about-company-story-bg h2,
+.about-company-story-bg p {
+    color: #4B2A01;
+}
+@media (max-width: 900px) {
+    .about-company-story-bg {
+        padding: 1.2rem 0.7rem;
+    }
+}
+/* Font family and color overrides to match homepage */
+body, .about-section, .about-company-story, .about-mission, .about-vision, .about-values, .accordion-content {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #424242;
+}
+.about-page-title, .about-section h2, .about-section h3, .about-mission h3, .about-vision h3 {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #FDAE4B;
+}
+.about-section h2, .about-section h3, .about-mission h3, .about-vision h3 {
+    color: #6C6489;
+}
+.about-section p, .about-section li, .about-mission p, .about-vision p, .accordion-content {
+    color: #424242;
+}
+/* About Page Hero Banner */
+.about-hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-hero::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.about-page-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+@media (max-width: 900px) {
+    .about-hero {
+        min-height: 220px;
+    }
+    .about-page-title {
+        font-size: 2.1rem;
+    }
+}
+/* About Page Custom Styles */
+.about-page-title {
+    color: #FDAE4B;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.about-section {
+    /* background: #fff9f5; */
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(253, 174, 75, 0.08);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+}
+.about-section > section {
+    margin-bottom: 60px;
+}
+.about-section > section:last-child {
+    margin-bottom: 0;
+}
+.about-company-story {
+    background: #fef6e9;
+    border-left: 6px solid #FDAE4B;
+    padding: 2rem 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+}
+.about-mission-vision {
+    margin-bottom: 2.5rem;
+}
+.about-mission-vision-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.about-mission, .about-vision {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(108, 100, 137, 0.08);
+    padding: 2rem 1.5rem;
+    min-width: 260px;
+}
+.about-mission h3, .about-vision h3 {
+    color: #6C6489;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.about-mission p, .about-vision p {
+    color: #424242;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+@media (max-width: 900px) {
+    .about-mission-vision-row {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .about-section > section {
+        margin-bottom: 36px;
+    }
+}
+.about-values {
+    border-left: none;
+    padding: 0;
+    background: none;
+}
+
+/* Accordion styles */
+.accordion {
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px 0 rgba(76, 100, 137, 0.06);
+}
+.accordion-item {
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+}
+.accordion-header {
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    font-weight: 600;
+    color: #FDAE4B;
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+.accordion-header:hover {
+    background: #fff9f5;
+}
+.accordion-content {
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    color: #6C6489;
+    font-size: 1rem;
+    display: none;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+}
+.accordion-icon {
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+.accordion-item.active .accordion-icon {
+    transform: rotate(90deg);
+}
+@media (max-width: 600px) {
+    .accordion-header, .accordion-content {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+}
+.about-section h2 {
+    color: #6C6489;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.about-section h3 {
+    color: #FDAE4B;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.about-section ul {
+    list-style: disc inside;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.about-section li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #424242;
+}
+.about-section .font-bold.text-primary {
+    color: #FDAE4B;
+}
+.about-section .text-gray-700 {
+    color: #6C6489;
+}
+@media (max-width: 600px) {
+    .about-section {
+        padding: 1.2rem 0.5rem;
+    }
+    .about-page-title {
+        font-size: 2rem;
+    }
+}

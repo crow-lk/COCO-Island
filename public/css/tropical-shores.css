@@ -1,0 +1,117 @@
+/* Font family and color overrides to match homepage */
+body, .tropical-shores-section, .tropical-shores-company-story, .tropical-shores-mission, .tropical-shores-vision, .tropical-shores-values, .accordion-content {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #424242;
+}
+.tropical-shores-page-title, .tropical-shores-section h2, .tropical-shores-section h3, .tropical-shores-mission h3, .tropical-shores-vision h3 {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #FDAE4B;
+}
+.tropical-shores-section h2, .tropical-shores-section h3, .tropical-shores-mission h3, .tropical-shores-vision h3 {
+    color: #6C6489;
+}
+.tropical-shores-section p, .tropical-shores-section li, .tropical-shores-mission p, .tropical-shores-vision p, .accordion-content {
+    color: #424242;
+}
+/* tropical-shores Page Hero Banner */
+.tropical-shores-hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tropical-shores-hero::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.tropical-shores-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.tropical-shores-page-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+@media (max-width: 900px) {
+    .tropical-shores-hero {
+        min-height: 220px;
+    }
+    .tropical-shores-page-title {
+        font-size: 2.1rem;
+    }
+}
+/* tropical-shores Page Custom Styles */
+.tropical-shores-page-title {
+    color: #FDAE4B;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.tropical-shores-section {
+    /* background: #fff9f5; */
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(253, 174, 75, 0.08);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+}
+.tropical-shores-section > section {
+    margin-bottom: 60px;
+}
+.tropical-shores-section > section:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Key Highlights icon badges --- */
+.tropical-highlights .icon-circle{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f3f6fa;            /* subtle neutral bg */
+  color: #0d1b2a;                  /* icon color (inherits FA color) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;             /* center above title */
+  transition: all .25s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0); /* smooth hover shadow transition */
+}
+
+.tropical-highlights .icon-circle i{
+  line-height: 1;
+}
+
+/* Hover state: only when the card is hovered */
+.tropical-highlights .single-feature:hover .icon-circle{
+  background: #ff6600;             /* theme accent (used in your site) */
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(255,102,0,.28);
+}
+
+
+.loveitsection{
+    background: #ff6600;
+    color: #fff;
+}

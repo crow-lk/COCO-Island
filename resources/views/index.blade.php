@@ -64,111 +64,127 @@
         <main>
             @include('components.hero')
 
-            <!-- about us area start -->
-            <section class="about-us">
-                <div class="container">
-                    <div class="about-us-inner">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-5">
-                                <div class="about-us-tab">
-                                    <ul class="nav nav-tabs left-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-home"></i> hous insurance</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="travel-tab" data-toggle="tab" href="#travel" role="tab" aria-controls="travel" aria-selected="false"><i class="far fa-bicycle"></i> trvel insurance</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="life-tab" data-toggle="tab" href="#life" role="tab" aria-controls="life" aria-selected="false"><i class="far fa-heart"></i> life insurance</a>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="car-tab" data-toggle="tab" href="#car" role="tab" aria-controls="car" aria-selected="false"><i class="fas fa-car"></i> car insurance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xl-8 col-lg-8 col-md-7">
-                                <div class="about-us-tab-content">
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                            <div class="about-content d-flex">
-                                                <div class="about-thumb d-none d-xl-block">
-                                                    <a href="https://www.youtube.com/watch?v=yJg-Y5byMMw" data-fancybox class="play-btn"><i class="far fa-play-circle"></i></a>
-                                                    <img src="{{ asset('frontend/assets/img/about/about-1.jpg') }}" alt="about-1">
-                                                </div>
-                                                <div class="about-text ml-30">
-                                                    <h3>About Us</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sedos eiusmod tempor incididunt ut labore et do magna aqua Ut enim ad minim veniam, quis  exerc ullamco laboris nisi ut aliquip ex  commconsequat Du aute irure dolor in reprehenderit in</p>
-                                                    <ul class="about-features mb-20">
-                                                        <li><span>General Medical</span></li>
-                                                        <li><span>Outdoor Checkup</span></li>
-                                                        <li><span>Easy and Affordable Billing</span></li>
-                                                    </ul>
-                                                    <a href="#" class="btn btn-square">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
-                                            <div class="about-content d-flex">
-                                                <div class="about-thumb d-none d-xl-block">
-                                                    <a href="https://www.youtube.com/watch?v=yJg-Y5byMMw" data-fancybox class="play-btn"><i class="far fa-play-circle"></i></a>
-                                                    <img src="{{ asset('frontend/assets/img/about/about-1.jpg') }}" alt="about-1">
-                                                </div>
-                                                <div class="about-text ml-30">
-                                                    <h3>About Us</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sedos eiusmod tempor incididunt ut labore et do magna aqua Ut enim ad minim veniam, quis  exerc ullamco laboris nisi ut aliquip ex  commconsequat Du aute irure dolor in reprehenderit in</p>
-                                                    <ul class="about-features mb-20">
-                                                        <li><span>General Medical</span></li>
-                                                        <li><span>Outdoor Checkup</span></li>
-                                                        <li><span>Easy and Affordable Billing</span></li>
-                                                    </ul>
-                                                    <a href="#" class="btn btn-square">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="life" role="tabpanel" aria-labelledby="car-tab">
-                                            <div class="about-content d-flex ">
-                                                <div class="about-thumb d-none d-xl-block">
-                                                    <a href="https://www.youtube.com/watch?v=yJg-Y5byMMw" data-fancybox class="play-btn"><i class="far fa-play-circle"></i></a>
-                                                    <img src="{{ asset('frontend/assets/img/about/about-1.jpg') }}" alt="about-1">
-                                                </div>
-                                                <div class="about-text ml-30">
-                                                    <h3>About Us</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sedos eiusmod tempor incididunt ut labore et do magna aqua Ut enim ad minim veniam, quis  exerc ullamco laboris nisi ut aliquip ex  commconsequat Du aute irure dolor in reprehenderit in</p>
-                                                    <ul class="about-features mb-20">
-                                                        <li><span>General Medical</span></li>
-                                                        <li><span>Outdoor Checkup</span></li>
-                                                        <li><span>Easy and Affordable Billing</span></li>
-                                                    </ul>
-                                                    <a href="#" class="btn btn-square">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
-                                            <div class="about-content d-flex">
-                                                <div class="about-thumb d-none d-xl-block">
-                                                    <a href="https://www.youtube.com/watch?v=yJg-Y5byMMw" data-fancybox class="play-btn"><i class="far fa-play-circle"></i></a>
-                                                    <img src="{{ asset('frontend/assets/img/about/about-1.jpg') }}" alt="about-1">
-                                                </div>
-                                                <div class="about-text ml-30">
-                                                    <h3>About Us</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sedos eiusmod tempor incididunt ut labore et do magna aqua Ut enim ad minim veniam, quis  exerc ullamco laboris nisi ut aliquip ex  commconsequat Du aute irure dolor in reprehenderit in</p>
-                                                    <ul class="about-features mb-20">
-                                                        <li><span>General Medical</span></li>
-                                                        <li><span>Outdoor Checkup</span></li>
-                                                        <li><span>Easy and Affordable Billing</span></li>
-                                                    </ul>
-                                                    <a href="#" class="btn btn-square">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
+<section class="about-us">
+    <div class="container">
+        <div class="about-us-inner">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-5">
+                    <div class="about-us-tab">
+                        <ul class="nav nav-tabs left-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                    <i class="fas fa-map-marked-alt"></i> Local Expertise
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="travel-tab" data-toggle="tab" href="#travel" role="tab" aria-controls="travel" aria-selected="false">
+                                    <i class="fas fa-route"></i> Tailor-Made Experiences
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="life-tab" data-toggle="tab" href="#life" role="tab" aria-controls="life" aria-selected="false">
+                                    <i class="fas fa-handshake"></i> Reliable Service
+                                </a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="car-tab" data-toggle="tab" href="#car" role="tab" aria-controls="car" aria-selected="false">
+                                    <i class="fas fa-shield-alt"></i> Comfort & Safety
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-8 col-lg-8 col-md-7">
+                    <div class="about-us-tab-content">
+                        <div class="tab-content" id="myTabContent">
+
+                            <!-- Local Expertise -->
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
+                                    <div class="about-thumb mb-3 mb-xl-0">
+                                        <img src="{{ asset('frontend/assets/img/about/about-01.jpg') }}" alt="Local Expertise" width="370" height="325" class="mx-auto d-block">
+                                    </div>
+                                    <div class="about-text ml-30">
+                                        <h3>Local Expertise</h3>
+                                        <p class="text-justify">We are proud to be based in Sri Lanka with a deep understanding of its culture, routes, and hidden gems. Every journey we offer is guided by real local insight and authentic connections.</p>
+                                        <ul class="about-features mb-20 text-left text-xl-left">
+                                            <li><span>In-depth regional knowledge</span></li>
+                                            <li><span>Access to lesser-known attractions</span></li>
+                                            <li><span>Trusted relationships with local communities</span></li>
+                                        </ul>
+                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Tailor-Made Experiences -->
+                            <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
+                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
+                                    <div class="about-thumb mb-3 mb-xl-0">
+                                        <img src="{{ asset('frontend/assets/img/about/about-02.jpg') }}" alt="Tailor-Made Experiences" width="370" height="325" class="mx-auto d-block">
+                                    </div>
+                                    <div class="about-text ml-30">
+                                        <h3>Tailor-Made Experiences</h3>
+                                        <p class="text-justify">Your journey should reflect your preferences. Every itinerary is handcrafted to suit your travel style, timing, and personal interests — whether spiritual, scenic, cultural, or all of the above.</p>
+                                        <ul class="about-features mb-20 text-left text-xl-left">
+                                            <li><span>Flexible scheduling and routing</span></li>
+                                            <li><span>Personalized activity selection</span></li>
+                                            <li><span>Small groups or private tours</span></li>
+                                        </ul>
+                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reliable Service -->
+                            <div class="tab-pane fade" id="life" role="tabpanel" aria-labelledby="life-tab">
+                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
+                                    <div class="about-thumb mb-3 mb-xl-0">
+                                        <img src="{{ asset('frontend/assets/img/about/about-03.jpg') }}" alt="Reliable Service" width="370" height="325" class="mx-auto d-block">
+                                    </div>
+                                    <div class="about-text ml-30">
+                                        <h3>Reliable Service</h3>
+                                        <p class="text-justify">From your first inquiry to the final drop-off, we ensure a seamless experience. Expect clear communication, punctual service, and consistent follow-through across every step of your trip.</p>
+                                        <ul class="about-features mb-20 text-left text-xl-left">
+                                            <li><span>Dedicated tour coordinators</span></li>
+                                            <li><span>Prompt responses and updates</span></li>
+                                            <li><span>Strong operational planning</span></li>
+                                        </ul>
+                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comfort & Safety -->
+                            <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
+                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
+                                    <div class="about-thumb mb-3 mb-xl-0">
+                                        <img src="{{ asset('frontend/assets/img/about/about-04.jpg') }}" alt="Comfort & Safety" width="370" height="325" class="mx-auto d-block">
+                                    </div>
+                                    <div class="about-text ml-30">
+                                        <h3>Comfort &amp; Safety</h3>
+                                        <p class="text-justify">Travel with confidence knowing your comfort and safety come first. Our team ensures clean transport, licensed drivers, and secure environments throughout your journey.</p>
+                                        <ul class="about-features mb-20 text-left text-xl-left">
+                                            <li><span>Fully insured, air-conditioned vehicles</span></li>
+                                            <li><span>Professional, experienced drivers</span></li>
+                                            <li><span>Safety-first travel routes and stops</span></li>
+                                        </ul>
+                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /tabs -->
+
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+
             <!-- about us area end -->
 
             <!-- tour area start -->
@@ -178,7 +194,7 @@
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
                                 <h1>Popular Tour</h1>
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                <p> Explore Sri Lanka’s most iconic locations with handpicked tours designed for comfort, discovery, and lasting memories. Each journey captures the island’s true essence, from mountains to coastlines. </p>
                             </div>
                         </div>
                     </div>
@@ -187,31 +203,31 @@
                             <div class="tour-slider owl-carousel">
                                 <div class="single-tour">
                                     <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/tour-1.jpg') }}" alt="tour-1">
+                                        <img src="{{ asset('frontend/assets/img/tour/Ramayanaya.jpg') }}" alt="tour-1">
                                         <div class="tour-content text-center">
-                                            <h4>Thailand</h4>
-                                            <p>Lorem ipsum dolor consectetur adipisicing elit sed do</p>
-                                            <a href="#" class="link-btn">Read more</a>
+                                            <h4>Trails of Ramayanaya: Eternal Legacy</h4>
+                                            <p>Walk in the footsteps of Rama, Sita, and Hanuman across Lanka </p>
+                                            <a href="{{ route('tours.ramayana') }}" class="link-btn">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="single-tour">
                                     <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/tour-2.jpg') }}" alt="tour-1">
+                                        <img src="{{ asset('frontend/assets/img/tour/Emerald.jpg') }}" alt="tour-1">
                                         <div class="tour-content text-center">
-                                            <h4>Switzerland</h4>
-                                            <p>Lorem ipsum dolor consectetur adipisicing elit sed do</p>
-                                            <a href="#" class="link-btn">Read more</a>
+                                            <h4>The Emerald Isle Expedition</h4>
+                                            <p>A perfect blend of beaches, hills, culture, and city charm</p>
+                                            <a href="{{ route('tours.emerald-isle') }}" class="link-btn">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="single-tour">
                                     <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/tour-3.jpg') }}" alt="tour-1">
+                                        <img src="{{ asset('frontend/assets/img/tour/Sunsets.jpg') }}" alt="tour-1">
                                         <div class="tour-content text-center">
-                                            <h4>California</h4>
-                                            <p>Lorem ipsum dolor consectetur adipisicing elit sed do</p>
-                                            <a href="#" class="link-btn">Read more</a>
+                                            <h4>Tropical Shores & Golden Sunsets</h4>
+                                            <p>Sun-drenched beaches, luxury stays, and endless coastal charm</p>
+                                            <a href="{{ route('tours.tropical-shores') }}" class="link-btn">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -228,22 +244,22 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="best-money-content">
-                                <h1>Best Money - North America</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed  eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut enim ad tinim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipeea commodolaboris nisi ut aliquipeea</p>
+                                <h1>Exclusive Offer – Trails of Ramayana Tour</h1>
+                                <p>Step into the epic tale of Ramayana through a spiritual 10-day journey across Sri Lanka. Discover sacred sites like Sita Amman Temple, Ashoka Vatika, and Ravana Falls, all guided by our local experts with deep cultural insights</p>
 
                                 <div class="best-money-price">
-                                    <span class="old-price">$ 800</span>
-                                    <span class="new-price">500 $</span>
+                                    <span class="old-price"> $800 ₹41,500</span>
+                                    <span class="new-price">Only ₹25,999</span>
                                     <span>/ FOR PERSON</span>
                                 </div>
-                                <a href="#" class="btn">BOOK NOW</a>
+                                <a href="https://wa.me/94776605054" class="btn">Contact Us</a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="best-money-img w-img">
-                                <img src="{{ asset('frontend/assets/img/best_money/best-money.jpg') }}" alt="best-money">
+                                <img src="{{ asset('frontend/assets/img/Muneswaram-temple.jpg') }}" alt="best-money">
                                 <div class="best-money-countdown text-center">
-                                    <div data-countdown data-date="Dec 02 2022 20:20:22">
+                                    <div data-countdown data-date="Dec 02 2026 20:20:22">
                                         <ul>
                                             <li><span data-days>0</span> days</li>
                                             <li><span data-hours>0</span> hours</li>
@@ -349,7 +365,7 @@
             <!-- best things area end -->
 
             <!-- team area start -->
-            <section class="team-area pt-80 pb-70 grey-bg">
+            <!-- <section class="team-area pt-80 pb-70 grey-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-8 offset-xl-2">
@@ -438,181 +454,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- team area end -->
 
-            <!-- package area start -->
-            <section class="package-area pt-80 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-2">
-                            <div class="sec-title text-center mb-50">
-                                <h1>Top Tour Packages</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-1.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-2.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person-2.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-3.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person-3.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-4.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person-4.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-5.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person-5.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="single-package mb-30 w-img">
-                                <img src="{{ asset('frontend/assets/img/package/package-6.jpg') }}" alt="package-1">
-                                <div class="package-person">
-                                    <img src="{{ asset('frontend/assets/img/package/package-person-6.jpg') }}" alt="package-person">
-                                </div>
-                                <div class="package-content">
-                                    <div class="package-info">
-                                        <h3><a href="#">Brazil – All Stunning</a></h3>
-                                        <p>4 Days, 5 Nights Start From</p>
-                                    </div>
-                                    <div class="package-bottom d-flex justify-content-between">
-                                        <span>$ 3500</span>
-                                        <div class="rating">
-                                            <ul>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                                <li><span><i class="fas fa-star"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- package area end -->
+            
 
             <!-- testimonial area start -->
             <section class="testimonial-area grey-bg pt-80 pb-100">
@@ -694,7 +539,7 @@
             <!-- testimonial area end -->
 
             <!-- blog area start -->
-            <section class="blog-area pt-80 pb-70">
+            <!-- <section class="blog-area pt-80 pb-70">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-8 offset-xl-2">
@@ -757,7 +602,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- blog area end -->
         </main>
 

@@ -1,0 +1,117 @@
+/* Font family and color overrides to match homepage */
+body, .emerald-isle-section, .emerald-isle-company-story, .emerald-isle-mission, .emerald-isle-vision, .emerald-isle-values, .accordion-content {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #424242;
+}
+.emerald-isle-page-title, .emerald-isle-section h2, .emerald-isle-section h3, .emerald-isle-mission h3, .emerald-isle-vision h3 {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #FDAE4B;
+}
+.emerald-isle-section h2, .emerald-isle-section h3, .emerald-isle-mission h3, .emerald-isle-vision h3 {
+    color: #6C6489;
+}
+.emerald-isle-section p, .emerald-isle-section li, .emerald-isle-mission p, .emerald-isle-vision p, .accordion-content {
+    color: #424242;
+}
+/* emerald-isle Page Hero Banner */
+.emerald-isle-hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.emerald-isle-hero::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.emerald-isle-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.emerald-isle-page-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+@media (max-width: 900px) {
+    .emerald-isle-hero {
+        min-height: 220px;
+    }
+    .emerald-isle-page-title {
+        font-size: 2.1rem;
+    }
+}
+/* emerald-isle Page Custom Styles */
+.emerald-isle-page-title {
+    color: #FDAE4B;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.emerald-isle-section {
+    /* background: #fff9f5; */
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(253, 174, 75, 0.08);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+}
+.emerald-isle-section > section {
+    margin-bottom: 60px;
+}
+.emerald-isle-section > section:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Key Highlights icon badges --- */
+.emerald-highlights .icon-circle{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f3f6fa;            /* subtle neutral bg */
+  color: #0d1b2a;                  /* icon color (inherits FA color) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;             /* center above title */
+  transition: all .25s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0); /* smooth hover shadow transition */
+}
+
+.emerald-highlights .icon-circle i{
+  line-height: 1;
+}
+
+/* Hover state: only when the card is hovered */
+.emerald-highlights .single-feature:hover .icon-circle{
+  background: #ff6600;             /* theme accent (used in your site) */
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(255,102,0,.28);
+}
+
+
+.loveitsection{
+    background: #ff6600;
+    color: #fff;
+}

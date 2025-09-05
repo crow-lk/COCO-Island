@@ -51,12 +51,11 @@
                                             <li><a href="#">Submenu 6</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Packages</a></li>
-                                    <li><a href="#">Hotels</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('packages') }}">Packages</a></li>
                                     <li><a href="#">Jobs</a></li>
                                     <li><a href="/blogs">Blogs</a></li>
-                                    <li><a href="#">Life</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

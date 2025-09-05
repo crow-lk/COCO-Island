@@ -333,7 +333,6 @@
                                 <div class="footer-policy">
                                     <a href="#">Terms & Condition</a>
                                     <a href="#">Privacy</a>
-                                    <a href="#">Support</a>
                                 </div>
                             </div>
                         </div>
