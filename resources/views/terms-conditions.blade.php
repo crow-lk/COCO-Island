@@ -1,17 +1,17 @@
+<!-- resources/views/about.blade.php -->
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>COCO Island Holidays - Tour Packages</title>
-        <meta name="description" content="Explore our tour packages.">
+        <title>About | COCO Island Holidays - Travel Agency</title>
+        <meta name="description" content="Learn more about COCO Island Holidays, our story, mission, vision, and values.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Place favicon.ico in the root directory -->
-		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/fav-icon.jpg') }}">
-        
-		<!-- CSS here -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/fav-icon.jpg') }}">
+        <!-- CSS here -->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/preloader.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css') }}">
@@ -24,15 +24,11 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+        <link rel="stylesheet" href="{{ asset('css/about.css') }}">
         @stack('styles')
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-        <!-- pre loader area start -->
+        <!-- pre loader -->
         <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
@@ -40,34 +36,46 @@
                     <div class="object" id="object_two"></div>
                     <div class="object" id="object_three"></div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- pre loader area end -->
 
-        <!-- scroll up area start -->
+        <!-- scroll up -->
         <div class="scroll-up" id="scroll" style="display: none;">
             <a href="javascript:void(0);"><i class="fas fa-angle-up"></i></a>
         </div>
-        <!-- scroll up area end -->
 
-        <!-- Floating WhatsApp Button Start -->
+        <!-- Floating WhatsApp -->
         <a href="https://wa.me/94776605054" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <!-- Floating WhatsApp Button End -->
 
-         @include('components.header')
-
+        @php($transparentHeader = true)
+        @include('components.header')
 <main>
+                        <!-- About Hero Banner -->
+        <section class="about-hero-area slider-area" data-background="{{ asset('frontend/assets/img/slider/slider-01.jpg') }}">
+            <div class="about-hero single-slider slider-height d-flex align-items-center"
+                 data-background="{{ asset('frontend/assets/img/about/aboutpage.jpg') }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="about-hero-content text-center">
+                                <h1 class="about-page-title sec-title text-center pt-150">Terms & Conditions</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <!-- Terms & Conditions -->
     <section class="section pt-70 pb-70 terms-and-conditions" id="terms">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
-                    <h2 class="sec-title text-center mb-40">Terms &amp; Conditions</h2>
+                    <!-- <h2 class="sec-title text-center mb-40">Terms &amp; Conditions</h2> -->
 
                     <p class="text-justify">
-                        When booking a trip with <strong>Coco Island Holidays</strong>, you agree to the following terms:
+                        When booking a trip with <strong>Coco Island Holidays</strong>, you agree to the following terms
                     </p>
 
                     <ol class="pl-3">

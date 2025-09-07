@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="about-hero-content text-center">
-                                <h1 class="about-page-title sec-title text-center pt-150">About</h1>
+                                <h1 class="about-page-title sec-title text-center pt-150">About Us</h1>
                             </div>
                         </div>
                     </div>

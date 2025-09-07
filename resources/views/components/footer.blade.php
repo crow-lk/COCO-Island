@@ -1,5 +1,5 @@
 <!-- footer area start -->
-<footer class="footer-area grey-bg-2">
+<footer class="footer-area black-bg text-white">
     <div class="footer-top pt-95 pb-20">
         <div class="container">
             <div class="row">

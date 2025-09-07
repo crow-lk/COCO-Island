@@ -1821,7 +1821,7 @@ p {
   text-align: center;
   font-size: 16px;
   color: #ffffff;
-  background-color: #252e45;
+  background-color: #ff6600;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%; }
@@ -1916,7 +1916,7 @@ p {
   position: relative;
   padding-right: 10px;
   margin-right: 5px;
-  color: #333b55;
+  color: #ffffff;
   font-size: 15px; }
 
 .footer-policy a:hover {
