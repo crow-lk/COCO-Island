@@ -1,6 +1,6 @@
 <!-- header area start -->
 <header class="header-area {{ ($transparentHeader ?? false) ? 'header-transparent' : '' }}">
-    <div class="header-top">
+    <!-- <div class="header-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-5 col-6">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="header-bottom">
         <div class="container">
             <div class="row align-items-center">

@@ -64,125 +64,181 @@
         <main>
             @include('components.hero')
 
-<section class="about-us">
-    <div class="container">
-        <div class="about-us-inner">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-5">
-                    <div class="about-us-tab">
-                        <ul class="nav nav-tabs left-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                    <i class="fas fa-map-marked-alt"></i> Local Expertise
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="travel-tab" data-toggle="tab" href="#travel" role="tab" aria-controls="travel" aria-selected="false">
-                                    <i class="fas fa-route"></i> Tailor-Made Experiences
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="life-tab" data-toggle="tab" href="#life" role="tab" aria-controls="life" aria-selected="false">
-                                    <i class="fas fa-handshake"></i> Reliable Service
-                                </a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="car-tab" data-toggle="tab" href="#car" role="tab" aria-controls="car" aria-selected="false">
-                                    <i class="fas fa-shield-alt"></i> Comfort & Safety
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Collection Intro -->
+<!-- Collection Intro -->
+<section class="collection-intro" id="about-intro">
+  <div class="container">
+    <div class="intro-wrap text-center">
+      <p class="intro-eyebrow reveal" style="--d: .0s">Discover Sri Lanka with</p>
+      <h1 class="intro-title reveal" style="--d: .12s">COCO ISLAND HOLIDAYS</h1>
+      <p class="intro-subtitle reveal" style="--d: .22s">
+        Unravel the warm delights of Sri Lankan hospitality with our collection
+      </p>
 
-                <div class="col-xl-8 col-lg-8 col-md-7">
-                    <div class="about-us-tab-content">
-                        <div class="tab-content" id="myTabContent">
-
-                            <!-- Local Expertise -->
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
-                                    <div class="about-thumb mb-3 mb-xl-0">
-                                        <img src="{{ asset('frontend/assets/img/about/about-01.jpg') }}" alt="Local Expertise" width="370" height="325" class="mx-auto d-block">
-                                    </div>
-                                    <div class="about-text ml-30">
-                                        <h3>Local Expertise</h3>
-                                        <p class="text-justify">We are proud to be based in Sri Lanka with a deep understanding of its culture, routes, and hidden gems. Every journey we offer is guided by real local insight and authentic connections.</p>
-                                        <ul class="about-features mb-20 text-left text-xl-left">
-                                            <li><span>In-depth regional knowledge</span></li>
-                                            <li><span>Access to lesser-known attractions</span></li>
-                                            <li><span>Trusted relationships with local communities</span></li>
-                                        </ul>
-                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tailor-Made Experiences -->
-                            <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
-                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
-                                    <div class="about-thumb mb-3 mb-xl-0">
-                                        <img src="{{ asset('frontend/assets/img/about/about-02.jpg') }}" alt="Tailor-Made Experiences" width="370" height="325" class="mx-auto d-block">
-                                    </div>
-                                    <div class="about-text ml-30">
-                                        <h3>Tailor-Made Experiences</h3>
-                                        <p class="text-justify">Your journey should reflect your preferences. Every itinerary is handcrafted to suit your travel style, timing, and personal interests — whether spiritual, scenic, cultural, or all of the above.</p>
-                                        <ul class="about-features mb-20 text-left text-xl-left">
-                                            <li><span>Flexible scheduling and routing</span></li>
-                                            <li><span>Personalized activity selection</span></li>
-                                            <li><span>Small groups or private tours</span></li>
-                                        </ul>
-                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Reliable Service -->
-                            <div class="tab-pane fade" id="life" role="tabpanel" aria-labelledby="life-tab">
-                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
-                                    <div class="about-thumb mb-3 mb-xl-0">
-                                        <img src="{{ asset('frontend/assets/img/about/about-03.jpg') }}" alt="Reliable Service" width="370" height="325" class="mx-auto d-block">
-                                    </div>
-                                    <div class="about-text ml-30">
-                                        <h3>Reliable Service</h3>
-                                        <p class="text-justify">From your first inquiry to the final drop-off, we ensure a seamless experience. Expect clear communication, punctual service, and consistent follow-through across every step of your trip.</p>
-                                        <ul class="about-features mb-20 text-left text-xl-left">
-                                            <li><span>Dedicated tour coordinators</span></li>
-                                            <li><span>Prompt responses and updates</span></li>
-                                            <li><span>Strong operational planning</span></li>
-                                        </ul>
-                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Comfort & Safety -->
-                            <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
-                                <div class="about-content d-flex flex-column flex-xl-row justify-content-center align-items-center align-items-xl-start text-center text-xl-left">
-                                    <div class="about-thumb mb-3 mb-xl-0">
-                                        <img src="{{ asset('frontend/assets/img/about/about-04.jpg') }}" alt="Comfort & Safety" width="370" height="325" class="mx-auto d-block">
-                                    </div>
-                                    <div class="about-text ml-30">
-                                        <h3>Comfort &amp; Safety</h3>
-                                        <p class="text-justify">Travel with confidence knowing your comfort and safety come first. Our team ensures clean transport, licensed drivers, and secure environments throughout your journey.</p>
-                                        <ul class="about-features mb-20 text-left text-xl-left">
-                                            <li><span>Fully insured, air-conditioned vehicles</span></li>
-                                            <li><span>Professional, experienced drivers</span></li>
-                                            <li><span>Safety-first travel routes and stops</span></li>
-                                        </ul>
-                                        <a href="https://wa.me/94776605054" target="_blank" class="btn">Contact Us</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /tabs -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <p class="intro-lead reveal" style="--d: .34s">
+        Welcome to Coco Island Holidays, where our real passion for travel, hospitality, and our beloved country
+        is reflected in our handpicked stays and experiences. We bring out Sri Lanka’s cultural heritage and rich biodiversity
+        through diverse attractions that reveal the many sides of this beautiful island—giving you a true glimpse into
+        the soul of Ceylon.
+      </p>
     </div>
+  </div>
 </section>
+
+
+<!-- Why Choose Us (Accordion + 3×3 Gallery) -->
+<section class="chooseus-gallery" id="why-choose-us">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+      <!-- LEFT: HEADING + ACCORDION -->
+      <div class="col-lg-5">
+        <p class="cu-eyebrow">Explore</p>
+        <h2 class="cu-title">Why Choose Us</h2>
+
+        <div class="cu-divider">
+          <img src="{{ asset('frontend/assets/img/icon2.png') }}" alt="icon" class="cu-icon">
+          <span class="cu-line"></span>
+        </div>
+
+        <!-- Accordion -->
+        <div class="cu-accordion" role="tablist">
+          <!-- 1. LOCAL EXPERTISE -->
+          <article class="cu-acc-item">
+            <button class="cu-acc-btn is-open"
+                    id="acc-btn-0"
+                    aria-expanded="true"
+                    aria-controls="acc-panel-0"
+                    data-group="0">
+              <span>LOCAL EXPERTISE</span><i class="cu-caret"></i>
+            </button>
+            <div class="cu-acc-panel" id="acc-panel-0" role="region" aria-labelledby="acc-btn-0" style="height:auto;">
+              <p>We are proud to be based in Sri Lanka with a deep understanding of its culture, routes, and hidden gems. Every journey we offer is guided by real local insight and authentic connections.</p>
+              <ul class="cu-points">
+                <li>In-depth regional knowledge</li>
+                <li>Access to lesser-known attractions</li>
+                <li>Trusted relationships with local communities</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. TAILOR-MADE EXPERIENCES -->
+          <article class="cu-acc-item">
+            <button class="cu-acc-btn"
+                    id="acc-btn-1"
+                    aria-expanded="false"
+                    aria-controls="acc-panel-1"
+                    data-group="1">
+              <span>TAILOR-MADE EXPERIENCES</span><i class="cu-caret"></i>
+            </button>
+            <div class="cu-acc-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
+              <p>Your journey should reflect your preferences. Every itinerary is handcrafted to suit your travel style, timing, and personal interests — whether spiritual, scenic, cultural, or all of the above.</p>
+              <ul class="cu-points">
+                <li>Flexible scheduling and routing</li>
+                <li>Personalised activity selection</li>
+                <li>Small groups or private tours</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. RELIABLE SERVICE -->
+          <article class="cu-acc-item">
+            <button class="cu-acc-btn"
+                    id="acc-btn-2"
+                    aria-expanded="false"
+                    aria-controls="acc-panel-2"
+                    data-group="2">
+              <span>RELIABLE SERVICE</span><i class="cu-caret"></i>
+            </button>
+            <div class="cu-acc-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
+              <p>From your first inquiry to the final drop-off, we ensure a seamless experience. Expect clear communication, punctual service, and consistent follow-through across every step of your trip.</p>
+              <ul class="cu-points">
+                <li>Dedicated tour coordinators</li>
+                <li>Prompt responses and updates</li>
+                <li>Strong operational planning</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 4. COMFORT & SAFETY -->
+          <article class="cu-acc-item">
+            <button class="cu-acc-btn"
+                    id="acc-btn-3"
+                    aria-expanded="false"
+                    aria-controls="acc-panel-3"
+                    data-group="3">
+              <span>COMFORT &amp; SAFETY</span><i class="cu-caret"></i>
+            </button>
+            <div class="cu-acc-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
+              <p>Travel with confidence knowing your comfort and safety come first. Our team ensures clean transport, licensed drivers, and secure environments throughout your journey.</p>
+              <ul class="cu-points">
+                <li>Fully insured, air-conditioned vehicles</li>
+                <li>Professional, experienced drivers</li>
+                <li>Safety-first travel routes and stops</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- RIGHT: 3×3 GRID + LIGHTBOX -->
+      <div class="col-lg-7">
+        <div class="cu-gallery">
+          <!-- Group 0 -->
+          <figure class="cu-gitem" data-group="0">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-1.png') }}" alt="Local expertise - coastal view">
+          </figure>
+          <figure class="cu-gitem" data-group="0">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-2.png') }}" alt="Hidden temple trail">
+          </figure>
+          <figure class="cu-gitem" data-group="0">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-3.png') }}" alt="Local market experience">
+          </figure>
+
+          <!-- Group 1 -->
+          <figure class="cu-gitem" data-group="1">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-4.png') }}" alt="Tailor-made itinerary">
+          </figure>
+          <figure class="cu-gitem" data-group="1">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-5.png') }}" alt="Private tea experience">
+          </figure>
+          <figure class="cu-gitem" data-group="1">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-6.png') }}" alt="Sunrise hike plan">
+          </figure>
+
+          <!-- Group 2 -->
+          <figure class="cu-gitem" data-group="2">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-7.png') }}" alt="Reliable logistics">
+          </figure>
+          <figure class="cu-gitem" data-group="2">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-8.png') }}" alt="On-time pickups">
+          </figure>
+          <figure class="cu-gitem" data-group="2">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-9.png') }}" alt="Coordinated transfers">
+          </figure>
+
+          <!-- Group 3 (optional extras; script will still show 9 tiles) -->
+          <figure class="cu-gitem" data-group="3">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-8.png') }}" alt="Comfort & safety vehicles">
+          </figure>
+          <figure class="cu-gitem" data-group="3">
+            <img class="cu-gimage" src="{{ asset('frontend/assets/img/chooseus/local-9.png') }}" alt="Licensed drivers">
+          </figure>
+
+          <!-- Lightbox modal -->
+          <div class="cu-modal" aria-hidden="true">
+            <button class="cu-modal__nav cu-modal__prev" aria-label="Previous"></button>
+            <img class="cu-modal__img" src="" alt="">
+            <button class="cu-modal__nav cu-modal__next" aria-label="Next"></button>
+            <button class="cu-modal__close" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
             <!-- about us area end -->
@@ -536,74 +592,9 @@
                     </div>
                 </div>
             </section>
-            <!-- testimonial area end -->
 
-            <!-- blog area start -->
-            <!-- <section class="blog-area pt-80 pb-70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-2">
-                            <div class="sec-title text-center mb-50">
-                                <h1>The Best Value Under the Sun</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-12">
-                            <div class="single-blog mb-30 fix">
-                                <div class="blog-thumb w-img">
-                                    <img src="{{ asset('frontend/assets/img/blog/blog-big.jpg') }}" alt="blog-big">
-                                </div>
-                                <div class="blog-tag">
-                                    <a href="#">Protest</a>
-                                </div>
-                                <div class="blog-content">
-                                    <h1><a href="#">How the future of america is shaped by politicians</a></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipis sedo eiusmod tempor incididunt ut labore et dolore magn</p>
-                                    <div class="blog-meta d-sm-flex align-items-center d-none">
-                                        <div class="blog-avater mr-15">
-                                            <img src="{{ asset('frontend/assets/img/blog/blog-avater.jpg') }}" alt="blog-avater">
-                                        </div>
-                                        <div class="aveter-info">
-                                            <h4>Jamel Grant</h4>
-                                            <a href="#">12 November</a>
-                                            <a href="#"><i class="fal fa-comment"></i> 12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-12">
-                            <div class="single-blog fix mb-30 w-img">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('frontend/assets/img/blog/blog-sm-1.jpg') }}" alt="blog-sm">
-                                </div>
-                                <div class="blog-tag">
-                                    <a href="#">Culture</a>
-                                </div>
-                                <div class="blog-content">
-                                    <h1><a href="#">How the future of america is shaped by politicians</a></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipis sedo eiusmod tempor incididunt ut labore et dolore magn</p>
-                                </div>
-                            </div>
-                            <div class="single-blog fix mb-30">
-                                <div class="blog-thumb w-img">
-                                    <img src="{{ asset('frontend/assets/img/blog/blog-sm-2.jpg') }}" alt="blog-sm">
-                                </div>
-                                <div class="blog-tag">
-                                    <a href="#">Culture</a>
-                                </div>
-                                <div class="blog-content">
-                                    <h1><a href="#">How the future of america is shaped by politicians</a></h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipis sedo eiusmod tempor incididunt ut labore et dolore magn</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- blog area end -->
+           
+
         </main>
 
         @include('components.footer')

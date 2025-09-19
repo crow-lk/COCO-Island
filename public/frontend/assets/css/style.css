@@ -477,7 +477,7 @@ p {
 /*  02. HEADER CSS START 
 /*----------------------------------------*/
 .header-area {
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   z-index: 11; }
 
 .header-area.header-2 {
@@ -489,7 +489,9 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%; }
+  width: 100%; 
+opacity: 100%;
+}
 
 .header-top {
   padding-top: 6px;
@@ -753,25 +755,66 @@ p {
 /*----------------------------------------*/
 /*  03. SLIDER CSS START 
 /*----------------------------------------*/
-.single-slider {
+
+/* Center the hero content over the video */
+.single-slider { position: relative; overflow: hidden; }
+.slider-height { min-height: 70vh; } /* keep or adjust */
+
+.slide-bg-video{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 0;
+}
+
+/* Put text above the video */
+.single-slider .container { position: relative; z-index: 2; }
+
+/* TRUE centering + nicer layout */
+.slider-content { 
+  max-width: 960px; 
+  margin: 0 auto; 
+  text-align: center; 
+}
+.slider-btn-wrapper{
+  display: flex; 
+  gap: 16px; 
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+/* If your old theme adds top margin, neutralize it here */
+.slider-content.mt-120 { margin-top: 0 !important; }
+
+/* Optional: mobile heights */
+@media (max-width: 991.98px){ .slider-height{ min-height:60vh; } }
+@media (max-width: 575.98px){ .slider-height{ min-height:55vh; } }
+
+/* Reduced motion: fall back to poster */
+@media (prefers-reduced-motion: reduce){
+  .slide-bg-video{ display:none; }
+}
+
+
+/* .single-slider {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover; } */
 
-.single-slider::before {
+/* .single-slider::before {
   position: absolute;
   content: '';
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5); } */
 
 .slider-height {
   min-height: 895px; }
 
 .slider-content h1 {
-  font-size: 60px;
+  font-size: 40px;
   line-height: 72px;
   font-weight: 700;
   color: #ffffff;
@@ -781,7 +824,7 @@ p {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   font-weight: 400;
-  padding-right: 215px;
+  /* padding-right: 215px; */
   margin-bottom: 40px; }
 
 .slider-btn-wrapper .btn {
@@ -824,125 +867,7 @@ p {
   right: 25px;
   left: auto; }
 
-/*----------------------------------------*/
-/*  04. ABOUT CSS START 
-/*----------------------------------------*/
-.about-us {
-  position: relative;
-  margin-bottom: 127px;
-  margin-top: -130px;
-  z-index: 11; }
 
-.about-us-inner {
-  position: relative;
-  padding-right: 15px; }
-
-.about-us-inner::after {
-  position: absolute;
-  content: '';
-  top: -50px;
-  left: -80px;
-  width: calc(100% + 132px);
-  height: calc(100% + 100px);
-  background: #fff;
-  z-index: -1;
-  -webkit-box-shadow: 0px 5px 37px 0px rgba(16, 145, 255, 0.15);
-  -moz-box-shadow: 0px 5px 37px 0px rgba(16, 145, 255, 0.15);
-  box-shadow: 0px 5px 37px 0px rgba(16, 145, 255, 0.15);
-  border-top-left-radius: 61px;
-  border-bottom-right-radius: 61px; }
-
-.about-us-tab ul.nav {
-  display: block; }
-
-.about-us-tab ul.nav-tabs {
-  border-bottom: none; }
-
-.about-us-tab ul li a.nav-link {
-  font-size: 18px;
-  color: #252e45;
-  border: none;
-  padding: 0;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  border-bottom: 1px solid #dddddd; }
-
-.about-us-tab ul li:last-child a.nav-link {
-  border-bottom: none; }
-
-.about-us-tab ul li a i {
-  font-size: 22px;
-  margin-right: 15px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  color: #b0b0b0;
-  text-align: center; }
-
-.about-us-tab ul li a.nav-link.active {
-  border-bottom: 1px solid #dddddd;
-  color: #ff6600;
-  text-decoration: line-through; }
-
-.about-us-tab ul li:last-child a.nav-link.active {
-  border-bottom: none; }
-
-.about-us-tab ul li a.nav-link.active i {
-  color: #b0b0b0; }
-
-/* about us content */
-.about-thumb {
-  position: relative; }
-
-.about-thumb a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 35px;
-  z-index: 1; }
-
-.about-thumb a:hover {
-  color: #ff6600; }
-
-.about-text h3 {
-  font-size: 25px;
-  text-transform: uppercase;
-  margin-bottom: 7px; }
-
-.about-text p {
-  font-size: 15px;
-  color: #252e45;
-  margin-bottom: 10px; }
-
-.about-text ul.about-features li {
-  position: relative;
-  padding-left: 21px;
-  margin-bottom: 6px; }
-
-.about-text ul.about-features li::before {
-  position: absolute;
-  content: '\f101';
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-family: "Font Awesome 5 Pro";
-  font-size: 15px;
-  color: #252e45; }
 
 /*----------------------------------------*/
 /*  05. TOUR CSS START 
@@ -1941,3 +1866,163 @@ p {
 
 .footer-policy a:last-child::after {
   display: none; }
+
+/* ===== Collection Intro (animated) ===== */
+.collection-intro{
+  /* light, airy background */
+  padding: clamp(48px, 9vw, 110px) 0;
+  background:
+    radial-gradient(900px 320px at -12% 0%, rgba(0,0,0,.02) 0%, rgba(0,0,0,0) 70%),
+    radial-gradient(900px 320px at 112% 0%, rgba(0,0,0,.02) 0%, rgba(0,0,0,0) 70%),
+    #ffffff;
+
+  /* subtle drifting of the corner gradients */
+  position: relative;
+  overflow: clip;                 /* prevents scrollbars during drift */
+  animation: intro-drift 16s ease-in-out infinite alternate;
+}
+
+.intro-wrap{ max-width: 980px; margin: 0 auto; }
+
+.intro-eyebrow{
+  margin-bottom: 8px;
+  letter-spacing: .03em;
+  color: #8c8c8c;
+  font-size: clamp(13px, 1.2vw, 18px);
+  font-weight: 600;
+}
+
+.intro-title{
+  color:#111;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: clamp(26px, 5.2vw, 28px);  /* compact title size */
+  text-transform: none;
+}
+
+.intro-subtitle{
+  color:#9aa0a6;
+  margin: 0 auto 20px;
+  max-width: 820px;
+  font-weight: 500;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+.intro-lead{
+  max-width: 820px;
+  margin: 0 auto;
+  color:#697586;
+  line-height: 1.75;
+  font-size: clamp(14px, 1.25vw, 16.5px);
+}
+
+.intro-cta{ margin-top: 22px; gap: 12px; }
+
+/* ---------- Scroll-in animation helpers ---------- */
+/* Only apply when JS marks <html> with .js (progressive enhancement) */
+.js #about-intro .reveal{
+  opacity: 0;
+  transform: translateY(18px) scale(.98);
+  filter: blur(6px);
+  transition:
+    opacity .65s cubic-bezier(.2,.65,.2,1),
+    transform .65s cubic-bezier(.2,.65,.2,1),
+    filter .65s cubic-bezier(.2,.65,.2,1);
+  transition-delay: var(--d, 0s);  /* set per-element with inline --d */
+}
+.js #about-intro .reveal.in{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Gentle background drift keyframes */
+@keyframes intro-drift{
+  0%   { background-position: -12% 0%, 112% 0%, 0 0; }
+  100% { background-position: -15% -2%, 115% 2%, 0 0; }
+}
+
+/* Accessibility: respect user’s reduced-motion preference */
+@media (prefers-reduced-motion: reduce){
+  .collection-intro{ animation: none; }
+  .reveal, .reveal.in{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Keep section light even if the site uses dark mode */
+@media (prefers-color-scheme: dark){
+  .collection-intro{ background:#ffffff; }
+  .intro-title{ color:#111; }
+  .intro-subtitle{ color:#9aa0a6; }
+  .intro-lead{ color:#697586; }
+}
+
+
+/* ===== Why Choose Us (accordion + 3×3 gallery) ===== */
+.chooseus-gallery{background:#f9fbfd;padding:clamp(48px,9vw,110px) 0}
+
+/* Left heading */
+.cu-eyebrow{font:600 14px/1 "Poppins",sans-serif;letter-spacing:.03em;color:#8c8c8c;margin:0 0 6px}
+.cu-title{font:700 clamp(28px,5vw,44px)/1.15 "Poppins",sans-serif;color:#111;margin:0 0 10px}
+.cu-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px}
+.cu-icon{width:68px;height:68px;object-fit:contain}
+.cu-line{height:2px;width:120px;background:#ff6600;border-radius:2px;opacity:.6}
+
+/* Accordion */
+.cu-accordion{display:flex;flex-direction:column;gap:10px}
+.cu-acc-item{border:1px solid rgba(17,24,39,.08);border-radius:12px;background:#fff}
+.cu-acc-btn{
+  width:100%;text-align:left;background:transparent;border:0;padding:14px 44px 14px 14px;
+  font:700 14px/1 "Poppins",sans-serif;color:#333;letter-spacing:.04em;position:relative
+}
+.cu-acc-btn .cu-caret{
+  position:absolute;right:14px;top:50%;width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-50%) rotate(45deg);transition:transform .2s ease
+}
+.cu-acc-btn.is-open .cu-caret{transform:translateY(-50%) rotate(-135deg)}
+.cu-acc-btn:is(:hover,:focus){outline:0;box-shadow:0 0 0 3px rgba(255,102,0,.15);border-radius:12px}
+
+.cu-acc-panel{
+  overflow:hidden;height:0;transition:height .25s ease;padding:0 14px
+}
+.cu-acc-panel p{color:#697586;font-size:15.5px;line-height:1.75;margin:10px 0 8px}
+.cu-points{list-style:none;padding:0 0 14px 0;margin:0}
+.cu-points li{position:relative;padding-left:22px;margin:6px 0;color:#475569;font-size:14.5px;line-height:1.6}
+.cu-points li::before{
+  content:"";position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:50%;
+  box-shadow:inset 0 0 0 2px #ff6600;background:radial-gradient(circle at 50% 50%,#ff6600 0 45%,transparent 46%);
+  opacity:.9
+}
+
+/* Right: 3×3 grid */
+.cu-gallery{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cu-gitem{position:relative;border-radius:14px;overflow:hidden;background:#fff;
+  border:1px solid rgba(17,24,39,.06);box-shadow:0 .1875rem .625rem rgba(0,0,0,.12)}
+.cu-gitem[hidden]{display:none!important}
+.cu-gimage{display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;transition:transform .28s ease,opacity .28s ease}
+.cu-gimage:hover{cursor:pointer;opacity:.9;transform:scale(1.04)}
+
+/* Lightbox */
+.cu-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);z-index:1050}
+.cu-modal[aria-hidden="false"]{display:flex}
+.cu-modal__img{display:block;margin:auto;max-width:90%;max-height:90%}
+.cu-modal__nav,.cu-modal__close{position:absolute;background:transparent;border:0;cursor:pointer;opacity:.7;width:42px;height:42px}
+.cu-modal__nav:hover,.cu-modal__close:hover{opacity:1}
+.cu-modal__prev{left:24px;top:50%;transform:translateY(-50%)}
+.cu-modal__next{right:24px;top:50%;transform:translateY(-50%)}
+.cu-modal__nav::before{content:"";display:inline-block;border:solid #fff;border-width:0 .25rem .25rem 0;padding:.5rem}
+.cu-modal__prev::before{transform:rotate(135deg)}
+.cu-modal__next::before{transform:rotate(-45deg)}
+.cu-modal__close{top:24px;right:24px}
+.cu-modal__close::before,.cu-modal__close::after{content:"";position:absolute;left:20px;width:2px;height:30px;background:#fff}
+.cu-modal__close::before{transform:rotate(45deg)}
+.cu-modal__close::after{transform:rotate(-45deg)}
+.noscroll{overflow:hidden}
+
+/* Responsive */
+@media (max-width:991.98px){ .cu-gallery{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:575.98px){ .cu-gallery{grid-template-columns:1fr} }
