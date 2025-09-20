@@ -46,14 +46,29 @@
                                     <li><a href="{{ route('about') }}">About</a></li>
                                     <li><a href="{{ route('home') }}" class="arrow">Tours</a>
                                         <ul class="submenu">
-                                            <li><a href="{{ route('tours.ramayana') }}">Trails of Ramayanaya: Eternal Legacy</a></li>
-                                            <li><a href="{{ route('tours.emerald-isle') }}">The Emerald Isle Expedition</a></li>
-                                            <li><a href="{{ route('tours.tropical-shores') }}">Tropical Shores & Golden Sunsets</a></li>
+                                            @foreach($activeTours as $tour)
+                                                <li>
+                                                    @if($tour->slug)
+                                                        <a href="{{ route('tours.show', $tour->slug) }}">{{ $tour->title }}</a>
+                                                    @elseif($tour->route_name)
+                                                        <a href="{{ route($tour->route_name) }}">{{ $tour->title }}</a>
+                                                    @else
+                                                        <a href="{{ route('contact') }}">{{ $tour->title }}</a>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                            
+                                            <!-- Legacy menu items for backward compatibility - only if no active tours -->
+                                            @if($activeTours->isEmpty())
+                                                <li><a href="{{ route('tours.ramayana') }}">Trails of Ramayanaya: Eternal Legacy</a></li>
+                                                <li><a href="{{ route('tours.emerald-isle') }}">The Emerald Isle Expedition</a></li>
+                                                <li><a href="{{ route('tours.tropical-shores') }}">Tropical Shores & Golden Sunsets</a></li>
+                                            @endif
                                         </ul>
                                     </li>
                                     {{-- <li><a href="{{ route('packages') }}">Packages</a></li> --}}
                                     {{-- <li><a href="#">Jobs</a></li> --}}
-                                    <li><a href="/blogs">Blogs</a></li>
+                                    <li><a href="{{ route('home') }}">Blogs</a></li>
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>

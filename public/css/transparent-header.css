@@ -1,0 +1,21 @@
+/* Header Transparent Scroll Effect */
+.header-transparent.scrolled {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.header-transparent.scrolled .header-bottom {
+    background: transparent;
+    padding: 10px 0;
+}
+
+.header-transparent .header-bottom {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Tour hero enhancement for transparent header */
+.tour-hero {
+    height: 100vh;
+    min-height: 600px;
+}

@@ -257,36 +257,28 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="tour-slider owl-carousel">
+                                @forelse ($popularTours as $tour)
                                 <div class="single-tour">
                                     <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/Ramayanaya.jpg') }}" alt="tour-1">
+                                        <img src="{{ $tour->image_url }}" alt="{{ $tour->title }}">
                                         <div class="tour-content text-center">
-                                            <h4>Trails of Ramayanaya: Eternal Legacy</h4>
-                                            <p>Walk in the footsteps of Rama, Sita, and Hanuman across Lanka </p>
-                                            <a href="{{ route('tours.ramayana') }}" class="link-btn">Book Now</a>
+                                            <h4>{{ $tour->title }}</h4>
+                                            <p>{{ $tour->description }}</p>
+                                            @if($tour->slug)
+                                                <a href="{{ route('tours.show', $tour->slug) }}" class="link-btn">Book Now</a>
+                                            @elseif($tour->route_name)
+                                                <a href="{{ route($tour->route_name) }}" class="link-btn">Book Now</a>
+                                            @else
+                                                <a href="{{ route('contact') }}" class="link-btn">Inquire Now</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-tour">
-                                    <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/Emerald.jpg') }}" alt="tour-1">
-                                        <div class="tour-content text-center">
-                                            <h4>The Emerald Isle Expedition</h4>
-                                            <p>A perfect blend of beaches, hills, culture, and city charm</p>
-                                            <a href="{{ route('tours.emerald-isle') }}" class="link-btn">Book Now</a>
-                                        </div>
-                                    </div>
+                                @empty
+                                <div class="col-12 text-center">
+                                    <p>No popular tours available at the moment. Check back soon!</p>
                                 </div>
-                                <div class="single-tour">
-                                    <div class="tour-img">
-                                        <img src="{{ asset('frontend/assets/img/tour/Sunsets.jpg') }}" alt="tour-1">
-                                        <div class="tour-content text-center">
-                                            <h4>Tropical Shores & Golden Sunsets</h4>
-                                            <p>Sun-drenched beaches, luxury stays, and endless coastal charm</p>
-                                            <a href="{{ route('tours.tropical-shores') }}" class="link-btn">Book Now</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>

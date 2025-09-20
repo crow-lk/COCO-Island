@@ -1,0 +1,93 @@
+/* Tour page specific styles */
+.tour-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tour-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.tour-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tour-highlights .icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #ff5324;
+    margin-bottom: 15px;
+}
+
+.tour-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.tour-content h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.tour-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.loveitsection {
+    background-color: #ff5324;
+    position: relative;
+}
+
+.loveitsection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.loveitsection .container {
+    position: relative;
+    z-index: 2;
+}
+
+.single-feature {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.single-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tour-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.tour-content ul li {
+    margin-bottom: 10px;
+}
