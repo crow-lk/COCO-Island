@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Place favicon.ico in the root directory -->
-		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/fav-icon.jpg') }}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/fav-icon.png') }}">
         
 		<!-- CSS here -->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
