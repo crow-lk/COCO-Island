@@ -7,9 +7,6 @@ on:
 
       #Production environment
       - fix-migrations
-      
-      #production environment
-      # - deploymentrevert20250818
 
 jobs:
   deploy:
