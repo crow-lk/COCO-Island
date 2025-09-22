@@ -32,6 +32,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandLogo(asset('frontend/assets/img/logo/coco-logo.png'))
+            ->brandLogoHeight('75px') // Adjust the value as needed
             ->colors([
                 'primary' => Color::Amber,
             ])
