@@ -10,7 +10,7 @@
                         </div>
                         <div class="footer-content">
                             <div class="footer-contact">
-                                <p>Lorem ipsum dolor sit am co adipisicing elit, sed do eiusmod tempor</p>
+                                <p>Your trusted travel partner in Sri Lanka for unforgettable holidays</p>
                                 <ul>
                                     <li>
                                         <div class="footer-contact-inner d-flex align-items-center">
@@ -38,7 +38,7 @@
                                                 <span><i class="fal fa-envelope"></i></span>
                                             </div>
                                             <div class="text">
-                                                <p> yourmail@gmail.com</p>
+                                                <p>info@cocoislandholidays.com</p>
                                             </div>
                                         </div>
                                     </li>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="footer-content">
                             <div class="subscribe">
-                                <p>Lorem ipsum dolor si  consectetur adipisicing elit, sed eiusmotempor incididunt ut labore et</p>
+                                <p>Subscribe to our newsletter for exclusive travel deals, offers, and the latest updates on Sri Lankan adventures</p>
                                 
                                 <div class="subscribe-form">
                                     <form action="#">

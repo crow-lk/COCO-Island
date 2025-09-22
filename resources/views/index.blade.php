@@ -419,7 +419,7 @@
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
                                 <h1>Meet The Guides</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                <p>Explore our popular tour packages featuring breathtaking locations, immersive experiences, and personalized service for an unforgettable Sri Lankan adventure</p>
                             </div>
                         </div>
                     </div>

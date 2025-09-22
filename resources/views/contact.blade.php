@@ -95,7 +95,7 @@
         <div class="h-100 px-3">
           <i class="fas fa-phone fa-2x mb-3" aria-hidden="true"></i>
           <h4 class="theme-color mb-1">Phone</h4>
-          <p class="mb-0"><a href="tel:+94770505952">+94 77 050 5952</a></p>
+          <p class="mb-0"><a href="tel:+94776605054">+94 77 660 5054</a></p>
         </div>
       </div>
 
@@ -182,7 +182,7 @@
             <a href="https://www.tiktok.com/@coco.island.holidays" target="_blank" class="social-icon mx-3">
                 <i class="fab fa-tiktok"></i>
             </a>
-            <a href="https://wa.me/94770505952" target="_blank" class="social-icon mx-3">
+            <a href="https://wa.me/94776605054" target="_blank" class="social-icon mx-3">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>

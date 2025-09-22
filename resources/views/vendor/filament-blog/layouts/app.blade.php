@@ -242,7 +242,7 @@
                                                         <span><i class="fal fa-envelope"></i></span>
                                                     </div>
                                                     <div class="text">
-                                                        <p>yourmail@gmail.com</p>
+                                                        <p>info@cocoislandholidays.com</p>
                                                     </div>
                                                 </div>
                                             </li>

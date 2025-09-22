@@ -66,7 +66,7 @@
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
                                 <h1>Top Tour Packages</h1>
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim </p>
+                                <p>Discover our carefully curated travel packages designed to showcase the best of Sri Lanka's natural beauty, cultural heritage, and authentic experiences</p>
                             </div>
                         </div>
                     </div>
