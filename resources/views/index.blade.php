@@ -604,6 +604,7 @@
         <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/countdown.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/video-optimization.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 
         @stack('scripts')

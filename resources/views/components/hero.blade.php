@@ -4,7 +4,7 @@
 <section class="slider-area">
 <div class="single-slider slider-height d-flex align-items-center p-relative">
   <!-- Background video -->
-  <video class="slide-bg-video" autoplay muted loop playsinline preload="metadata"
+  <video class="slide-bg-video" autoplay muted loop playsinline preload="none"
          poster="{{ asset('frontend/assets/video/0914.mp4.jpg') }}">
     <source src="{{ asset('frontend/assets/video/0914.webm') }}" type="video/webm">
     <source src="{{ asset('frontend/assets/video/0914.mp4') }}" type="video/mp4">
