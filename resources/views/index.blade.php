@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/default.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         @stack('styles')
@@ -69,18 +69,15 @@
 <section class="collection-intro" id="about-intro">
   <div class="container">
     <div class="intro-wrap text-center">
-      <p class="intro-eyebrow reveal" style="--d: .0s">Discover Sri Lanka with</p>
-      <h1 class="intro-title reveal" style="--d: .12s">COCO ISLAND HOLIDAYS</h1>
-      <p class="intro-subtitle reveal" style="--d: .22s">
-        Unravel the warm delights of Sri Lankan hospitality with our collection
-      </p>
+            <p class="intro-eyebrow reveal" style="--d: .0s">Explore Sri Lanka</p>
+            <h1 class="intro-title reveal" style="--d: .12s">COCO ISLAND HOLIDAYS</h1>
+            <p class="intro-subtitle reveal" style="--d: .22s">
+                Authentic Sri Lanka tours — wildlife safaris, tea-country escapes, coastal beaches and cultural heritage itineraries
+            </p>
 
-      <p class="intro-lead reveal" style="--d: .34s">
-        Welcome to Coco Island Holidays, where our real passion for travel, hospitality, and our beloved country
-        is reflected in our handpicked stays and experiences. We bring out Sri Lanka’s cultural heritage and rich biodiversity
-        through diverse attractions that reveal the many sides of this beautiful island—giving you a true glimpse into
-        the soul of Ceylon.
-      </p>
+            <p class="intro-lead reveal" style="--d: .34s">
+                Discover Sri Lanka’s vibrant landscapes and centuries-old culture with local guides who know the island intimately. From mist-covered central highlands and verdant tea plantations to UNESCO temples and white-sand beaches, our curated tours balance authentic experiences with sustainable travel practices. Whether you seek wildlife, history, or relaxation, we design journeys that reveal Sri Lanka’s best while supporting local communities.
+            </p>
     </div>
   </div>
 </section>
@@ -92,8 +89,8 @@
     <div class="row gy-5 align-items-center">
       <!-- LEFT: HEADING + ACCORDION -->
       <div class="col-lg-5">
-        <p class="cu-eyebrow">Explore</p>
-        <h2 class="cu-title">Why Choose Us</h2>
+    <p class="cu-eyebrow">Why Travel With Us</p>
+    <h2 class="cu-title">Why Choose COCO Island Holidays</h2>
 
         <div class="cu-divider">
           <img src="{{ asset('frontend/assets/img/icon2.png') }}" alt="icon" class="cu-icon">
@@ -112,12 +109,12 @@
               <span>LOCAL EXPERTISE</span><i class="cu-caret"></i>
             </button>
             <div class="cu-acc-panel" id="acc-panel-0" role="region" aria-labelledby="acc-btn-0" style="height:auto;">
-              <p>We are proud to be based in Sri Lanka with a deep understanding of its culture, routes, and hidden gems. Every journey we offer is guided by real local insight and authentic connections.</p>
-              <ul class="cu-points">
-                <li>In-depth regional knowledge</li>
-                <li>Access to lesser-known attractions</li>
-                <li>Trusted relationships with local communities</li>
-              </ul>
+                            <p>Rooted in Sri Lanka, our team brings decades of on-the-ground experience to every itinerary. We prioritise local knowledge, authentic encounters, and routes that reveal both iconic sights and hidden gems — from national parks rich in wildlife to small coastal villages.</p>
+                            <ul class="cu-points">
+                                <li>Local guides and insider routes</li>
+                                <li>Authentic cultural and nature experiences</li>
+                                <li>Responsible partnerships with communities</li>
+                            </ul>
             </div>
           </article>
 
@@ -131,12 +128,12 @@
               <span>TAILOR-MADE EXPERIENCES</span><i class="cu-caret"></i>
             </button>
             <div class="cu-acc-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
-              <p>Your journey should reflect your preferences. Every itinerary is handcrafted to suit your travel style, timing, and personal interests — whether spiritual, scenic, cultural, or all of the above.</p>
-              <ul class="cu-points">
-                <li>Flexible scheduling and routing</li>
-                <li>Personalised activity selection</li>
-                <li>Small groups or private tours</li>
-              </ul>
+                            <p>We craft tailor-made Sri Lanka tours that match your pace and interests — from family-friendly itineraries to adventure and wellness escapes. Each trip is personalised to include the experiences you care about most.</p>
+                            <ul class="cu-points">
+                                <li>Custom itineraries and flexible dates</li>
+                                <li>Special interest tours (wildlife, culture, food)</li>
+                                <li>Private or small-group options</li>
+                            </ul>
             </div>
           </article>
 
@@ -150,12 +147,12 @@
               <span>RELIABLE SERVICE</span><i class="cu-caret"></i>
             </button>
             <div class="cu-acc-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
-              <p>From your first inquiry to the final drop-off, we ensure a seamless experience. Expect clear communication, punctual service, and consistent follow-through across every step of your trip.</p>
-              <ul class="cu-points">
-                <li>Dedicated tour coordinators</li>
-                <li>Prompt responses and updates</li>
-                <li>Strong operational planning</li>
-              </ul>
+                            <p>Our operational excellence means you travel with confidence. We handle logistics, trusted transport and certified guides so you can focus on enjoying unforgettable moments across Sri Lanka.</p>
+                            <ul class="cu-points">
+                                <li>Experienced tour coordinators</li>
+                                <li>Reliable transport and local partners</li>
+                                <li>Clear communication and support</li>
+                            </ul>
             </div>
           </article>
 
@@ -169,12 +166,12 @@
               <span>COMFORT &amp; SAFETY</span><i class="cu-caret"></i>
             </button>
             <div class="cu-acc-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
-              <p>Travel with confidence knowing your comfort and safety come first. Our team ensures clean transport, licensed drivers, and secure environments throughout your journey.</p>
-              <ul class="cu-points">
-                <li>Fully insured, air-conditioned vehicles</li>
-                <li>Professional, experienced drivers</li>
-                <li>Safety-first travel routes and stops</li>
-              </ul>
+                            <p>Your comfort and safety are central to every tour. We work with vetted suppliers, follow recommended safety protocols, and provide vehicles and guides who keep your wellbeing a priority.</p>
+                            <ul class="cu-points">
+                                <li>Vetted, insured transport and guides</li>
+                                <li>Health and safety best practices</li>
+                                <li>24/7 local support for emergencies</li>
+                            </ul>
             </div>
           </article>
         </div>
@@ -249,8 +246,8 @@
                     <div class="row">
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
-                                <h1>Popular Tour</h1>
-                                <p> Explore Sri Lanka’s most iconic locations with handpicked tours designed for comfort, discovery, and lasting memories. Each journey captures the island’s true essence, from mountains to coastlines. </p>
+                                <h1>Popular Tours</h1>
+                                <p>Handpicked Sri Lanka tours featuring wildlife safaris, cultural heritage routes and coastal escapes. Browse our most-booked itineraries for balanced experiences that combine nature, history and local culture.</p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +290,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="best-money-content">
                                 <h1>Exclusive Offer – Trails of Ramayana Tour</h1>
-                                <p>Step into the epic tale of Ramayana through a spiritual 10-day journey across Sri Lanka. Discover sacred sites like Sita Amman Temple, Ashoka Vatika, and Ravana Falls, all guided by our local experts with deep cultural insights</p>
+                                <p>Explore the legendary Ramayana trail on this immersive 10-day pilgrimage across Sri Lanka. Visit sacred temples, mythic landscapes and local shrines while learning the historical and cultural stories that connect these sites — led by knowledgeable local guides.</p>
 
                                 <div class="best-money-price">
                                     <span class="old-price"> $800 ₹41,500</span>
@@ -329,8 +326,8 @@
                     <div class="row">
                         <div class="col-xl-8 offset-xl-2">
                             <div class="sec-title text-center mb-50">
-                                <h1>Best Things to Do in the City</h1>
-                                <p>From breathtaking landscapes to cultural landmarks and serene beaches, discover the most unforgettable experiences every traveller must enjoy in Sri Lanka.</p>
+                                <h1>Top Experiences in Sri Lanka</h1>
+                                <p>From misty tea plantations and elephant safaris to fortified colonial towns and palm-fringed beaches, Sri Lanka offers diverse experiences for every traveller. Here are some top picks to include in your itinerary.</p>
                             </div>
                         </div>
                     </div>
@@ -604,7 +601,6 @@
         <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/countdown.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/video-optimization.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 
         @stack('scripts')

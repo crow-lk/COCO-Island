@@ -2,7 +2,7 @@
 
     <!-- slider area start -->
 <section class="slider-area">
-<div class="single-slider slider-height d-flex align-items-center p-relative">
+<div class="single-slider slider-height d-flex align-items-center">
   <!-- Background video -->
   <video class="slide-bg-video" autoplay muted loop playsinline preload="none"
          poster="{{ asset('frontend/assets/video/0914.mp4.jpg') }}">
@@ -13,17 +13,14 @@
 
   <!-- Content -->
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-10 col-md-12">
-        <div class="slider-content text-center mx-auto">
-          <h1 data-animation="fadeInUp" data-delay=".3s">Your Journey to Sri Lanka Begins Here</h1>
-          <p data-animation="fadeInUp" data-delay=".5s">
-            Experience Sri Lanka like never before. Our expert-led tours combine breathtaking locations, local insight,
-            and seamless service, giving you the most authentic, safe, and unforgettable travel experience across the island.
-          </p>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="slider-content text-center">
+          <h1 data-animation="fadeInUp" data-delay=".3s">Sri Lanka Tours — Tailor-Made Holidays & Cultural Experiences | COCO Island Holidays</h1>
+          <p data-animation="fadeInUp" data-delay=".5s">Discover Sri Lanka with local, expert guides. From wildlife safaris and scenic hill-country tea trails to pristine beaches and cultural heritage sites, our personalised Sri Lanka tours are crafted for authentic, sustainable travel. Book private or small-group holidays designed for families, couples, and solo travellers.</p>
           <div class="slider-btn-wrapper">
-            <a href="#" class="btn" data-animation="fadeInUp" data-delay=".7s">Explore Our Tours</a>
-            <a href="https://wa.me/94776605054" class="btn btn-border" data-animation="fadeInUp" data-delay=".9s">Contact Us</a>
+            <a href="#" class="btn" data-animation="fadeInUp" data-delay=".7s">Browse Sri Lanka Tours</a>
+            <a href="https://wa.me/94776605054" class="btn btn-border" data-animation="fadeInUp" data-delay=".9s">Contact Our Travel Experts</a>
           </div>
         </div>
       </div>

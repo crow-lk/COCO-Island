@@ -11,6 +11,22 @@
 		$("#loading").fadeOut(500)
 	});
 
+	// fallback: sometimes 'load' can be delayed (large media); ensure the preloader
+	// doesn't permanently block interactions by hiding it after DOM ready + timeout.
+	document.addEventListener('DOMContentLoaded', function () {
+		try {
+			if (typeof jQuery !== 'undefined' && $("#loading").length) {
+				setTimeout(function () {
+					if ($("#loading").is(":visible")) {
+						$("#loading").fadeOut(300);
+					}
+				}, 800); // 800ms grace period after DOM ready
+			}
+		} catch (e) {
+			// silently ignore any errors here; this is a safe UI fallback
+		}
+	});
+
 	// search btn
 	$(".search").on("click", function () {
 		$(".search-bar-wrapper").addClass("search-bar-open");
