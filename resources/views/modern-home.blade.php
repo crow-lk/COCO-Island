@@ -105,6 +105,21 @@
             animation: fadeInUp 1s ease-out forwards;
         }
         
+        /* Mobile Language Switcher Positioning */
+        @media (max-width: 640px) {
+            .language-dropdown {
+                left: 0 !important;
+                right: auto !important;
+                width: 200px;
+                max-width: calc(100vw - 2rem);
+            }
+            
+            /* Ensure dropdown doesn't go off screen */
+            .language-switcher {
+                position: relative;
+            }
+        }
+        
         /* Scroll-triggered animations for other sections */
         .scroll-animate {
             opacity: 0;

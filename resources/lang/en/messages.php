@@ -138,12 +138,70 @@ return [
     'get_quote' => 'Get Quote',
     'view_details' => 'View Details',
     
+    // Privacy & Terms
+    'privacy' => [
+        'title' => 'Privacy Policy',
+        'last_updated' => 'Last updated',
+        'introduction' => 'Your privacy is important to us. This privacy policy explains how we collect, use, and protect your information.',
+    ],
+    
+    'terms' => [
+        'title' => 'Terms & Conditions',
+        'last_updated' => 'Last updated',
+        'introduction' => 'These terms and conditions govern your use of our website and services.',
+    ],
+
+    // Form Elements
+    'form' => [
+        'required' => 'Required',
+        'optional' => 'Optional',
+        'submit' => 'Submit',
+        'reset' => 'Reset',
+        'cancel' => 'Cancel',
+        'save' => 'Save',
+        'delete' => 'Delete',
+        'edit' => 'Edit',
+        'update' => 'Update',
+        'search' => 'Search',
+        'filter' => 'Filter',
+        'sort' => 'Sort',
+        'loading' => 'Loading...',
+        'success' => 'Success!',
+        'error' => 'Error occurred',
+        'confirm' => 'Are you sure?',
+    ],
+
+    // Packages Page
+    'packages' => [
+        'title' => 'Tour Packages',
+        'subtitle' => 'Discover our carefully crafted tour packages designed to showcase the best of Sri Lanka',
+        'from' => 'From',
+        'per_person' => 'per person',
+        'duration' => 'Duration',
+        'group_size' => 'Group Size',
+        'difficulty' => 'Difficulty',
+        'includes' => 'Includes',
+        'excludes' => 'Excludes',
+        'itinerary' => 'Itinerary',
+        'day' => 'Day',
+        'book_package' => 'Book This Package',
+        'customize' => 'Customize This Tour',
+    ],
+
     // Footer
     'footer' => [
         'company_description' => 'Authentic Sri Lanka tours with local expertise. Creating unforgettable experiences for over a decade.',
         'quick_links' => 'Quick Links',
         'popular_tours' => 'Popular Tours',
         'get_in_touch' => 'Get In Touch',
+        'address' => 'Address',
+        'phone' => 'Phone',
+        'email' => 'Email',
+        'follow_us' => 'Follow Us',
+        'newsletter' => 'Newsletter',
+        'newsletter_text' => 'Subscribe to our newsletter for travel tips and special offers',
+        'newsletter_placeholder' => 'Enter your email',
+        'subscribe' => 'Subscribe',
         'copyright' => '© 2024 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism',
     ],
 ];

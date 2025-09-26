@@ -138,12 +138,70 @@ return [
     'get_quote' => 'Obtenir un Devis',
     'view_details' => 'Voir les Détails',
     
+    // Packages Page
+    'packages' => [
+        'title' => 'Forfaits Circuits',
+        'subtitle' => 'Découvrez nos forfaits circuits soigneusement élaborés conçus pour présenter le meilleur du Sri Lanka',
+        'from' => 'À partir de',
+        'per_person' => 'par personne',
+        'duration' => 'Durée',
+        'group_size' => 'Taille du groupe',
+        'difficulty' => 'Difficulté',
+        'includes' => 'Inclus',
+        'excludes' => 'Exclus',
+        'itinerary' => 'Itinéraire',
+        'day' => 'Jour',
+        'book_package' => 'Réserver ce forfait',
+        'customize' => 'Personnaliser ce circuit',
+    ],
+
+    // Privacy & Terms
+    'privacy' => [
+        'title' => 'Politique de confidentialité',
+        'last_updated' => 'Dernière mise à jour',
+        'introduction' => 'Votre confidentialité est importante pour nous. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations.',
+    ],
+    
+    'terms' => [
+        'title' => 'Termes et conditions',
+        'last_updated' => 'Dernière mise à jour',
+        'introduction' => 'Ces termes et conditions régissent votre utilisation de notre site web et de nos services.',
+    ],
+
+    // Form Elements
+    'form' => [
+        'required' => 'Requis',
+        'optional' => 'Optionnel',
+        'submit' => 'Soumettre',
+        'reset' => 'Réinitialiser',
+        'cancel' => 'Annuler',
+        'save' => 'Sauvegarder',
+        'delete' => 'Supprimer',
+        'edit' => 'Modifier',
+        'update' => 'Mettre à jour',
+        'search' => 'Rechercher',
+        'filter' => 'Filtrer',
+        'sort' => 'Trier',
+        'loading' => 'Chargement...',
+        'success' => 'Succès !',
+        'error' => 'Erreur survenue',
+        'confirm' => 'Êtes-vous sûr ?',
+    ],
+
     // Footer
     'footer' => [
         'company_description' => 'Circuits authentiques du Sri Lanka avec expertise locale. Créant des expériences inoubliables depuis plus d\'une décennie.',
         'quick_links' => 'Liens Rapides',
         'popular_tours' => 'Circuits Populaires',
         'get_in_touch' => 'Prendre Contact',
+        'address' => 'Adresse',
+        'phone' => 'Téléphone',
+        'email' => 'E-mail',
+        'follow_us' => 'Suivez-nous',
+        'newsletter' => 'Newsletter',
+        'newsletter_text' => 'Abonnez-vous à notre newsletter pour des conseils de voyage et des offres spéciales',
+        'newsletter_placeholder' => 'Entrez votre e-mail',
+        'subscribe' => 'S\'abonner',
         'copyright' => '© 2024 COCO Island Holidays. Tous droits réservés. | Conçu avec ❤️ pour le tourisme sri-lankais',
     ],
 ];

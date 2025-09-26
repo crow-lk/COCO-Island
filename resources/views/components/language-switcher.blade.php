@@ -6,7 +6,7 @@
         <i class="fas fa-chevron-down text-xs transform transition-transform duration-200"></i>
     </button>
     
-    <div class="language-dropdown hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+    <div class="language-dropdown hidden absolute right-0 sm:right-0 left-0 sm:left-auto mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-9999">
         <div class="py-2">
             <a href="{{ route('language.switch', 'en') }}" 
                class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200 {{ app()->getLocale() == 'en' ? 'bg-primary-50 text-primary-600' : '' }}">
