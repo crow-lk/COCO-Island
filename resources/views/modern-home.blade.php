@@ -141,7 +141,11 @@
             right: 24px;
             background: #25d366;
             color: white;
-            padding: 16px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -166,15 +170,14 @@
     </a>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="flex items-center space-x-3">
+                    <a href="#home" class="flex items-center">
                         <img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" 
                              alt="COCO Island Holidays Logo" 
-                             class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
-                        <h2 class="text-base font-bold text-primary-600">COCO Island</h2>
+                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -222,10 +225,10 @@
 
         <!-- Content -->
         <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
-            <h1 class="text-base lg:text-lg font-bold mb-6 leading-tight animate-fade-in-up" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); animation-delay: 0.3s;">
+            <h1 class="text-2xl lg:text-4xl font-bold mb-6 leading-tight animate-fade-in-up" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); animation-delay: 0.3s;">
                 Sri Lanka Tours — Tailor-Made Holidays & Cultural Experiences
             </h1>
-            <p class="text-base lg:text-base mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation-delay: 0.5s;">
+            <p class="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation-delay: 0.5s;">
                 Discover Sri Lanka with local, expert guides. From wildlife safaris and scenic hill-country tea trails to pristine beaches and cultural heritage sites, our personalised Sri Lanka tours are crafted for authentic, sustainable travel.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.7s;">
@@ -240,16 +243,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 lg:py-24 relative bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('frontend/assets/img/footerbreaker.png') }}');">
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <p class="text-primary-300 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Explore Sri Lanka</p>
+    <section id="about" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-900">
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Explore Sri Lanka</p>
                 <h1 class="text-lg lg:text-2xl font-bold mb-8 scroll-animate">COCO ISLAND HOLIDAYS</h1>
                 <p class="text-base lg:text-lg font-medium mb-8 max-w-4xl mx-auto leading-relaxed scroll-animate">
                     Authentic Sri Lanka tours — wildlife safaris, tea-country escapes, coastal beaches and cultural heritage itineraries
                 </p>
-                <p class="text-base lg:text-base max-w-5xl mx-auto leading-relaxed text-gray-100 scroll-animate">
+                <p class="text-base lg:text-lg max-w-5xl mx-auto leading-relaxed text-gray-600 scroll-animate">
                     Discover Sri Lanka's vibrant landscapes and centuries-old culture with local guides who know the island intimately. From mist-covered central highlands and verdant tea plantations to UNESCO temples and white-sand beaches, our curated tours balance authentic experiences with sustainable travel practices. Whether you seek wildlife, history, or relaxation, we design journeys that reveal Sri Lanka's best while supporting local communities.
                 </p>
             </div>
@@ -745,7 +747,7 @@
                     <div class="text-center">
                         <h3 class="font-bold mb-2">Share Your Story</h3>
                         <p class="text-gray-300 text-sm mb-4">Traveled with us? We'd love to hear about your experience!</p>
-                        <a href="https://wa.me/94776605054" class="inline-flex items-center text-primary-400 hover:text-primary-300 text-sm font-medium">
+                        <a href="https://wa.me/94776605054" class="inline-flex items-center text-primary-400 hover:text-primary-600 text-sm font-medium">
                             <i class="fas fa-comment-dots mr-2"></i>
                             Leave a Review
                         </a>
@@ -765,16 +767,16 @@
                     <h3 class="text-base font-bold mb-4 text-primary-400">COCO Island Holidays</h3>
                     <p class="text-gray-300 mb-4">Authentic Sri Lanka tours with local expertise. Creating unforgettable experiences for over a decade.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors duration-300">
+                        <a href="#" class="text-primary-400 hover:text-primary-600 transition-colors duration-300">
                             <i class="fab fa-facebook-f text-base"></i>
                         </a>
-                        <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors duration-300">
+                        <a href="#" class="text-primary-400 hover:text-primary-600 transition-colors duration-300">
                             <i class="fab fa-instagram text-base"></i>
                         </a>
-                        <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors duration-300">
+                        <a href="#" class="text-primary-400 hover:text-primary-600 transition-colors duration-300">
                             <i class="fab fa-twitter text-base"></i>
                         </a>
-                        <a href="#" class="text-primary-400 hover:text-primary-300 transition-colors duration-300">
+                        <a href="#" class="text-primary-400 hover:text-primary-600 transition-colors duration-300">
                             <i class="fab fa-youtube text-base"></i>
                         </a>
                     </div>

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
         <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">         <div class="flex-shrink-0">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-3">
+            <div class="flex justify-between items-center h-16">                         <div class="flex-shrink-0">
+                    <a href="{{ route('home') }}" class="flex items-center">
                         <img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" 
                              alt="COCO Island Holidays Logo" 
-                             class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
-                        <span class="text-base font-bold text-primary">COCO Island Holidays</span>
+                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
                     </a>
                 </div>eta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Packages | COCO Island Holidays - Travel Agency</title>
@@ -136,7 +135,7 @@
 
     <!-- Hero Section -->
     <section class="hero-bg relative h-96 flex items-center justify-center mt-16">
-        <div class="text-center text-white animate-on-scroll">
+        <div class="text-center text-gray-900 animate-on-scroll">
             <h1 class="text-base md:text-base font-bold mb-4">Top Tour Packages</h1>
             <p class="text-base md:text-base opacity-90 max-w-2xl mx-auto px-4">
                 Discover our carefully curated travel packages designed to showcase the best of Sri Lanka's natural beauty, cultural heritage, and authentic experiences
