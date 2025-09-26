@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .language-dropdown-btn {
+            background: rgba(249, 115, 22, 0.2) !important;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+        }
+        .language-dropdown-btn:hover {
+            background: rgba(249, 115, 22, 0.3) !important;
+            border-color: rgba(249, 115, 22, 0.5);
+        }
+        .language-dropdown {
+            min-width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Language Switcher Test</h1>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Test the language switcher:</h2>
+            
+            <!-- Language Switcher Test -->
+            <div class="language-switcher relative inline-block">
+                <button type="button" class="language-dropdown-btn flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors duration-300 rounded-lg">
+                    <i class="fas fa-globe"></i>
+                    <span>EN</span>
+                    <i class="fas fa-chevron-down text-xs transform transition-transform duration-200"></i>
+                </button>
+                
+                <div class="language-dropdown hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div class="py-2">
+                        <a href="#en" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                            <div class="w-5 h-5 mr-3 rounded-sm bg-gradient-to-r from-blue-600 to-red-600 flex items-center justify-center">
+                                <span class="text-xs text-white font-bold">EN</span>
+                            </div>
+                            <span>English</span>
+                        </a>
+                        
+                        <a href="#si" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                            <div class="w-5 h-5 mr-3 rounded-sm bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center">
+                                <span class="text-xs text-white font-bold">සි</span>
+                            </div>
+                            <span>සිංහල</span>
+                        </a>
+                        
+                        <a href="#ta" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200">
+                            <div class="w-5 h-5 mr-3 rounded-sm bg-gradient-to-br from-orange-500 to-green-600 flex items-center justify-center">
+                                <span class="text-xs text-white font-bold">த</span>
+                            </div>
+                            <span>தமிழ்</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-gray-600">Click the language button above to test the dropdown functionality.</p>
+                <p class="text-sm text-gray-500 mt-2">If it works here, it should work on your main site too.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language Switcher Functionality
+        document.querySelectorAll('.language-dropdown-btn').forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Language button clicked!'); // Debug log
+                
+                // Find the dropdown associated with this button
+                const dropdown = this.nextElementSibling;
+                const chevron = this.querySelector('.fas.fa-chevron-down');
+                
+                // Close all other dropdowns first
+                document.querySelectorAll('.language-dropdown').forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Reset all chevrons
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(otherChevron) {
+                    if (otherChevron !== chevron) {
+                        otherChevron.classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('hidden');
+                if (chevron) {
+                    chevron.classList.toggle('rotate-180');
+                }
+                
+                console.log('Dropdown toggled, hidden:', dropdown.classList.contains('hidden')); // Debug log
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-switcher')) {
+                document.querySelectorAll('.language-dropdown').forEach(function(dropdown) {
+                    dropdown.classList.add('hidden');
+                });
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(chevron) {
+                    chevron.classList.remove('rotate-180');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

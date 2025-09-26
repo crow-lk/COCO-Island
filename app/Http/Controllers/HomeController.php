@@ -75,8 +75,15 @@ class HomeController extends Controller
             $popularTours = collect(); // Empty collection as fallback
         }
         
+        // Set locale if not already set
+        if (!session()->has('locale')) {
+            session(['locale' => 'en']);
+            app()->setLocale('en');
+        }
+        
         return view('modern-home', [
-            'popularTours' => $popularTours
+            'popularTours' => $popularTours,
+            'currentLocale' => app()->getLocale()
         ]);
     }
 

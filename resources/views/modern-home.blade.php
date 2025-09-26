@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lanka Tours — Tailor-Made Holidays & Cultu            <h1 class="text-xl lg:text-3xl font-bold mb-6 leading-tight animate-fade-in-up" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); animation-delay: 0.3s;">
-                Sri Lanka Tours — Tailor-Made Holidays & Cultural Experiences
-            </h1>
-            <p class="text-base lg:text-lg mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation-delay: 0.5s;">Experiences | COCO Island Holidays</title>
-    <meta name="description" content="Discover Sri Lanka with local, expert guides. From wildlife safaris and scenic hill-country tea trails to pristine beaches and cultural heritage sites, our personalised Sri Lanka tours are crafted for authentic, sustainable travel.">
+    <title>{{ __('messages.hero.title') }} | COCO Island Holidays</title>
+    <meta name="description" content="{{ __('messages.hero.subtitle') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- Favicon -->
@@ -15,6 +12,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Multilingual CSS -->
+    <link rel="stylesheet" href="{{ asset('css/multilingual.css') }}">
     <script>
         tailwind.config = {
             theme: {
@@ -37,15 +36,10 @@
                         }
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out',
                         'fade-in': 'fadeIn 0.6s ease-in-out',
                         'scale-in': 'scaleIn 0.6s ease-out',
                     },
                     keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
@@ -66,7 +60,7 @@
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}">
     
-    <style>
+        <style>
         .hero-video {
             position: absolute;
             top: 0;
@@ -87,6 +81,31 @@
             transition: width 0.1s ease-out;
         }
         
+        /* Hero Section Animations - Immediate on page load */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Ensure hero content is hidden initially then animated in */
+        .hero-content {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        /* Scroll-triggered animations for other sections */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
@@ -96,9 +115,7 @@
         .scroll-animate.animate-in {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        .line-clamp-3 {
+        }        .line-clamp-3 {
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -182,12 +199,14 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Home</a>
-                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">About</a>
-                        <a href="#tours" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Tours</a>
-                        <a href="#experiences" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Experiences</a>
-                        <a href="#testimonials" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Reviews</a>
-                        <a href="{{ route('contact') }}" class="bg-primary-500 text-white px-4 py-2 rounded-xl hover:bg-primary-600 transition-colors duration-300">Contact</a>
+                        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.home') }}</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.about') }}</a>
+                        <a href="#tours" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.tours') }}</a>
+                        <a href="#experiences" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.experiences') }}</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.reviews') }}</a>
+                        <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="bg-primary-500 text-white px-4 py-2 rounded-xl hover:bg-primary-600 transition-colors duration-300">{{ __('messages.nav.contact') }}</a>
+                        <!-- Language Switcher -->
+                        @include('components.language-switcher')
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -201,12 +220,16 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
-                <a href="#tours" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Tours</a>
-                <a href="#experiences" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Experiences</a>
-                <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Reviews</a>
-                <a href="{{ route('contact') }}" class="block px-3 py-2 bg-primary-500 text-white rounded-xl mx-3 text-center">Contact</a>
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.home') }}</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.about') }}</a>
+                <a href="#tours" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.tours') }}</a>
+                <a href="#experiences" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.experiences') }}</a>
+                <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.reviews') }}</a>
+                <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 bg-primary-500 text-white rounded-xl mx-3 text-center">{{ __('messages.nav.contact') }}</a>
+                <!-- Mobile Language Switcher -->
+                <div class="px-3 py-2">
+                    @include('components.language-switcher')
+                </div>
             </div>
         </div>
     </nav>
@@ -224,19 +247,19 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
         <!-- Content -->
-        <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
-            <h1 class="text-2xl lg:text-4xl font-bold mb-6 leading-tight animate-fade-in-up" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); animation-delay: 0.3s;">
-                Sri Lanka Tours — Tailor-Made Holidays & Cultural Experiences
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-4 hero-content">
+            <h1 class="text-2xl lg:text-4xl font-bold mb-6 leading-tight" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); animation-delay: 0.2s;">
+                {{ __('messages.hero.title') }}
             </h1>
-            <p class="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation-delay: 0.5s;">
-                Discover Sri Lanka with local, expert guides. From wildlife safaris and scenic hill-country tea trails to pristine beaches and cultural heritage sites, our personalised Sri Lanka tours are crafted for authentic, sustainable travel.
+            <p class="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation-delay: 0.4s;">
+                {{ __('messages.hero.subtitle') }}
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.7s;">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.6s;">
                 <a href="#tours" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-primary-500 text-white hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    Browse Sri Lanka Tours
+                    {{ __('messages.hero.browse_tours') }}
                 </a>
                 <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-white text-primary-500 border-2 border-primary-500 hover:bg-primary-500 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    Contact Our Travel Experts
+                    {{ __('messages.hero.contact_experts') }}
                 </a>
             </div>
         </div>
@@ -246,13 +269,13 @@
     <section id="about" class="py-16 lg:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-gray-900">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Explore Sri Lanka</p>
-                <h1 class="text-lg lg:text-2xl font-bold mb-8 scroll-animate">COCO ISLAND HOLIDAYS</h1>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">{{ __('messages.about.explore_title') }}</p>
+                <h1 class="text-lg lg:text-2xl font-bold mb-8 scroll-animate">{{ __('messages.about.company_name') }}</h1>
                 <p class="text-base lg:text-lg font-medium mb-8 max-w-4xl mx-auto leading-relaxed scroll-animate">
-                    Authentic Sri Lanka tours — wildlife safaris, tea-country escapes, coastal beaches and cultural heritage itineraries
+                    {{ __('messages.about.tagline') }}
                 </p>
                 <p class="text-base lg:text-lg max-w-5xl mx-auto leading-relaxed text-gray-600 scroll-animate">
-                    Discover Sri Lanka's vibrant landscapes and centuries-old culture with local guides who know the island intimately. From mist-covered central highlands and verdant tea plantations to UNESCO temples and white-sand beaches, our curated tours balance authentic experiences with sustainable travel practices. Whether you seek wildlife, history, or relaxation, we design journeys that reveal Sri Lanka's best while supporting local communities.
+                    {{ __('messages.about.description') }}
                 </p>
             </div>
         </div>
@@ -272,9 +295,9 @@
                 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6 scroll-animate">
                     <i class="fas fa-award text-primary-600 text-base"></i>
                 </div>
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Why Travel With Us</p>
-                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Why Choose COCO Island Holidays</h2>
-                <p class="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed scroll-animate">Experience the difference of traveling with local experts who are passionate about sharing the authentic beauty and culture of Sri Lanka.</p>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">{{ __('messages.why_choose.section_title', [], app()->getLocale()) }}</p>
+                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">{{ __('messages.why_choose.title') }}</h2>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed scroll-animate">{{ __('messages.why_choose.subtitle') }}</p>
             </div>
 
             <!-- Features Grid -->
@@ -288,8 +311,8 @@
                         </div>
                     </div>
                     <div class="pt-8">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Local Expertise</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Decades of on-the-ground experience with insider knowledge of hidden gems and authentic cultural encounters.</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">{{ __('messages.why_choose.local_expertise.title') }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ __('messages.why_choose.local_expertise.description') }}</p>
                         <ul class="space-y-2">
                             <li class="flex items-center text-sm text-gray-700">
                                 <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
@@ -427,8 +450,8 @@
     <section id="tours" class="py-16 lg:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Popular Tours</h1>
-                <p class="text-base lg:text-base text-gray-600 max-w-4xl mx-auto scroll-animate">Handpicked Sri Lanka tours featuring wildlife safaris, cultural heritage routes and coastal escapes. Browse our most-booked itineraries for balanced experiences that combine nature, history and local culture.</p>
+                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">{{ __('messages.tours.title') }}</h1>
+                <p class="text-base lg:text-base text-gray-600 max-w-4xl mx-auto scroll-animate">{{ __('messages.tours.subtitle') }}</p>
             </div>
             
             <div class="tour-slider owl-carousel">
@@ -441,16 +464,16 @@
                         <h4 class="text-lg font-bold mb-3 text-gray-900">{{ $tour->title ?? 'Cultural Heritage Tour' }}</h4>
                         <p class="text-gray-600 mb-6 line-clamp-3">{{ $tour->description ?? 'Explore ancient temples, colonial architecture, and traditional villages. Discover Sri Lanka\'s rich cultural tapestry with expert local guides.' }}</p>
                         @if(isset($tour->slug))
-                            <a href="{{ route('tours.show', $tour->slug) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
                                 Book Now
                             </a>
                         @elseif(isset($tour->route_name))
-                            <a href="{{ route($tour->route_name) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            <a href="{{ route($tour->route_name, ['locale' => app()->getLocale()]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
                                 Book Now
                             </a>
                         @else
                             <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                                Inquire Now
+                                {{ __('messages.tours.inquire_now') }}
                             </a>
                         @endif
                     </div>
@@ -1117,6 +1140,19 @@
     <script src="{{ asset('frontend/assets/js/countdown.js') }}"></script>
 
     <script>
+        // Page Load Animation Trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure hero animations trigger properly
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                // Small delay to ensure page is fully loaded
+                setTimeout(() => {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+
         // Initialize Owl Carousel
         $(document).ready(function() {
             // Tour Slider (no navigation buttons)
@@ -1202,6 +1238,50 @@
                     });
                 }
             });
+        });
+
+        // Language Switcher Functionality
+        document.querySelectorAll('.language-dropdown-btn').forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Find the dropdown associated with this button
+                const dropdown = this.nextElementSibling;
+                const chevron = this.querySelector('.fas.fa-chevron-down');
+                
+                // Close all other dropdowns first
+                document.querySelectorAll('.language-dropdown').forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Reset all chevrons
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(otherChevron) {
+                    if (otherChevron !== chevron) {
+                        otherChevron.classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('hidden');
+                if (chevron) {
+                    chevron.classList.toggle('rotate-180');
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-switcher')) {
+                document.querySelectorAll('.language-dropdown').forEach(function(dropdown) {
+                    dropdown.classList.add('hidden');
+                });
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(chevron) {
+                    chevron.classList.remove('rotate-180');
+                });
+            }
         });
 
         // Countdown Timer

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCO Island Holidays - Version Française</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-gray-800">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center">
+                        <img src="/frontend/assets/img/logo/coco-logo.png" 
+                             alt="COCO Island Holidays Logo" 
+                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Accueil</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">À Propos</a>
+                        <a href="#tours" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Circuits</a>
+                        <a href="#experiences" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Expériences</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">Avis</a>
+                        <a href="#contact" class="bg-primary-500 text-white px-4 py-2 rounded-xl hover:bg-primary-600 transition-colors duration-300">Contact</a>
+                        
+                        <!-- Language Indicator -->
+                        <div class="flex items-center space-x-2 px-3 py-2 bg-primary-600/20 rounded-lg backdrop-blur-sm">
+                            <i class="fas fa-globe text-white"></i>
+                            <span class="text-white font-medium">FR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-white">
+        <!-- Background Video -->
+        <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+            <source src="/frontend/assets/video/0914.webm" type="video/webm">
+            <source src="/frontend/assets/video/0914.mp4" type="video/mp4">
+        </video>
+
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
+            <h1 class="text-2xl lg:text-4xl font-bold mb-6 leading-tight" style="text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);">
+                Circuits Sri Lanka — Vacances Sur Mesure & Expériences Culturelles
+            </h1>
+            <p class="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+                Découvrez le Sri Lanka avec des guides locaux experts. Des safaris animaliers et sentiers de thé dans les collines pittoresques aux plages immaculées et sites du patrimoine culturel, nos circuits personnalisés du Sri Lanka sont conçus pour un voyage authentique et durable.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#tours" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-primary-500 text-white hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    Parcourir les Circuits Sri Lanka
+                </a>
+                <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-white text-primary-500 border-2 border-primary-500 hover:bg-primary-500 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    Contacter Nos Experts Voyage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-900">
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Explorer le Sri Lanka</p>
+                <h1 class="text-lg lg:text-2xl font-bold mb-8">COCO ISLAND HOLIDAYS</h1>
+                <p class="text-base lg:text-lg font-medium mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Circuits authentiques du Sri Lanka — safaris animaliers, évasions dans le pays du thé, plages côtières et itinéraires du patrimoine culturel
+                </p>
+                <p class="text-base lg:text-lg max-w-5xl mx-auto leading-relaxed text-gray-600">
+                    Découvrez les paysages vibrants du Sri Lanka et sa culture séculaire avec des guides locaux qui connaissent l'île intimement. Des hautes terres centrales couvertes de brume et plantations de thé verdoyantes aux temples UNESCO et plages de sable blanc, nos circuits organisés équilibrent expériences authentiques et pratiques de voyage durable. Que vous recherchiez la faune, l'histoire ou la détente, nous concevons des voyages qui révèlent le meilleur du Sri Lanka tout en soutenant les communautés locales.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
+                    <i class="fas fa-award text-primary-600 text-base"></i>
+                </div>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Pourquoi Voyager Avec Nous</p>
+                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900">Pourquoi Choisir COCO Island Holidays</h2>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">Découvrez la différence de voyager avec des experts locaux passionnés par le partage de la beauté authentique et de la culture du Sri Lanka.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                
+                <!-- Local Expertise -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-map-marked-alt text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Expertise Locale</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Des décennies d'expérience sur le terrain avec une connaissance privilégiée des joyaux cachés et des rencontres culturelles authentiques.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Guides locaux & routes privilégiées
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Expériences authentiques
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Partenariats communautaires
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tailor-Made Experiences -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-palette text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Circuits Sur Mesure</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Itinéraires personnalisés conçus autour de vos intérêts, votre rythme et votre style de voyage pour des expériences vraiment personnelles.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Itinéraires personnalisés
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Horaires flexibles
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Circuits thématiques
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Reliable Service -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-handshake text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Service Fiable</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Service professionnel avec transport de confiance, guides certifiés et logistique fluide pour un voyage sans souci.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Coordination professionnelle
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Partenariats de confiance
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Communication claire
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Comfort & Safety -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-shield-alt text-white text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Sécurité et Confort</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Votre bien-être est notre priorité avec des fournisseurs vérifiés, des protocoles de sécurité et un soutien 24h/24 et 7j/7 tout au long de votre voyage.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Transport & guides vérifiés
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Protocoles de sécurité
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Support 24h/24 et 7j/7
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Section -->
+            <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 lg:p-12 text-white">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">500+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Voyageurs Heureux</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">50+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Forfaits Circuits</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">10+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Années d'Expérience</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">4.9★</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Note Moyenne</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-primary-400 text-center">
+                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">Prêt à découvrir la différence ? Laissez nos experts locaux créer votre aventure parfaite au Sri Lanka.</p>
+                    <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-comments mr-3"></i>
+                        Commencer à Planifier Votre Voyage
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tours Section -->
+    <section id="tours" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900">Circuits Populaires</h1>
+                <p class="text-base lg:text-base text-gray-600 max-w-4xl mx-auto">Circuits du Sri Lanka sélectionnés avec soin comprenant safaris animaliers, routes du patrimoine culturel et évasions côtières. Parcourez nos itinéraires les plus réservés pour des expériences équilibrées qui combinent nature, histoire et culture locale.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tour Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/frontend/assets/img/best_things/Thalawakale.jpg" alt="Circuit Patrimoine Culturel" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">Circuit Patrimoine Culturel</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Explorez les temples anciens, l'architecture coloniale et les villages traditionnels. Découvrez la riche tapisserie culturelle du Sri Lanka avec des guides locaux experts.</p>
+                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            Réserver Maintenant
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/frontend/assets/img/best_things/Goyambokka-beach.jpg" alt="Safari Aventure Faune" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">Safari Aventure Faune</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Découvrez la faune incroyable du Sri Lanka incluant éléphants, léopards et oiseaux exotiques dans des parcs nationaux immaculés.</p>
+                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            Réserver Maintenant
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/frontend/assets/img/best_things/Ramboda-Waterfall.jpg" alt="Sentier de Thé des Collines" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">Sentier de Thé des Collines</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">Voyagez à travers des montagnes brumeuses et des plantations de thé émeraude. Apprenez la production du thé de Ceylan et profitez de trajets en train pittoresques.</p>
+                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            Réserver Maintenant
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-base font-bold mb-4 text-primary-400">COCO Island Holidays</h3>
+                    <p class="text-gray-300 mb-4">Circuits authentiques du Sri Lanka avec expertise locale. Créant des expériences inoubliables depuis plus d'une décennie.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Accueil</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">À Propos</a></li>
+                        <li><a href="#tours" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Circuits</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tours -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Circuits Populaires</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Patrimoine Culturel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Safari Faune</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Sentier de Thé</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Paradis Côtier</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Prendre Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i> +94 77 660 5054</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@cocoislandholidays.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Colombo, Sri Lanka</p>
+                    </div>
+                    <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full mt-4 px-4 py-2 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 transition-colors duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 COCO Island Holidays. Tous droits réservés. | Conçu avec ❤️ pour le tourisme sri-lankais</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/94776605054" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 hover:scale-105" target="_blank" aria-label="Chat sur WhatsApp">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+
+</body>
+</html>

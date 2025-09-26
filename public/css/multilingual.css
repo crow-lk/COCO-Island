@@ -1,0 +1,164 @@
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    z-index: 1000;
+}
+
+.language-dropdown-btn {
+    background: rgba(249, 115, 22, 0.2) !important;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+.language-dropdown-btn:hover {
+    background: rgba(249, 115, 22, 0.3) !important;
+    border-color: rgba(249, 115, 22, 0.5);
+}
+
+.language-dropdown {
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.language-dropdown a:hover {
+    background-color: rgba(249, 115, 22, 0.1) !important;
+    color: rgb(249, 115, 22) !important;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #FFF;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f97316, #ea580c);
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+/* Hero Video Styles */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Flag Images */
+.flag-img {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Language Dropdown Mobile */
+@media (max-width: 768px) {
+    .language-switcher .dropdown {
+        right: 0;
+        left: auto;
+        min-width: 180px;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+}
+
+/* RTL Support for future languages */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .language-switcher .dropdown {
+    left: 0;
+    right: auto;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .language-switcher button {
+        border: 1px solid currentColor;
+    }
+    
+    .whatsapp-float {
+        border: 2px solid #128C7E;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .scroll-animate,
+    .whatsapp-float {
+        animation: none;
+        transition: none;
+    }
+}
