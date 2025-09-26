@@ -126,7 +126,7 @@ class TourController extends Controller
     }
     
     /**
-     * Display the specified tour.
+     * Display the specified tour (legacy version).
      */
     public function show($slug)
     {
@@ -135,6 +135,18 @@ class TourController extends Controller
                     ->firstOrFail();
                     
         return view('tours.show', compact('tour'));
+    }
+
+    /**
+     * Display the specified tour with modern Tailwind design.
+     */
+    public function modernShow($slug)
+    {
+        $tour = Tour::where('slug', $slug)
+                    ->where('is_active', true)
+                    ->firstOrFail();
+                    
+        return view('modern-tour-show', compact('tour'));
     }
     
     /**
@@ -147,7 +159,7 @@ class TourController extends Controller
                     ->first();
                     
         if ($tour) {
-            return view('tours.show', compact('tour'));
+            return view('modern-tour-show', compact('tour'));
         }
         
         // Fallback to the old static view if no dynamic tour is found

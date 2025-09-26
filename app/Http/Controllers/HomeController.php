@@ -54,4 +54,54 @@ class HomeController extends Controller
             'cacheBuster' => time()
         ]);
     }
+
+    /**
+     * Show the modern Tailwind-based homepage.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function modernIndex()
+    {
+        try {
+            // Get all active and popular tours for the modern design
+            $popularTours = Tour::where('is_popular', true)
+                               ->where('is_active', true)
+                               ->orderBy('display_order')
+                               ->get();
+            
+            Log::debug('Popular tours loaded for modern view: ' . $popularTours->count());
+        } catch (\Exception $e) {
+            Log::error('Error loading tours for modern view: ' . $e->getMessage());
+            $popularTours = collect(); // Empty collection as fallback
+        }
+        
+        return view('modern-home', [
+            'popularTours' => $popularTours
+        ]);
+    }
+
+    /**
+     * Show the modern packages page.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function modernPackages()
+    {
+        try {
+            // Get all active and popular tours for the packages page
+            $popularTours = Tour::where('is_popular', true)
+                               ->where('is_active', true)
+                               ->orderBy('display_order')
+                               ->get();
+            
+            Log::debug('Tours loaded for modern packages view: ' . $popularTours->count());
+        } catch (\Exception $e) {
+            Log::error('Error loading tours for modern packages view: ' . $e->getMessage());
+            $popularTours = collect(); // Empty collection as fallback
+        }
+        
+        return view('modern-packages', [
+            'popularTours' => $popularTours
+        ]);
+    }
 }

@@ -12,18 +12,10 @@
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/fav-icon.png') }}">
         
 		<!-- CSS here -->
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/preloader.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/meanmenu.css') }}">
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/font-pro.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/default.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         @stack('styles')
     </head>
@@ -31,6 +23,9 @@
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
+
+        <!-- Scroll progress indicator -->
+        <div class="scroll-progress"></div>
 
         <!-- pre loader area start -->
         <div id="loading">
@@ -64,27 +59,28 @@
         <main>
             @include('components.hero')
 
-<!-- Collection Intro -->
-<!-- Collection Intro -->
-<section class="collection-intro" id="about-intro">
-  <div class="container">
-    <div class="intro-wrap text-center">
-            <p class="intro-eyebrow reveal" style="--d: .0s">Explore Sri Lanka</p>
-            <h1 class="intro-title reveal" style="--d: .12s">COCO ISLAND HOLIDAYS</h1>
-            <p class="intro-subtitle reveal" style="--d: .22s">
-                Authentic Sri Lanka tours — wildlife safaris, tea-country escapes, coastal beaches and cultural heritage itineraries
-            </p>
+            <!-- Collection Intro -->
+            <section class="section-luxury relative bg-hero-pattern bg-cover bg-center bg-no-repeat" id="about-intro">
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="container-custom relative z-10">
+                    <div class="text-center text-white">
+                        <p class="text-primary-300 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate fade-up">Explore Sri Lanka</p>
+                        <h1 class="section-title text-white mb-8 scroll-animate fade-up delay-200">COCO ISLAND HOLIDAYS</h1>
+                        <p class="text-2xl lg:text-3xl font-medium mb-8 max-w-4xl mx-auto leading-relaxed scroll-animate fade-up delay-300">
+                            Authentic Sri Lanka tours — wildlife safaris, tea-country escapes, coastal beaches and cultural heritage itineraries
+                        </p>
+                        <p class="text-lg lg:text-xl max-w-5xl mx-auto leading-relaxed text-gray-100 scroll-animate fade-up delay-400">
+                            Discover Sri Lanka's vibrant landscapes and centuries-old culture with local guides who know the island intimately. From mist-covered central highlands and verdant tea plantations to UNESCO temples and white-sand beaches, our curated tours balance authentic experiences with sustainable travel practices. Whether you seek wildlife, history, or relaxation, we design journeys that reveal Sri Lanka's best while supporting local communities.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-            <p class="intro-lead reveal" style="--d: .34s">
-                Discover Sri Lanka’s vibrant landscapes and centuries-old culture with local guides who know the island intimately. From mist-covered central highlands and verdant tea plantations to UNESCO temples and white-sand beaches, our curated tours balance authentic experiences with sustainable travel practices. Whether you seek wildlife, history, or relaxation, we design journeys that reveal Sri Lanka’s best while supporting local communities.
-            </p>
-    </div>
-  </div>
-</section>
+            <!-- Why Choose Us (Accordion + 3×3 Gallery) -->
 
 
 <!-- Why Choose Us (Accordion + 3×3 Gallery) -->
-<section class="chooseus-gallery" id="why-choose-us">
+<section class="chooseus-gallery luxury-section" id="why-choose-us">
   <div class="container">
     <div class="row gy-5 align-items-center">
       <!-- LEFT: HEADING + ACCORDION -->
@@ -240,51 +236,43 @@
 
             <!-- about us area end -->
 
-            <!-- tour area start -->
-            <section class="tour-area pb-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-2">
-                            <div class="sec-title text-center mb-50">
-                                <h1>Popular Tours</h1>
-                                <p>Handpicked Sri Lanka tours featuring wildlife safaris, cultural heritage routes and coastal escapes. Browse our most-booked itineraries for balanced experiences that combine nature, history and local culture.</p>
-                            </div>
-                        </div>
+            <!-- Popular Tours -->
+            <section class="section-luxury bg-gray-50">
+                <div class="container-custom">
+                    <div class="text-center mb-16">
+                        <h1 class="section-title scroll-animate fade-up">Popular Tours</h1>
+                        <p class="section-subtitle scroll-animate fade-up delay-200">Handpicked Sri Lanka tours featuring wildlife safaris, cultural heritage routes and coastal escapes. Browse our most-booked itineraries for balanced experiences that combine nature, history and local culture.</p>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="tour-slider owl-carousel">
-                                @forelse ($popularTours as $tour)
-                                <div class="single-tour">
-                                    <div class="tour-img">
-                                        <img src="{{ $tour->image_url }}" alt="{{ $tour->title }}">
-                                        <div class="tour-content text-center">
-                                            <h4>{{ $tour->title }}</h4>
-                                            <p>{{ $tour->description }}</p>
-                                            @if($tour->slug)
-                                                <a href="{{ route('tours.show', $tour->slug) }}" class="link-btn">Book Now</a>
-                                            @elseif($tour->route_name)
-                                                <a href="{{ route($tour->route_name) }}" class="link-btn">Book Now</a>
-                                            @else
-                                                <a href="{{ route('contact') }}" class="link-btn">Inquire Now</a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                @empty
-                                <div class="col-12 text-center">
-                                    <p>No popular tours available at the moment. Check back soon!</p>
-                                </div>
-                                @endforelse
+                    
+                    <div class="tour-slider owl-carousel">
+                        @forelse ($popularTours as $tour)
+                        <div class="tour-card scroll-animate fade-up" style="animation-delay: {{ $loop->index * 0.1 }}s">
+                            <div class="tour-card-image">
+                                <img src="{{ $tour->image_url }}" alt="{{ $tour->title }}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="tour-card-content">
+                                <h4 class="tour-card-title">{{ $tour->title }}</h4>
+                                <p class="tour-card-description">{{ $tour->description }}</p>
+                                @if($tour->slug)
+                                    <a href="{{ route('tours.show', $tour->slug) }}" class="btn btn-primary w-full">Book Now</a>
+                                @elseif($tour->route_name)
+                                    <a href="{{ route($tour->route_name) }}" class="btn btn-primary w-full">Book Now</a>
+                                @else
+                                    <a href="{{ route('contact') }}" class="btn btn-primary w-full">Inquire Now</a>
+                                @endif
                             </div>
                         </div>
+                        @empty
+                        <div class="text-center py-16">
+                            <p class="text-xl text-gray-600">No popular tours available at the moment. Check back soon!</p>
+                        </div>
+                        @endforelse
                     </div>
                 </div>
             </section>
-            <!-- tour area end -->
 
             <!-- best money area start -->
-            <section class="best-money pt-100 pb-125 grey-bg">
+            <section class="best-money luxury-section grey-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12">
@@ -321,7 +309,7 @@
             <!-- best money area end -->
 
             <!-- best things area start -->
-            <section class="best-things pt-80 pb-70">
+            <section class="best-things luxury-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-8 offset-xl-2">
@@ -333,7 +321,7 @@
                     </div>
                     <div class="row grid">
                         <div class="col-xl-6 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Thalawakale</a></h4>
@@ -345,7 +333,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Goyambokka-beach.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Goyambokka Beach</a></h4>
@@ -357,7 +345,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Koneswaram Temple.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Koneswaram Temple</a></h4>
@@ -369,7 +357,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Marble-Beach.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Marble Beach</a></h4>
@@ -381,7 +369,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Munneswaram.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Munneswaram Temple</a></h4>
@@ -393,7 +381,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 grid-item">
-                            <div class="things-img fix mb-30 w-img">
+                            <div class="fix mb-30 w-img">
                                 <img src="{{ asset('frontend/assets/img/best_things/Ramboda-Waterfall.jpg') }}" alt="best-things">
                                 <div class="things-content">
                                     <h4><a href="#">Ramboda Waterfall</a></h4>
@@ -504,77 +492,79 @@
 
             
 
-            <!-- testimonial area start -->
-            <section class="testimonial-area grey-bg pt-80 pb-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 offset-xl-2">
-                            <div class="sec-title text-center mb-50">
-                                <h1>What Travellers Say About Us</h1>
-                                <p>Discover how travellers from around the world experience Coco Island Holidays—authentic journeys, heartfelt moments, and memories to cherish forever.</p>
+            <!-- Testimonials -->
+            <section class="section-luxury bg-gray-50">
+                <div class="container-custom">
+                    <div class="text-center mb-16">
+                        <h1 class="section-title scroll-animate fade-up">What Travellers Say About Us</h1>
+                        <p class="section-subtitle scroll-animate fade-up delay-200">Discover how travellers from around the world experience Coco Island Holidays—authentic journeys, heartfelt moments, and memories to cherish forever.</p>
+                    </div>
+                    
+                    <div class="testi-slider-active owl-carousel">
+                        <div class="testimonial-card scroll-animate fade-up delay-100">
+                            <div class="text-primary-500 text-4xl mb-6">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">Walking the Ramayana trail with Coco Island Holidays was life-changing. Every site was steeped in history, and our guide brought the stories alive. Felt safe, spiritual, and deeply connected to my roots.</p>
+                            
+                            <div class="flex items-center">
+                                <div class="image-circular w-16 h-16 mr-4">
+                                    <img src="{{ asset('frontend/assets/img/testimonial/Priya-Menon.jpg') }}" alt="Priya Menon" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Priya Menon</h4>
+                                    <span class="text-gray-600">Web Designer</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="testi-slider">
-                                <div class="testi-slider-active owl-carousel">
-                                    <div class="single-testi white-bg transition-3">
-                                        <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Walking the Ramayana trail with Coco Island Holidays was life-changing. Every site was steeped in history, and our guide brought the stories alive. Felt safe, spiritual, and deeply connected to my roots.</p>
-
-                                        <div class="testi-person d-flex">
-                                            <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/Priya-Menon.jpg') }}" alt="testi-1">
-                                            </div>
-                                            <div class="testi-info">
-                                                <h4>Priya Menon</h4>
-                                                <span>Web Designer</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-testi white-bg transition-3">
-                                        <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>Our honeymoon was like a dream! Candle-lit beach dinners, whale watching, and sunsets in Galle, every moment felt curated just for us. Thank you, Coco Island Holidays, for making it magical.</p>
-
-                                        <div class="testi-person d-flex">
-                                            <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/Aarav-and-Meera-Kapoor.jpg') }}" alt="testi-1">
-                                            </div>
-                                            <div class="testi-info">
-                                                <h4>Aarav and Meera Kapoor</h4>
-                                                <span>Company CEO</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-testi white-bg transition-3">
-                                        <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>From misty hills to coastal forts, this expedition gave me a true taste of Sri Lanka. I appreciated the care Coco Island Holidays put into every small detail, professional, seamless, unforgettable.</p>
-
-                                        <div class="testi-person d-flex">
-                                            <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/David-Stein.jpg') }}" alt="testi-1">
-                                            </div>
-                                            <div class="testi-info">
-                                                <h4>David Stein</h4>
-                                                <span>Designer</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-testi white-bg transition-3">
-                                        <span class="quote"><i class="fas fa-quote-left"></i></span>
-                                        <p>I needed nature, silence, and a bit of luxury, and I found it here. The glamping sites were beautiful and eco-friendly, and I felt so grounded. Highly recommend for solo soul-searchers.</p>
-
-                                        <div class="testi-person d-flex">
-                                            <div class="testi-thumb mr-20">
-                                                <img src="{{ asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg') }}" alt="testi-1">
-                                            </div>
-                                            <div class="testi-info">
-                                                <h4>Sofia Alvarez</h4>
-                                                <span>Software Engineer</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                        
+                        <div class="testimonial-card scroll-animate fade-up delay-200">
+                            <div class="text-primary-500 text-4xl mb-6">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">Our honeymoon was like a dream! Candle-lit beach dinners, whale watching, and sunsets in Galle, every moment felt curated just for us. Thank you, Coco Island Holidays, for making it magical.</p>
+                            
+                            <div class="flex items-center">
+                                <div class="image-circular w-16 h-16 mr-4">
+                                    <img src="{{ asset('frontend/assets/img/testimonial/Aarav-and-Meera-Kapoor.jpg') }}" alt="Aarav and Meera Kapoor" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Aarav and Meera Kapoor</h4>
+                                    <span class="text-gray-600">Company CEO</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card scroll-animate fade-up delay-300">
+                            <div class="text-primary-500 text-4xl mb-6">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">From misty hills to coastal forts, this expedition gave me a true taste of Sri Lanka. I appreciated the care Coco Island Holidays put into every small detail, professional, seamless, unforgettable.</p>
+                            
+                            <div class="flex items-center">
+                                <div class="image-circular w-16 h-16 mr-4">
+                                    <img src="{{ asset('frontend/assets/img/testimonial/David-Stein.jpg') }}" alt="David Stein" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">David Stein</h4>
+                                    <span class="text-gray-600">Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card scroll-animate fade-up delay-400">
+                            <div class="text-primary-500 text-4xl mb-6">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">I needed nature, silence, and a bit of luxury, and I found it here. The glamping sites were beautiful and eco-friendly, and I felt so grounded. Highly recommend for solo soul-searchers.</p>
+                            
+                            <div class="flex items-center">
+                                <div class="image-circular w-16 h-16 mr-4">
+                                    <img src="{{ asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg') }}" alt="Sofia Alvarez" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Sofia Alvarez</h4>
+                                    <span class="text-gray-600">Software Engineer</span>
                                 </div>
                             </div>
                         </div>
@@ -588,18 +578,9 @@
 
         @include('components.footer')
 
-		<!-- JS here -->
-        <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+		<!-- Essential JS for carousels and functionality -->
         <script src="{{ asset('frontend/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/vendor/waypoints.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/jquery.meanmenu.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/slick.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/isotope.pkgd.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/countdown.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 

@@ -1,11 +1,290 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  body {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #111827;
+  }
+
+  img {
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-500 border-2 border-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-border {
+    @apply btn-secondary;
+  }
+
+  .section-luxury {
+    @apply py-32 lg:py-40;
+  }
+
+  .section-title {
+    @apply text-4xl lg:text-5xl font-bold text-center mb-6 text-gray-900;
+  }
+
+  .section-subtitle {
+    @apply text-lg lg:text-xl text-center text-gray-600 mb-12 max-w-4xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+
+  .card-image {
+    @apply w-full h-64 object-cover rounded-t-2xl;
+  }
+
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center text-white;
+  }
+
+  .hero-content {
+    @apply text-center max-w-6xl mx-auto px-4;
+  }
+
+  .hero-title {
+    @apply text-5xl lg:text-7xl font-bold mb-6 leading-tight;
+  }
+
+  .hero-subtitle {
+    @apply text-xl lg:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .testimonial-card {
+    @apply bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300;
+  }
+
+  .tour-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+
+  .tour-card-image {
+    @apply w-full h-64 object-cover;
+  }
+
+  .tour-card-content {
+    @apply p-6;
+  }
+
+  .tour-card-title {
+    @apply text-2xl font-bold mb-3 text-gray-900;
+  }
+
+  .tour-card-description {
+    @apply text-gray-600 mb-6 line-clamp-3;
+  }
+
+  .image-rounded {
+    @apply rounded-xl overflow-hidden;
+  }
+
+  .image-rounded-lg {
+    @apply rounded-2xl overflow-hidden;
+  }
+
+  .image-circular {
+    @apply rounded-full overflow-hidden;
+  }
+
+  .gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent;
+  }
+
+  .scroll-animate {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .scroll-animate.animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fade-up {
+    @apply translate-y-8;
+  }
+
+  .fade-down {
+    @apply -translate-y-8;
+  }
+
+  .fade-left {
+    @apply -translate-x-8;
+  }
+
+  .fade-right {
+    @apply translate-x-8;
+  }
+
+  .scale-up {
+    @apply scale-95;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-white hover:text-primary-300 transition-colors duration-300 font-medium;
+  }
+
+  .nav-link-dark {
+    @apply text-gray-800 hover:text-primary-500 transition-colors duration-300 font-medium;
+  }
+
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none transition-all duration-300;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none transition-all duration-300 resize-none;
+  }
+
+  /* Accordion styles */
+  .accordion-item {
+    @apply border border-gray-200 rounded-xl mb-4 overflow-hidden;
+  }
+
+  .accordion-button {
+    @apply w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-300 flex items-center justify-between;
+  }
+
+  .accordion-content {
+    @apply px-6 py-4 bg-gray-50 border-t border-gray-200;
+  }
+}
+
+/* Custom utility styles */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Custom animation delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  /* WhatsApp float button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50;
+  }
+
+  /* Scroll progress indicator */
+  .scroll-progress {
+    @apply fixed top-0 left-0 h-1 bg-gradient-to-r from-primary-500 to-primary-600 z-50 transition-all duration-100;
+  }
+}
+
+/* Video background styles */
+.slide-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Owl Carousel overrides for Tailwind */
+.owl-carousel .owl-item img {
+  @apply w-full h-auto rounded-xl;
+}
+
+.owl-carousel .owl-nav button {
+  @apply absolute top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-12 h-12 rounded-full shadow-lg transition-all duration-300;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+  @apply -left-6;
+}
+
+.owl-carousel .owl-nav .owl-next {
+  @apply -right-6;
+}
+
+.owl-carousel .owl-dots {
+  @apply flex justify-center mt-8 space-x-2;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+  @apply w-3 h-3 bg-gray-300 rounded-full transition-all duration-300;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+  @apply bg-primary-500 w-8;
+}
+
+/* Slick Slider overrides */
+.slick-slide img {
+  @apply rounded-xl;
+}
+
+.slick-dots {
+  @apply flex justify-center mt-8 space-x-2;
+}
+
+.slick-dots li button {
+  @apply w-3 h-3 bg-gray-300 rounded-full transition-all duration-300 text-transparent;
+}
+
+.slick-dots li.slick-active button {
+  @apply bg-primary-500 w-8;
 }

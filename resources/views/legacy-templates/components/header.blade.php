@@ -68,7 +68,7 @@
                                     </li>
                                     {{-- <li><a href="{{ route('packages') }}">Packages</a></li> --}}
                                     {{-- <li><a href="#">Jobs</a></li> --}}
-                                    <li><a href="{{ route('home') }}">Blogs</a></li>
+                                    <li><a href="http://coco-island.test/blogs">Blogs</a></li>
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
