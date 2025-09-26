@@ -259,117 +259,167 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left: Content -->
-                <div class="scroll-animate">
-                    <p class="text-primary-500 uppercase tracking-widest text-sm font-semibold mb-4">Why Travel With Us</p>
-                    <h2 class="text-lg lg:text-xl font-bold mb-8 text-gray-900">Why Choose COCO Island Holidays</h2>
-                    <div class="flex items-center mb-8">
-                        <img src="{{ asset('frontend/assets/img/icon2.png') }}" alt="icon" class="w-8 h-8 mr-4">
-                        <div class="flex-1 h-px bg-gray-300"></div>
+    <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-primary-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-primary-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6 scroll-animate">
+                    <i class="fas fa-award text-primary-600 text-base"></i>
+                </div>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Why Travel With Us</p>
+                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Why Choose COCO Island Holidays</h2>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed scroll-animate">Experience the difference of traveling with local experts who are passionate about sharing the authentic beauty and culture of Sri Lanka.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                
+                <!-- Local Expertise -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 scroll-animate border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-map-marked-alt text-white text-lg"></i>
+                        </div>
                     </div>
-                    
-                    <!-- Accordion -->
-                    <div class="space-y-4">
-                        <!-- Local Expertise -->
-                        <div class="border border-gray-200 rounded-xl overflow-hidden">
-                            <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-300 flex items-center justify-between accordion-btn" data-target="accordion-1">
-                                <span>LOCAL EXPERTISE</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div id="accordion-1" class="accordion-content px-6 py-4 bg-gray-50 border-t border-gray-200">
-                                <p class="mb-4">Rooted in Sri Lanka, our team brings decades of on-the-ground experience to every itinerary. We prioritise local knowledge, authentic encounters, and routes that reveal both iconic sights and hidden gems — from national parks rich in wildlife to small coastal villages.</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Local guides and insider routes</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Authentic cultural and nature experiences</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Responsible partnerships with communities</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Tailor-Made Experiences -->
-                        <div class="border border-gray-200 rounded-xl overflow-hidden">
-                            <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-300 flex items-center justify-between accordion-btn" data-target="accordion-2">
-                                <span>TAILOR-MADE EXPERIENCES</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div id="accordion-2" class="accordion-content px-6 py-4 bg-gray-50 border-t border-gray-200 hidden">
-                                <p class="mb-4">We craft tailor-made Sri Lanka tours that match your pace and interests — from family-friendly itineraries to adventure and wellness escapes. Each trip is personalised to include the experiences you care about most.</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Custom itineraries and flexible dates</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Special interest tours (wildlife, culture, food)</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Private or small-group options</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Reliable Service -->
-                        <div class="border border-gray-200 rounded-xl overflow-hidden">
-                            <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-300 flex items-center justify-between accordion-btn" data-target="accordion-3">
-                                <span>RELIABLE SERVICE</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div id="accordion-3" class="accordion-content px-6 py-4 bg-gray-50 border-t border-gray-200 hidden">
-                                <p class="mb-4">Our operational excellence means you travel with confidence. We handle logistics, trusted transport and certified guides so you can focus on enjoying unforgettable moments across Sri Lanka.</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Experienced tour coordinators</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Reliable transport and local partners</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Clear communication and support</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Comfort & Safety -->
-                        <div class="border border-gray-200 rounded-xl overflow-hidden">
-                            <button class="w-full px-6 py-4 text-left font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-300 flex items-center justify-between accordion-btn" data-target="accordion-4">
-                                <span>COMFORT & SAFETY</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div id="accordion-4" class="accordion-content px-6 py-4 bg-gray-50 border-t border-gray-200 hidden">
-                                <p class="mb-4">Your comfort and safety are central to every tour. We work with vetted suppliers, follow recommended safety protocols, and provide vehicles and guides who keep your wellbeing a priority.</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Vetted, insured transport and guides</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> Health and safety best practices</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-primary-500 mr-2"></i> 24/7 local support for emergencies</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Local Expertise</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Decades of on-the-ground experience with insider knowledge of hidden gems and authentic cultural encounters.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Local guides & insider routes
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Authentic experiences
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Community partnerships
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Right: Gallery Grid -->
-                <div class="grid grid-cols-3 gap-4 scroll-animate">
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-1.png') }}" alt="Local expertise" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <!-- Tailor-Made Experiences -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 scroll-animate border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-palette text-white text-lg"></i>
+                        </div>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-2.png') }}" alt="Hidden temple" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Tailor-Made Tours</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Custom itineraries designed around your interests, pace, and travel style for truly personal experiences.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Custom itineraries
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Flexible scheduling
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Special interest tours
+                            </li>
+                        </ul>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-3.png') }}" alt="Local market" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+
+                <!-- Reliable Service -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 scroll-animate border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-handshake text-white text-lg"></i>
+                        </div>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-4.png') }}" alt="Tailor-made" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Reliable Service</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Professional service with trusted transport, certified guides, and seamless logistics for worry-free travel.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Professional coordination
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Trusted partnerships
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Clear communication
+                            </li>
+                        </ul>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-5.png') }}" alt="Tea experience" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+
+                <!-- Comfort & Safety -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 scroll-animate border border-gray-100">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-shield-alt text-white text-lg"></i>
+                        </div>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-6.png') }}" alt="Sunrise hike" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <div class="pt-8">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Safety & Comfort</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Your wellbeing is our priority with vetted suppliers, safety protocols, and 24/7 support throughout your journey.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Vetted transport & guides
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                Safety protocols
+                            </li>
+                            <li class="flex items-center text-sm text-gray-700">
+                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
+                                24/7 support
+                            </li>
+                        </ul>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-7.png') }}" alt="Reliable logistics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+
+            </div>
+
+            <!-- Stats Section -->
+            <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 lg:p-12 text-white scroll-animate">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">500+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Happy Travelers</div>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-8.png') }}" alt="On-time pickups" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">50+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Tour Packages</div>
                     </div>
-                    <div class="aspect-square rounded-xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/chooseus/local-9.png') }}" alt="Coordinated transfers" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">10+</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Years Experience</div>
                     </div>
+                    <div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">4.9★</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">Average Rating</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-primary-400 text-center">
+                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">Ready to experience the difference? Let our local experts create your perfect Sri Lankan adventure.</p>
+                    <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-comments mr-3"></i>
+                        Start Planning Your Journey
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -464,51 +514,161 @@
     </section>
 
     <!-- Special Offer Section -->
-    <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left: Content -->
-                <div class="scroll-animate">
-                    <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900">Exclusive Offer – Trails of Ramayana Tour</h1>
-                    <p class="text-base text-gray-600 mb-8 leading-relaxed">Explore the legendary Ramayana trail on this immersive 10-day pilgrimage across Sri Lanka. Visit sacred temples, mythic landscapes and local shrines while learning the historical and cultural stories that connect these sites — led by knowledgeable local guides.</p>
-
-                    <div class="mb-8">
-                        <div class="flex items-baseline gap-4 mb-2">
-                            <span class="text-base text-gray-400 line-through">$800 ₹41,500</span>
-                            <span class="text-base font-bold text-primary-600">Only ₹25,999</span>
-                        </div>
-                        <span class="text-gray-500">/ FOR PERSON</span>
-                    </div>
-                    <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                        Contact Us
-                    </a>
+    <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-orange-50 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-primary-400 to-orange-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-orange-400 to-primary-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-orange-500 rounded-full mb-6 scroll-animate">
+                    <i class="fas fa-fire text-white text-base"></i>
                 </div>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Limited Time Offer</p>
+                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Exclusive Sri Lanka Experience</h2>
+            </div>
 
-                <!-- Right: Image with Countdown -->
-                <div class="relative scroll-animate">
-                    <div class="rounded-2xl overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/Muneswaram-temple.jpg') }}" alt="Trails of Ramayana" class="w-full h-96 object-cover">
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center">
-                        <div id="countdown" class="flex justify-center gap-4 text-sm font-semibold">
-                            <div class="flex flex-col">
-                                <span id="days" class="text-base text-primary-600">0</span>
-                                <span class="text-gray-600">days</span>
+            <!-- Main Offer Card -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden scroll-animate">
+                <div class="grid lg:grid-cols-2">
+                    <!-- Left: Image with Overlay -->
+                    <div class="relative h-96 lg:h-auto">
+                        <img src="{{ asset('frontend/assets/img/Muneswaram-temple.jpg') }}" alt="Trails of Ramayana" class="w-full h-full object-cover">
+                        
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute top-6 left-6">
+                            <div class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                                🔥 HOT DEAL
                             </div>
-                            <div class="flex flex-col">
-                                <span id="hours" class="text-base text-primary-600">0</span>
-                                <span class="text-gray-600">hours</span>
-                            </div>
-                            <div class="flex flex-col">
-                                <span id="minutes" class="text-base text-primary-600">0</span>
-                                <span class="text-gray-600">minutes</span>
-                            </div>
-                            <div class="flex flex-col">
-                                <span id="seconds" class="text-base text-primary-600">0</span>
-                                <span class="text-gray-600">seconds</span>
+                        </div>
+                        
+                        <!-- Countdown Timer -->
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 text-center">
+                                <p class="text-gray-800 font-semibold mb-4 text-sm">⏰ Offer Ends In:</p>
+                                <div id="countdown" class="grid grid-cols-4 gap-2">
+                                    <div class="text-center">
+                                        <div id="days" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Days</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div id="hours" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Hours</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div id="minutes" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Mins</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div id="seconds" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Secs</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Right: Content -->
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <!-- Tour Title -->
+                        <div class="mb-8">
+                            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Trails of Ramayana Tour</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">Embark on a spiritual journey through Sri Lanka's sacred Ramayana trail. Experience 10 days of mystical temples, ancient legends, and profound cultural insights with expert local guides who bring these timeless stories to life.</p>
+                            
+                            <!-- Tour Highlights -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-calendar-alt text-primary-500 mr-3"></i>
+                                    <span>10 Days / 9 Nights</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-users text-primary-500 mr-3"></i>
+                                    <span>Small Groups Only</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-map-marked-alt text-primary-500 mr-3"></i>
+                                    <span>Sacred Sites Tour</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-user-tie text-primary-500 mr-3"></i>
+                                    <span>Expert Local Guide</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <p class="text-sm text-gray-600 mb-1">Regular Price</p>
+                                        <p class="text-lg text-gray-400 line-through">₹41,500</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
+                                        <p class="text-2xl font-bold text-primary-600">₹25,999</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600">Per Person</span>
+                                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                        Save ₹15,501 (37% OFF)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-4">
+                            <a href="https://wa.me/94776605054" class="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-orange-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <i class="fab fa-whatsapp mr-3 text-lg"></i>
+                                Book This Exclusive Offer
+                            </a>
+                            <div class="flex gap-4">
+                                <a href="#" class="flex-1 inline-flex items-center justify-center px-4 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl hover:border-primary-500 hover:text-primary-600 transition-colors duration-300">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    More Details
+                                </a>
+                                <a href="#" class="flex-1 inline-flex items-center justify-center px-4 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl hover:border-primary-500 hover:text-primary-600 transition-colors duration-300">
+                                    <i class="fas fa-share-alt mr-2"></i>
+                                    Share Offer
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <div class="flex items-center justify-between text-sm text-gray-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                                    <span>Secure Booking</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-undo text-blue-500 mr-2"></i>
+                                    <span>Free Cancellation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-headset text-purple-500 mr-2"></i>
+                                    <span>24/7 Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-12 scroll-animate">
+                <p class="text-gray-600 mb-4">⚡ Only 5 spots remaining for this exclusive experience!</p>
+                <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <i class="fas fa-clock mr-2"></i>
+                    Limited time offer - Book now to secure your spot!
                 </div>
             </div>
         </div>
