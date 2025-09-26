@@ -514,74 +514,187 @@
         </div>
     </section>
 
-    <!-- Top Experiences Section -->
+    <!-- Best Places to Visit Section -->
     <section id="experiences" class="py-16 lg:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Top Experiences in Sri Lanka</h1>
-                <p class="text-base lg:text-base text-gray-600 max-w-4xl mx-auto scroll-animate">From misty tea plantations and elephant safaris to fortified colonial towns and palm-fringed beaches, Sri Lanka offers diverse experiences for every traveller. Here are some top picks to include in your itinerary.</p>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Discover Sri Lanka</p>
+                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Best Places to Visit</h1>
+                <p class="text-base text-gray-600 max-w-4xl mx-auto scroll-animate">From ancient kingdoms and colonial fortresses to pristine beaches and wildlife sanctuaries, explore Sri Lanka's most iconic destinations that showcase the island's rich heritage and natural beauty.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Large Card -->
-                <div class="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="Thalawakale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <!-- Featured Destination -->
+            <div class="mb-12">
+                <div class="group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 scroll-animate">
+                    <div class="h-96 overflow-hidden">
+                        <img src="https://www.lovidhu.com/uploads/posts-seo/2021/03/sigiria-sri-lanka.jpg" alt="Sigiriya Rock Fortress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Thalawakale</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="max-w-2xl">
+                            <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">UNESCO World Heritage</span>
+                            <h3 class="text-3xl font-bold text-white mb-4">Sigiriya Rock Fortress</h3>
+                            <p class="text-gray-200 text-lg mb-6 leading-relaxed">Marvel at this 5th-century citadel rising 200 meters from the jungle floor. Climb the ancient rock fortress adorned with stunning frescoes and gardens, offering breathtaking panoramic views of Sri Lanka's cultural landscape.</p>
+                            <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300">
+                                <i class="fas fa-mountain mr-2"></i>
+                                Explore Sigiriya
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Small Card 1 -->
+            <!-- Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Anuradhapura -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Goyambokka-beach.jpg') }}" alt="Goyambokka Beach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://travelrebels.com/wp-content/uploads/2018/06/anuradhapura-sunset.jpg" alt="Anuradhapura Ancient City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Goyambokka Beach</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Ancient Kingdom</span>
+                        <h4 class="text-lg font-bold text-white mb-2">Anuradhapura</h4>
+                        <p class="text-gray-200 text-sm">Sacred city with ancient dagobas and the sacred Bodhi Tree, dating back 2,500 years.</p>
                     </div>
                 </div>
 
-                <!-- Small Card 2 -->
+                <!-- Nuwara Eliya -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Koneswaram Temple.jpg') }}" alt="Koneswaram Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://lakpura.com/cdn/shop/files/LK951R0000-10-E_4fb5ce5e-c060-481b-9ee3-429c7a3a7b72.jpg?v=1689939550&width=3840" alt="Nuwara Eliya Tea Country" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Koneswaram Temple</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Hill Country</span>
+                        <h4 class="text-lg font-bold text-white mb-2">Nuwara Eliya</h4>
+                        <p class="text-gray-200 text-sm">Cool mountain retreat with lush tea plantations and colonial charm in the clouds.</p>
                     </div>
                 </div>
 
-                <!-- Small Card 3 -->
+                <!-- Galle Fort -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Marble-Beach.jpg') }}" alt="Marble Beach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://media.cntravellerme.com/photos/6679185364c11ffe86eb6eeb/16:9/w_3984,h_2241,c_limit/1150415140" alt="Galle Fort Colonial Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Marble Beach</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Colonial Heritage</span>
+                        <h4 class="text-lg font-bold text-white mb-2">Galle Fort</h4>
+                        <p class="text-gray-200 text-sm">16th-century Portuguese fort with cobblestone streets and stunning ocean views.</p>
                     </div>
                 </div>
 
-                <!-- Small Card 4 -->
+            </div>
+
+            <!-- Second Row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- Yala National Park -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Munneswaram.jpg') }}" alt="Munneswaram Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg" alt="Yala National Park Wildlife" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Munneswaram Temple</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="inline-block bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Wildlife</span>
+                        <h4 class="text-lg font-bold text-white mb-1">Yala National Park</h4>
+                        <p class="text-gray-200 text-sm">Sri Lanka's premier wildlife destination with leopards and elephants.</p>
                     </div>
                 </div>
 
-                <!-- Large Card 2 -->
-                <div class="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-80 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Ramboda-Waterfall.jpg') }}" alt="Ramboda Waterfall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <!-- Polonnaruwa -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/d7/27/d9.jpg" alt="Polonnaruwa Ancient Ruins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 class="text-lg font-bold text-white">Ramboda Waterfall</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="inline-block bg-amber-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Ancient City</span>
+                        <h4 class="text-lg font-bold text-white mb-1">Polonnaruwa</h4>
+                        <p class="text-gray-200 text-sm">Medieval capital with remarkable stone sculptures and ruins.</p>
                     </div>
                 </div>
+
+                <!-- Hiriketiya Beach -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://wanderon-images.gumlet.io/blogs/new/2024/05/hirketiya.jpg" alt="Hiriketiya Beach Paradise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="inline-block bg-cyan-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Beach Paradise</span>
+                        <h4 class="text-lg font-bold text-white mb-1">Hiriketiya Beach</h4>
+                        <p class="text-gray-200 text-sm">Perfect horseshoe bay for surfing and beach relaxation.</p>
+                    </div>
+                </div>
+
+                <!-- Colombo -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://www.reddottours.com/uploads/Weather-by-regions/colombo-header.jpg" alt="Colombo Modern City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <span class="inline-block bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Capital City</span>
+                        <h4 class="text-lg font-bold text-white mb-1">Colombo</h4>
+                        <p class="text-gray-200 text-sm">Vibrant capital blending modern skyscrapers with colonial charm.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Unique Experiences Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Turtle Watching -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://travellersisle.com/wp-content/uploads/2022/10/Snorkeling-with-turtles-in-pigeon-island.jpg" alt="Sea Turtle Conservation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-teal-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-3">Wildlife Experience</span>
+                        <h4 class="text-lg font-bold text-white mb-2">Turtle Watching</h4>
+                        <p class="text-gray-200 text-sm mb-4">Witness endangered sea turtles nesting on pristine beaches and visit turtle hatcheries dedicated to conservation.</p>
+                        <div class="flex items-center text-gray-300 text-sm">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Hikkaduwa & Bentota</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whale Watching in Mirissa -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://whalewatching.navy.lk/assets/template/whale/img/2.jpg" alt="Whale Watching Mirissa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-3">Marine Adventure</span>
+                        <h4 class="text-lg font-bold text-white mb-2">Whale Watching</h4>
+                        <p class="text-gray-200 text-sm mb-4">Encounter magnificent blue whales and sperm whales in their natural habitat off the southern coast.</p>
+                        <div class="flex items-center text-gray-300 text-sm">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Mirissa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Card -->
+                <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-6 text-white scroll-animate flex flex-col justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-compass text-4xl mb-4 opacity-80"></i>
+                        <h3 class="text-lg font-bold mb-4">Plan Your Journey</h3>
+                        <p class="text-primary-100 text-sm mb-6">Ready to explore these incredible destinations? Let our local experts craft the perfect itinerary for your Sri Lankan adventure.</p>
+                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full bg-white text-primary-600 px-4 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Start Planning
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
