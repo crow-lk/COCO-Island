@@ -6,6 +6,7 @@ return [
         'home' => 'Home',
         'about' => 'About',
         'tours' => 'Tours',
+        'all_tours' => 'All Tours',
         'experiences' => 'Experiences',
         'reviews' => 'Reviews',
         'contact' => 'Contact',

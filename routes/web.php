@@ -31,6 +31,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
 
     Route::get('/packages', [HomeController::class, 'modernPackages'])->name('packages');
 
+    Route::get('/tours', [TourController::class, 'index'])->name('tours.index');
+
     Route::get('/privacy-policy', function () {
         return view('modern-privacy-policy');
     })->name('privacy.policy');

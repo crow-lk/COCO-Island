@@ -1,16 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
 <head>
-    <meta charset="U       <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">                         <div class="flex-shrink-0">
-                    <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" 
-                             alt="COCO Island Holidays Logo" 
-                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                    </a>
-                </div>>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | COCO Island Holidays - Travel Agency</title>
     <meta name="description" content="Learn more about COCO Island Holidays, our story, mission, vision, and values.">
@@ -21,23 +12,45 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Multilingual CSS -->
+    <link rel="stylesheet" href="{{ asset('css/multilingual.css') }}">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#f97316',
-                        secondary: '#ea580c',
-                    },
                     fontFamily: {
-                        sans: ['Verdana', 'Arial', 'sans-serif'],
+                        'sans': ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
                     },
                     animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
                         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
                         'fade-in-left': 'fadeInLeft 0.6s ease-out forwards',
                         'fade-in-right': 'fadeInRight 0.6s ease-out forwards',
                     },
                     keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
@@ -77,6 +90,21 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Mobile Language Switcher Positioning */
+        @media (max-width: 640px) {
+            .language-dropdown {
+                left: 0 !important;
+                right: auto !important;
+                width: 200px;
+                max-width: calc(100vw - 2rem);
+            }
+            
+            /* Ensure dropdown doesn't go off screen */
+            .language-switcher {
+                position: relative;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -85,51 +113,13 @@
         <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="{{ route('home') }}" class="text-base font-bold text-primary">
-                        COCO Island Holidays
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="{{ route('home') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                        <a href="{{ route('about') }}" class="text-primary px-3 py-2 text-sm font-medium">About</a>
-                        <a href="{{ route('packages') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Packages</a>
-                        <a href="{{ route('contact') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
-                        <i class="fas fa-bars text-base"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Home</a>
-                <a href="{{ route('about') }}" class="text-primary block px-3 py-2 text-base font-medium">About</a>
-                <a href="{{ route('packages') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Packages</a>
-                <a href="{{ route('contact') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
+    @include('components.header')
 
     <!-- Hero Section -->
     <section class="hero-bg relative h-screen flex items-center justify-center">
-        <div class="text-center text-gray-900 animate-on-scroll">
-            <h1 class="text-base md:text-lg font-bold mb-4">About Us</h1>
-            <p class="text-base md:text-base opacity-90">Discover our story and passion for travel</p>
+        <div class="text-center text-white animate-on-scroll">
+            <h1 class="text-2xl md:text-4xl font-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">{{ __('messages.about_page.title') }}</h1>
+            <p class="text-lg md:text-xl opacity-90" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">{{ __('messages.about_page.subtitle') }}</p>
         </div>
     </section>
 
@@ -266,12 +256,12 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ __('messages.footer.quick_links') }}</h4>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="{{ route('packages') }}" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">{{ __('messages.nav.home') }}</a></li>
+                        <li><a href="{{ route('about', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">{{ __('messages.nav.about') }}</a></li>
+                        <li><a href="{{ route('packages', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">{{ __('messages.nav.tours') }}</a></li>
+                        <li><a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">{{ __('messages.nav.contact') }}</a></li>
                     </ul>
                 </div>
                 
@@ -311,11 +301,7 @@
             document.getElementById('loading').classList.add('hidden');
         });
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+
 
         // Scroll animations
         const observerOptions = {
@@ -371,6 +357,50 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Language Switcher Functionality
+        document.querySelectorAll('.language-dropdown-btn').forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Find the dropdown associated with this button
+                const dropdown = this.nextElementSibling;
+                const chevron = this.querySelector('.fas.fa-chevron-down');
+                
+                // Close all other dropdowns first
+                document.querySelectorAll('.language-dropdown').forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Reset all chevrons
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(otherChevron) {
+                    if (otherChevron !== chevron) {
+                        otherChevron.classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('hidden');
+                if (chevron) {
+                    chevron.classList.toggle('rotate-180');
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-switcher')) {
+                document.querySelectorAll('.language-dropdown').forEach(function(dropdown) {
+                    dropdown.classList.add('hidden');
+                });
+                document.querySelectorAll('.language-dropdown-btn .fas.fa-chevron-down').forEach(function(chevron) {
+                    chevron.classList.remove('rotate-180');
+                });
+            }
         });
     </script>
 </body>

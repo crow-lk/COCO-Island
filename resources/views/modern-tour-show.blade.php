@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-       <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">                         <div class="flex-shrink-0">
-                    <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" 
-                             alt="COCO Island Holidays Logo" 
-                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                    </a>
-                </div>meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $tour->meta_title ?? $tour->title }} | COCO Island Holidays</title>
     <meta name="description" content="{{ $tour->meta_description ?? $tour->description }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,23 +12,45 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Multilingual CSS -->
+    <link rel="stylesheet" href="{{ asset('css/multilingual.css') }}">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#f97316',
-                        secondary: '#ea580c',
-                    },
                     fontFamily: {
-                        sans: ['Verdana', 'Arial', 'sans-serif'],
+                        'sans': ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
                     },
                     animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
                         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
                         'fade-in-left': 'fadeInLeft 0.6s ease-out forwards',
                         'fade-in-right': 'fadeInRight 0.6s ease-out forwards',
                     },
                     keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
@@ -92,45 +105,7 @@
         <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="{{ route('home') }}" class="text-base font-bold text-primary">
-                        COCO Island Holidays
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="{{ route('home') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                        <a href="{{ route('about') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">About</a>
-                        <a href="{{ route('packages') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Packages</a>
-                        <a href="{{ route('contact') }}" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
-                        <i class="fas fa-bars text-base"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Home</a>
-                <a href="{{ route('about') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">About</a>
-                <a href="{{ route('packages') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Packages</a>
-                <a href="{{ route('contact') }}" class="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
+    @include('components.header')
 
     <!-- Hero Section -->
     <section class="hero-bg relative h-screen flex items-center justify-center">
@@ -336,11 +311,7 @@
             document.getElementById('loading').classList.add('hidden');
         });
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+
 
         // Scroll animations
         const observerOptions = {

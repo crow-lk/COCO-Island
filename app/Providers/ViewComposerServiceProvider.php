@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Http\ViewComposers\HeaderComposer;
+use App\View\Composers\HeaderComposer as NewHeaderComposer;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -23,5 +24,6 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         View::composer('components.header', HeaderComposer::class);
+        View::composer('components.header', NewHeaderComposer::class);
     }
 }

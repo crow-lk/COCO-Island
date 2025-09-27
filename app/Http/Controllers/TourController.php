@@ -22,9 +22,22 @@ class TourController extends Controller
     }
     
     /**
-     * Display a listing of all tours in admin panel.
+     * Display a listing of all tours for frontend.
      */
     public function index()
+    {
+        $tours = Tour::where('is_active', true)
+                    ->orderBy('display_order')
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+                    
+        return view('modern-tours-index', compact('tours'));
+    }
+
+    /**
+     * Display a listing of all tours in admin panel.
+     */
+    public function adminIndex()
     {
         $tours = Tour::orderBy('display_order')->get();
         return view('admin.tours.index', compact('tours'));
@@ -146,7 +159,9 @@ class TourController extends Controller
                     ->where('is_active', true)
                     ->firstOrFail();
                     
-        return view('modern-tour-show', compact('tour'));
+        // For now, show the detailed Ramayana tour page as example
+        // You can expand this to handle different tours dynamically
+        return view('modern-tour-detail', compact('tour'));
     }
     
     /**
@@ -159,7 +174,7 @@ class TourController extends Controller
                     ->first();
                     
         if ($tour) {
-            return view('modern-tour-show', compact('tour'));
+            return view('modern-tour-detail', compact('tour'));
         }
         
         // Fallback to the old static view if no dynamic tour is found

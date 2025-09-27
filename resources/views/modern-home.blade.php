@@ -201,53 +201,7 @@
         <i class="fab fa-whatsapp text-base"></i>
     </a>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="flex items-center">
-                        <img src="{{ asset('frontend/assets/img/logo/coco-logo.png') }}" 
-                             alt="COCO Island Holidays Logo" 
-                             class="h-20 w-auto opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.home') }}</a>
-                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.about') }}</a>
-                        <a href="#tours" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.tours') }}</a>
-                        <a href="#experiences" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.experiences') }}</a>
-                        <a href="#testimonials" class="text-gray-700 hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.reviews') }}</a>
-                        <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="bg-primary-500 text-white px-4 py-2 rounded-xl hover:bg-primary-600 transition-colors duration-300">{{ __('messages.nav.contact') }}</a>
-                        <!-- Language Switcher -->
-                        @include('components.language-switcher')
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-base"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.home') }}</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.about') }}</a>
-                <a href="#tours" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.tours') }}</a>
-                <a href="#experiences" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.experiences') }}</a>
-                <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.reviews') }}</a>
-                <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 bg-primary-500 text-white rounded-xl mx-3 text-center">{{ __('messages.nav.contact') }}</a>
-                <!-- Mobile Language Switcher -->
-                <div class="px-3 py-2">
-                    @include('components.language-switcher')
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.header')
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center text-white">
@@ -292,6 +246,13 @@
                 <p class="text-base lg:text-lg max-w-5xl mx-auto leading-relaxed text-gray-600 scroll-animate">
                     {{ __('messages.about.description') }}
                 </p>
+                <div class="mt-8 scroll-animate">
+                    <a href="{{ route('about', ['locale' => app()->getLocale()]) }}" 
+                       class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-primary-500 text-white hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        {{ __('messages.read_more') }}
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1189,11 +1150,7 @@
 
         });
 
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+
 
         // Accordion Functionality
         document.querySelectorAll('.accordion-btn').forEach(button => {
