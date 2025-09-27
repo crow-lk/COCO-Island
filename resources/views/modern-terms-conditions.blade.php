@@ -91,9 +91,9 @@
 
     <!-- Hero Section -->
     <section class="hero-bg relative h-96 flex items-center justify-center mt-16">
-        <div class="text-center text-gray-900">
-            <h1 class="text-base md:text-lg font-bold mb-4">Terms & Conditions</h1>
-            <p class="text-base md:text-base opacity-90">Important information for your booking</p>
+        <div class="text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);">Terms & Conditions</h1>
+            <p class="text-xl md:text-2xl opacity-90" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Important information for your booking</p>
         </div>
     </section>
 
@@ -103,63 +103,63 @@
             <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                 <div class="space-y-8">
                     <div class="text-center mb-8">
-                        <p class="text-base text-gray-700">
-                            When booking a trip with <strong class="text-primary">COCO Island Holidays</strong>, you agree to the following terms:
+                        <p class="text-lg text-gray-700">
+                            When booking a trip with <strong class="text-primary-500">COCO Island Holidays</strong>, you agree to the following terms:
                         </p>
                     </div>
 
                     <div class="space-y-8">
                         <!-- Term 1 -->
-                        <div class="border-l-4 border-primary pl-6">
-                            <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center">
-                                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                        <div class="border-l-4 border-primary-500 pl-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-4">1</span>
                                 Bookings & Payments
                             </h3>
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-lg text-gray-700 leading-relaxed">
                                 A deposit is required to confirm your booking. Full payment must be made prior to trip commencement, as specified in your itinerary.
                             </p>
                         </div>
 
                         <!-- Term 2 -->
-                        <div class="border-l-4 border-primary pl-6">
-                            <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center">
-                                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                        <div class="border-l-4 border-primary-500 pl-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-4">2</span>
                                 Cancellations & Refunds
                             </h3>
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-lg text-gray-700 leading-relaxed">
                                 Cancellations must be made in writing. Refunds are subject to our cancellation policy and may vary based on notice period and third-party provider rules (hotels, guides, etc.).
                             </p>
                         </div>
 
                         <!-- Term 3 -->
-                        <div class="border-l-4 border-primary pl-6">
-                            <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center">
-                                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                        <div class="border-l-4 border-primary-500 pl-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-4">3</span>
                                 Travel Insurance
                             </h3>
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-lg text-gray-700 leading-relaxed">
                                 We recommend all travelers have comprehensive travel insurance covering health, accidents, delays, and cancellations.
                             </p>
                         </div>
 
                         <!-- Term 4 -->
-                        <div class="border-l-4 border-primary pl-6">
-                            <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center">
-                                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                        <div class="border-l-4 border-primary-500 pl-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-4">4</span>
                                 Itinerary Changes
                             </h3>
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-lg text-gray-700 leading-relaxed">
                                 We reserve the right to modify itineraries due to unforeseen circumstances (e.g., weather, road conditions, local regulations) while ensuring equivalent or better alternatives.
                             </p>
                         </div>
 
                         <!-- Term 5 -->
-                        <div class="border-l-4 border-primary pl-6">
-                            <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center">
-                                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                        <div class="border-l-4 border-primary-500 pl-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                <span class="w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-4">5</span>
                                 Liability
                             </h3>
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-lg text-gray-700 leading-relaxed">
                                 COCO Island Holidays is not liable for loss, injury, delays, or unforeseen incidents beyond our control. However, we always strive to support and safeguard your journey.
                             </p>
                         </div>
@@ -168,10 +168,10 @@
                     <!-- Agreement Notice -->
                     <div class="bg-orange-50 border border-orange-200 rounded-lg p-6 mt-8">
                         <div class="flex items-start">
-                            <i class="fas fa-info-circle text-orange-500 text-base mr-3 mt-1"></i>
+                            <i class="fas fa-info-circle text-orange-500 text-xl mr-4 mt-1"></i>
                             <div>
-                                <h4 class="font-semibold text-orange-800 mb-2">Agreement Confirmation</h4>
-                                <p class="text-orange-700">
+                                <h4 class="text-lg font-semibold text-orange-800 mb-2">Agreement Confirmation</h4>
+                                <p class="text-lg text-orange-700">
                                     By proceeding with a booking, you confirm that you have read and agreed to these terms and conditions.
                                 </p>
                             </div>
@@ -210,10 +210,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="{{ route('packages') }}" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -230,9 +230,9 @@
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved.</p>
                 <div class="mt-2 space-x-4">
-                    <a href="{{ route('privacy.policy') }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Privacy Policy</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions') }}" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Terms & Conditions</a>
                 </div>
             </div>
         </div>

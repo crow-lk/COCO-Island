@@ -153,15 +153,13 @@ class TourController extends Controller
     /**
      * Display the specified tour with modern Tailwind design.
      */
-    public function modernShow($slug)
+    public function modernShow(Request $request, $locale, $slug)
     {
         $tour = Tour::where('slug', $slug)
                     ->where('is_active', true)
                     ->firstOrFail();
-                    
-        // For now, show the detailed Ramayana tour page as example
-        // You can expand this to handle different tours dynamically
-        return view('modern-tour-detail', compact('tour'));
+        
+        return view('modern-tour-show', compact('tour'));
     }
     
     /**

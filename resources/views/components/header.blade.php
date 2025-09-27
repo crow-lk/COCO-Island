@@ -15,6 +15,15 @@
         visibility: hidden;
         transform: translateY(-10px);
         transition: all 0.2s ease-in-out;
+        min-width: 250px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    /* Ensure dropdown is properly positioned on transparent header */
+    .tours-dropdown {
+        position: relative;
+        z-index: 60;
     }
     
     .mobile-tours-dropdown .fa-chevron-down {
@@ -23,6 +32,11 @@
     
     .mobile-tours-dropdown .fa-chevron-down.rotate-180 {
         transform: rotate(180deg);
+    }
+    
+    /* Styling for tours in dropdown */
+    .dropdown-menu a:hover {
+        background-color: rgba(249, 115, 22, 0.05);
     }
 </style>
 
@@ -44,7 +58,36 @@
                     @if($isHomePage)
                         <a href="#home" class="text-white hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.home') }}</a>
                         <a href="#about" class="text-white hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.about') }}</a>
-                        <a href="#tours" class="text-white hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.tours') }}</a>
+                        
+                        <!-- Tours Dropdown for Homepage -->
+                        <div class="relative tours-dropdown">
+                            <button class="text-white hover:text-primary-600 transition-colors duration-300 flex items-center" id="tours-dropdown-button-home">
+                                {{ __('messages.nav.tours') }}
+                                <i class="fas fa-chevron-down ml-1 text-xs transform transition-transform duration-200"></i>
+                            </button>
+                            
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 z-50">
+                                <div class="py-2">
+                                    <!-- All Tours Link -->
+                                    <a href="{{ route('tours.index', ['locale' => app()->getLocale()]) }}" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200">
+                                        <i class="fas fa-list mr-2 text-primary-500"></i>
+                                        {{ __('messages.nav.all_tours') ?? 'All Tours' }}
+                                    </a>
+                                    
+                                    @if(isset($menuTours) && $menuTours->count() > 0)
+                                        <hr class="my-2 border-gray-100">
+                                        @foreach($menuTours as $tour)
+                                            <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200">
+                                                <i class="fas fa-map-marked-alt mr-2 text-primary-500"></i>
+                                                {{ $tour->title }}
+                                            </a>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        
                         <a href="#experiences" class="text-white hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.experiences') }}</a>
                         <a href="#testimonials" class="text-white hover:text-primary-600 transition-colors duration-300">{{ __('messages.nav.reviews') }}</a>
                     @else
@@ -103,9 +146,35 @@
             @if($isHomePage)
                 <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.home') }}</a>
                 <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.about') }}</a>
-                <a href="#tours" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.tours') }}</a>
+                
+                <!-- Mobile Tours Dropdown for Homepage -->
+                <div class="mobile-tours-dropdown">
+                    <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 flex items-center justify-between" id="mobile-tours-button-home">
+                        {{ __('messages.nav.tours') }}
+                        <i class="fas fa-chevron-down text-xs transform transition-transform duration-200" id="mobile-tours-icon-home"></i>
+                    </button>
+                    <div class="hidden bg-gray-50 border-l-2 border-primary-200" id="mobile-tours-menu-home">
+                        <a href="{{ route('tours.index', ['locale' => app()->getLocale()]) }}" class="block px-6 py-2 text-sm text-gray-600 hover:text-primary-600">
+                            <i class="fas fa-list mr-2"></i>{{ __('messages.nav.all_tours') ?? 'All Tours' }}
+                        </a>
+                        @if(isset($menuTours) && $menuTours->count() > 0)
+                            @foreach($menuTours as $tour)
+                                <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="block px-6 py-2 text-sm text-gray-600 hover:text-primary-600">
+                                    <i class="fas fa-map-marked-alt mr-2"></i>{{ $tour->title }}
+                                </a>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                
                 <a href="#experiences" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.experiences') }}</a>
                 <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-primary-600">{{ __('messages.nav.reviews') }}</a>
+                
+                <!-- Legal Links for Homepage -->
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Privacy Policy</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Terms & Conditions</a>
+                </div>
             @else
                 <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-gray-700 hover:text-primary-600 {{ request()->routeIs('home') ? 'text-primary-500' : '' }}">{{ __('messages.nav.home') }}</a>
                 <a href="{{ route('about', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-gray-700 hover:text-primary-600 {{ request()->routeIs('about') ? 'text-primary-500' : '' }}">{{ __('messages.nav.about') }}</a>
@@ -131,6 +200,12 @@
                 </div>
                 
                 <a href="{{ route('packages', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-gray-700 hover:text-primary-600 {{ request()->routeIs('packages') ? 'text-primary-500' : '' }}">{{ __('messages.nav.experiences') }}</a>
+                
+                <!-- Legal Links -->
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Privacy Policy</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Terms & Conditions</a>
+                </div>
             @endif
             <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 bg-primary-500 text-white rounded-xl mx-3 text-center">{{ __('messages.nav.contact') }}</a>
             <!-- Mobile Language Switcher -->
@@ -163,6 +238,18 @@
             mobileToursButton.addEventListener('click', function() {
                 mobileToursMenu.classList.toggle('hidden');
                 mobileToursIcon.classList.toggle('rotate-180');
+            });
+        }
+
+        // Mobile Tours Dropdown Toggle for Homepage
+        const mobileToursButtonHome = document.getElementById('mobile-tours-button-home');
+        const mobileToursMenuHome = document.getElementById('mobile-tours-menu-home');
+        const mobileToursIconHome = document.getElementById('mobile-tours-icon-home');
+        
+        if (mobileToursButtonHome && mobileToursMenuHome && mobileToursIconHome) {
+            mobileToursButtonHome.addEventListener('click', function() {
+                mobileToursMenuHome.classList.toggle('hidden');
+                mobileToursIconHome.classList.toggle('rotate-180');
             });
         }
     });

@@ -29,6 +29,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
         return view('modern-contact');
     })->name('contact');
 
+    Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
+
     Route::get('/packages', [HomeController::class, 'modernPackages'])->name('packages');
 
     Route::get('/tours', [TourController::class, 'index'])->name('tours.index');

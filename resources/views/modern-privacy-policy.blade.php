@@ -91,9 +91,9 @@
 
     <!-- Hero Section -->
     <section class="hero-bg relative h-96 flex items-center justify-center mt-16">
-        <div class="text-center text-gray-900">
-            <h1 class="text-base md:text-lg font-bold mb-4">Privacy Policy</h1>
-            <p class="text-base md:text-base opacity-90">Your privacy matters to us</p>
+        <div class="text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);">Privacy Policy</h1>
+            <p class="text-xl md:text-2xl opacity-90" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Your privacy matters to us</p>
         </div>
     </section>
 
@@ -102,14 +102,14 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="prose prose-lg max-w-none">
                 <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-                    <div class="space-y-6 text-gray-700 leading-relaxed">
-                        <p>
-                            Your privacy matters to us. At <strong class="text-primary">COCO Island Holidays</strong>, we are committed to
+                    <div class="space-y-8 text-gray-700 leading-relaxed">
+                        <p class="text-lg">
+                            Your privacy matters to us. At <strong class="text-primary-500">COCO Island Holidays</strong>, we are committed to
                             protecting the personal information you share with us, whether through online inquiries,
                             bookings, or communications.
                         </p>
                         
-                        <p>
+                        <p class="text-lg">
                             We collect only the information necessary to serve you better, such as your name, email,
                             travel preferences, and payment details, and we use it solely for trip coordination,
                             customer support, and service improvements. Your data is never shared with third parties
@@ -117,16 +117,16 @@
                             hotels, transport providers).
                         </p>
                         
-                        <p>
+                        <p class="text-lg">
                             All transactions are secured and handled with confidentiality. By using our website and
                             services, you agree to our privacy practices.
                         </p>
                         
-                        <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-primary">
-                            <p class="mb-0">
-                                <strong>Questions or Concerns?</strong><br>
+                        <div class="bg-primary-50 rounded-lg p-6 border-l-4 border-primary-500">
+                            <p class="mb-0 text-lg">
+                                <strong class="text-primary-600">Questions or Concerns?</strong><br>
                                 For any privacy-related concerns, feel free to contact us at
-                                <a href="mailto:info@cocoislandholidays.com" class="text-primary hover:text-secondary transition-colors">info@cocoislandholidays.com</a>.
+                                <a href="mailto:info@cocoislandholidays.com" class="text-primary-500 hover:text-primary-600 transition-colors font-semibold">info@cocoislandholidays.com</a>.
                             </p>
                         </div>
                     </div>
@@ -163,10 +163,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="{{ route('packages') }}" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -183,9 +183,9 @@
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved.</p>
                 <div class="mt-2 space-x-4">
-                    <a href="{{ route('privacy.policy') }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Privacy Policy</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions') }}" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Terms & Conditions</a>
                 </div>
             </div>
         </div>

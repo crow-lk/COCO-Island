@@ -439,19 +439,15 @@
                     <div class="p-6">
                         <h4 class="text-lg font-bold mb-3 text-gray-900">{{ $tour->title ?? 'Cultural Heritage Tour' }}</h4>
                         <p class="text-gray-600 mb-6 line-clamp-3">{{ $tour->description ?? 'Explore ancient temples, colonial architecture, and traditional villages. Discover Sri Lanka\'s rich cultural tapestry with expert local guides.' }}</p>
-                        @if(isset($tour->slug))
-                            <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                                Book Now
-                            </a>
-                        @elseif(isset($tour->route_name))
-                            <a href="{{ route($tour->route_name, ['locale' => app()->getLocale()]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                                Book Now
-                            </a>
-                        @else
-                            <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                                {{ __('messages.tours.inquire_now') }}
-                            </a>
+                        @if($tour->duration)
+                            <div class="flex items-center mb-4 text-sm text-gray-500">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>{{ $tour->duration }}</span>
+                            </div>
                         @endif
+                        <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            View Details
+                        </a>
                     </div>
                 </div>
                 @empty
@@ -1103,7 +1099,12 @@
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
+                <div class="mb-4 space-x-6">
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Terms & Conditions</a>
+                </div>
+                <p>&copy; 2025 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
             </div>
         </div>
     </footer>

@@ -111,4 +111,47 @@ class HomeController extends Controller
             'popularTours' => $popularTours
         ]);
     }
+
+    /**
+     * Handle contact form submission.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function submitContact(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|max:2000',
+        ]);
+
+        try {
+            // Log the contact form submission
+            Log::info('Contact form submitted', [
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+                'ip' => $request->ip(),
+                'user_agent' => $request->userAgent(),
+            ]);
+
+            // Here you could add email sending functionality
+            // Mail::to('admin@cocoislandholidays.com')->send(new ContactFormMail($request->all()));
+
+            // Redirect back with success message
+            return redirect()->route('contact', app()->getLocale())
+                ->with('success', 'Thank you for your message! We will contact you soon.');
+
+        } catch (\Exception $e) {
+            Log::error('Error processing contact form: ' . $e->getMessage());
+            
+            return redirect()->route('contact', app()->getLocale())
+                ->with('error', 'Sorry, there was an error sending your message. Please try again.')
+                ->withInput();
+        }
+    }
 }
