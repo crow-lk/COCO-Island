@@ -792,7 +792,7 @@
                 </a>
 
                 <!-- Colombo -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                <a href="{{ route('destinations.colombo', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-56 overflow-hidden">
                         <img src="https://www.reddottours.com/uploads/Weather-by-regions/colombo-header.jpg" alt="Colombo Modern City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -802,7 +802,7 @@
                         <h4 class="text-lg font-bold text-white mb-1">Colombo</h4>
                         <p class="text-gray-200 text-sm">Vibrant capital blending modern skyscrapers with colonial charm.</p>
                     </div>
-                </div>
+                </a>
 
             </div>
 

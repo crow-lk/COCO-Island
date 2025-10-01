@@ -72,6 +72,10 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
         return view('modern-hiriketiya');
     })->name('destinations.hiriketiya');
 
+    Route::get('/destinations/colombo', function () {
+        return view('modern-colombo');
+    })->name('destinations.colombo');
+
     // Dynamic tour routes
     Route::get('/tours/{slug}', [TourController::class, 'modernShow'])->name('tours.show');
 
