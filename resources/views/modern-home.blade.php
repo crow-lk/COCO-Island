@@ -731,17 +731,19 @@
                 </a>
 
                 <!-- Galle Fort -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://media.cntravellerme.com/photos/6679185364c11ffe86eb6eeb/16:9/w_3984,h_2241,c_limit/1150415140" alt="Galle Fort Colonial Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="{{ route('destinations.gallefort', ['locale' => app()->getLocale()]) }}" class="block">
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://media.cntravellerme.com/photos/6679185364c11ffe86eb6eeb/16:9/w_3984,h_2241,c_limit/1150415140" alt="Galle Fort Colonial Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <span class="inline-block bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Colonial Heritage</span>
+                            <h4 class="text-lg font-bold text-white mb-2">Galle Fort</h4>
+                            <p class="text-gray-200 text-sm">16th-century Portuguese fort with cobblestone streets and stunning ocean views.</p>
+                        </div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Colonial Heritage</span>
-                        <h4 class="text-lg font-bold text-white mb-2">Galle Fort</h4>
-                        <p class="text-gray-200 text-sm">16th-century Portuguese fort with cobblestone streets and stunning ocean views.</p>
-                    </div>
-                </div>
+                </a>
 
             </div>
 
@@ -749,20 +751,22 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 
                 <!-- Yala National Park -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-56 overflow-hidden">
-                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg" alt="Yala National Park Wildlife" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="{{ route('destinations.yala', ['locale' => app()->getLocale()]) }}" class="block">
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg" alt="Yala National Park Wildlife" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4">
+                            <span class="inline-block bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Wildlife</span>
+                            <h4 class="text-lg font-bold text-white mb-1">Yala National Park</h4>
+                            <p class="text-gray-200 text-sm">Sri Lanka's premier wildlife destination with leopards and elephants.</p>
+                        </div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="inline-block bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Wildlife</span>
-                        <h4 class="text-lg font-bold text-white mb-1">Yala National Park</h4>
-                        <p class="text-gray-200 text-sm">Sri Lanka's premier wildlife destination with leopards and elephants.</p>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Polonnaruwa -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                <a href="{{ route('destinations.polonnaruwa', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-56 overflow-hidden">
                         <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/d7/27/d9.jpg" alt="Polonnaruwa Ancient Ruins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -772,10 +776,10 @@
                         <h4 class="text-lg font-bold text-white mb-1">Polonnaruwa</h4>
                         <p class="text-gray-200 text-sm">Medieval capital with remarkable stone sculptures and ruins.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Hiriketiya Beach -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                <a href="{{ route('destinations.hiriketiya', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-56 overflow-hidden">
                         <img src="https://wanderon-images.gumlet.io/blogs/new/2024/05/hirketiya.jpg" alt="Hiriketiya Beach Paradise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -785,7 +789,7 @@
                         <h4 class="text-lg font-bold text-white mb-1">Hiriketiya Beach</h4>
                         <p class="text-gray-200 text-sm">Perfect horseshoe bay for surfing and beach relaxation.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Colombo -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">

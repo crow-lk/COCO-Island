@@ -56,6 +56,22 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
         return view('modern-nuwaraeliya');
     })->name('destinations.nuwaraeliya');
 
+    Route::get('/destinations/galle-fort', function () {
+        return view('modern-gallefort');
+    })->name('destinations.gallefort');
+
+    Route::get('/destinations/yala-national-park', function () {
+        return view('modern-yala');
+    })->name('destinations.yala');
+
+    Route::get('/destinations/polonnaruwa', function () {
+        return view('modern-polonnaruwa');
+    })->name('destinations.polonnaruwa');
+
+    Route::get('/destinations/hiriketiya-beach', function () {
+        return view('modern-hiriketiya');
+    })->name('destinations.hiriketiya');
+
     // Dynamic tour routes
     Route::get('/tours/{slug}', [TourController::class, 'modernShow'])->name('tours.show');
 
