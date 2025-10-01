@@ -703,7 +703,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 
                 <!-- Anuradhapura -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                <a href="{{ route('destinations.anuradhapura', ['locale' => app()->getLocale()]) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-64 overflow-hidden">
                         <img src="https://travelrebels.com/wp-content/uploads/2018/06/anuradhapura-sunset.jpg" alt="Anuradhapura Ancient City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -713,20 +713,22 @@
                         <h4 class="text-lg font-bold text-white mb-2">Anuradhapura</h4>
                         <p class="text-gray-200 text-sm">Sacred city with ancient dagobas and the sacred Bodhi Tree, dating back 2,500 years.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Nuwara Eliya -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://lakpura.com/cdn/shop/files/LK951R0000-10-E_4fb5ce5e-c060-481b-9ee3-429c7a3a7b72.jpg?v=1689939550&width=3840" alt="Nuwara Eliya Tea Country" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <a href="{{ route('destinations.nuwaraeliya', ['locale' => app()->getLocale()]) }}" class="block">
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://lakpura.com/cdn/shop/files/LK951R0000-10-E_4fb5ce5e-c060-481b-9ee3-429c7a3a7b72.jpg?v=1689939550&width=3840" alt="Nuwara Eliya Tea Country" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <span class="inline-block bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Hill Country</span>
+                            <h4 class="text-lg font-bold text-white mb-2">Nuwara Eliya</h4>
+                            <p class="text-gray-200 text-sm">Cool mountain retreat with lush tea plantations and colonial charm in the clouds.</p>
+                        </div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Hill Country</span>
-                        <h4 class="text-lg font-bold text-white mb-2">Nuwara Eliya</h4>
-                        <p class="text-gray-200 text-sm">Cool mountain retreat with lush tea plantations and colonial charm in the clouds.</p>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Galle Fort -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">

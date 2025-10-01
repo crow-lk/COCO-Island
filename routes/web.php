@@ -48,6 +48,14 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
         return view('modern-sigiriya');
     })->name('destinations.sigiriya');
 
+    Route::get('/destinations/anuradhapura', function () {
+        return view('modern-anuradhapura');
+    })->name('destinations.anuradhapura');
+
+    Route::get('/destinations/nuwara-eliya', function () {
+        return view('modern-nuwaraeliya');
+    })->name('destinations.nuwaraeliya');
+
     // Dynamic tour routes
     Route::get('/tours/{slug}', [TourController::class, 'modernShow'])->name('tours.show');
 
