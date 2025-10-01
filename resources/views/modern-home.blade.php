@@ -690,7 +690,7 @@
                             <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">UNESCO World Heritage</span>
                             <h3 class="text-3xl font-bold text-white mb-4">Sigiriya Rock Fortress</h3>
                             <p class="text-gray-200 text-lg mb-6 leading-relaxed">Marvel at this 5th-century citadel rising 200 meters from the jungle floor. Climb the ancient rock fortress adorned with stunning frescoes and gardens, offering breathtaking panoramic views of Sri Lanka's cultural landscape.</p>
-                            <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300">
+                            <a href="{{ route('destinations.sigiriya', ['locale' => app()->getLocale()]) }}" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300">
                                 <i class="fas fa-mountain mr-2"></i>
                                 Explore Sigiriya
                             </a>

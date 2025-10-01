@@ -43,6 +43,11 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|si|ta|de|fr|ru
         return view('modern-terms-conditions');
     })->name('terms.conditions');
 
+    // Destination pages
+    Route::get('/destinations/sigiriya', function () {
+        return view('modern-sigiriya');
+    })->name('destinations.sigiriya');
+
     // Dynamic tour routes
     Route::get('/tours/{slug}', [TourController::class, 'modernShow'])->name('tours.show');
 
