@@ -537,11 +537,11 @@
             </div>
 
             <!-- Main Offer Card -->
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden scroll-animate">
-                <div class="grid lg:grid-cols-2">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden scroll-animate min-h-screen flex flex-col justify-center">
+                <div class="grid lg:grid-cols-2 h-full">
                     <!-- Left: Image with Overlay -->
                     <div class="relative h-96 lg:h-auto">
-                        <img src="{{ asset('frontend/assets/img/Muneswaram-temple.jpg') }}" alt="Trails of Ramayana" class="w-full h-full object-cover">
+                        <img src="{{ asset('frontend/assets/img/12days.jpeg') }}" alt="Trails of Ramayana" class="absolute inset-0 m-auto max-w-full max-h-full object-contain h-full w-full" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                         
                         <!-- Gradient Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -553,8 +553,77 @@
                             </div>
                         </div>
                         
-                        <!-- Countdown Timer -->
-                        <div class="absolute bottom-6 left-6 right-6">
+                        <!-- Countdown Timer moved below pricing -->
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <!-- Tour Title -->
+                        <div class="mb-8">
+                            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Sri Lanka Scenic Escapes</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">12 Days & 11 Nights Tour in Sri Lanka<br>
+                                <span class="font-semibold text-primary-600">Signature Sri Lanka Experience</span><br>
+                                Explore ancient cities, misty highlands, golden beaches, and vibrant culture with our expertly crafted itinerary. Every day is packed with highlights, comfort, and authentic local experiences.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-plane-arrival text-primary-500 mr-3"></i>
+                                    <span>Airport Welcome & Transfers</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-mountain text-primary-500 mr-3"></i>
+                                    <span>Sigiriya Rock Fortress</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-leaf text-primary-500 mr-3"></i>
+                                    <span>Pinnawala Elephant Orphanage</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-spa text-primary-500 mr-3"></i>
+                                    <span>Hot Air Ballooning (Nov-May)</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-tree text-primary-500 mr-3"></i>
+                                    <span>Anuradhapura & Polonnaruwa</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-water text-primary-500 mr-3"></i>
+                                    <span>Village Tour & Tea Safari</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-umbrella-beach text-primary-500 mr-3"></i>
+                                    <span>Beach Relaxation in Galle</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-700">
+                                    <i class="fas fa-city text-primary-500 mr-3"></i>
+                                    <span>Colombo City & Shopping Tour</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <p class="text-sm text-gray-600 mb-1">Regular Price</p>
+                                        <p class="text-lg text-gray-400 line-through">$2,500</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
+                                        <p class="text-2xl font-bold text-primary-600">$1,800</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600">Per Person</span>
+                                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                        Save $700 (28% OFF)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Countdown Timer (now below pricing) -->
+                        <div class="mb-8">
                             <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 text-center">
                                 <p class="text-gray-800 font-semibold mb-4 text-sm">⏰ Offer Ends In:</p>
                                 <div id="countdown" class="grid grid-cols-4 gap-2">
@@ -573,57 +642,6 @@
                                     <div class="text-center">
                                         <div id="seconds" class="text-2xl font-bold text-primary-600 mb-1">0</div>
                                         <div class="text-xs text-gray-600 uppercase tracking-wide">Secs</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Content -->
-                    <div class="p-8 lg:p-12 flex flex-col justify-center">
-                        <!-- Tour Title -->
-                        <div class="mb-8">
-                            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Trails of Ramayana Tour</h3>
-                            <p class="text-gray-600 leading-relaxed mb-6">Embark on a spiritual journey through Sri Lanka's sacred Ramayana trail. Experience 10 days of mystical temples, ancient legends, and profound cultural insights with expert local guides who bring these timeless stories to life.</p>
-                            
-                            <!-- Tour Highlights -->
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-calendar-alt text-primary-500 mr-3"></i>
-                                    <span>10 Days / 9 Nights</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-users text-primary-500 mr-3"></i>
-                                    <span>Small Groups Only</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-map-marked-alt text-primary-500 mr-3"></i>
-                                    <span>Sacred Sites Tour</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-user-tie text-primary-500 mr-3"></i>
-                                    <span>Expert Local Guide</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pricing -->
-                        <div class="mb-8">
-                            <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div>
-                                        <p class="text-sm text-gray-600 mb-1">Regular Price</p>
-                                        <p class="text-lg text-gray-400 line-through">₹41,500</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
-                                        <p class="text-2xl font-bold text-primary-600">₹25,999</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-sm text-gray-600">Per Person</span>
-                                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                                        Save ₹15,501 (37% OFF)
                                     </div>
                                 </div>
                             </div>
@@ -1275,7 +1293,7 @@
 
         // Countdown Timer
         function countdown() {
-            const endDate = new Date('December 02, 2026 20:20:22').getTime();
+            const endDate = new Date('December 31, 2025 23:59:59').getTime();
             const now = new Date().getTime();
             const timeLeft = endDate - now;
 
