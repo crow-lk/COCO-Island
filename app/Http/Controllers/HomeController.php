@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LimitedTimeOffer;
 use App\Models\Tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -69,10 +70,15 @@ class HomeController extends Controller
                                ->orderBy('display_order')
                                ->get();
             
+            $limitedTimeOffer = LimitedTimeOffer::active()
+                ->ordered()
+                ->first();
+            
             Log::debug('Popular tours loaded for modern view: ' . $popularTours->count());
         } catch (\Exception $e) {
             Log::error('Error loading tours for modern view: ' . $e->getMessage());
             $popularTours = collect(); // Empty collection as fallback
+            $limitedTimeOffer = null;
         }
         
         // Set locale if not already set
@@ -83,7 +89,8 @@ class HomeController extends Controller
         
         return view('modern-home', [
             'popularTours' => $popularTours,
-            'currentLocale' => app()->getLocale()
+            'currentLocale' => app()->getLocale(),
+            'limitedTimeOffer' => $limitedTimeOffer,
         ]);
     }
 

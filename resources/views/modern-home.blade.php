@@ -519,6 +519,34 @@
     </section>
 
     <!-- Special Offer Section -->
+    @if($limitedTimeOffer)
+        @php
+            $heroImagePath = $limitedTimeOffer->hero_image;
+            $heroImage = $heroImagePath
+                ? (\Illuminate\Support\Str::startsWith($heroImagePath, ['http://', 'https://']) ? $heroImagePath : asset($heroImagePath))
+                : asset('frontend/assets/img/12days.jpeg');
+            $sectionIconClass = $limitedTimeOffer->section_icon ?? 'fas fa-fire';
+            $floatingBadgeText = $limitedTimeOffer->floating_badge_text ?? 'HOT DEAL';
+            $floatingBadgeIcon = $limitedTimeOffer->floating_badge_icon;
+            $floatingBadgeIconIsClass = $floatingBadgeIcon && \Illuminate\Support\Str::contains($floatingBadgeIcon, 'fa-');
+            $countdownEndsAt = ($limitedTimeOffer->countdown_enabled && $limitedTimeOffer->countdown_ends_at)
+                ? $limitedTimeOffer->countdown_ends_at->toIso8601String()
+                : null;
+            $primaryCtaLabel = $limitedTimeOffer->primary_cta_label ?? null;
+            $primaryCtaUrl = $limitedTimeOffer->primary_cta_url ?? null;
+            $primaryCtaIcon = $limitedTimeOffer->primary_cta_icon ?? null;
+            $primaryCtaIconIsClass = $primaryCtaIcon && \Illuminate\Support\Str::contains($primaryCtaIcon, 'fa-');
+            $secondaryCtas = is_array($limitedTimeOffer->secondary_ctas) ? $limitedTimeOffer->secondary_ctas : [];
+            $trustIndicators = is_array($limitedTimeOffer->trust_indicators) ? $limitedTimeOffer->trust_indicators : [];
+            $highlights = is_array($limitedTimeOffer->highlights) ? $limitedTimeOffer->highlights : [];
+            $currency = strtoupper($limitedTimeOffer->currency ?? 'USD');
+            $formatPrice = function ($value) use ($currency) {
+                if ($value === null) {
+                    return null;
+                }
+                return $currency . ' ' . number_format((float) $value, 0);
+            };
+        @endphp
     <section class="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-orange-50 relative overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 opacity-10">
@@ -530,10 +558,14 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-orange-500 rounded-full mb-6 scroll-animate">
-                    <i class="fas fa-fire text-white text-base"></i>
+                    <i class="{{ $sectionIconClass }} text-white text-base"></i>
                 </div>
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Limited Time Offer</p>
-                <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Exclusive Sri Lanka Experience</h2>
+                @if($limitedTimeOffer->section_label)
+                    <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">{{ $limitedTimeOffer->section_label }}</p>
+                @endif
+                @if($limitedTimeOffer->section_title)
+                    <h2 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">{{ $limitedTimeOffer->section_title }}</h2>
+                @endif
             </div>
 
             <!-- Main Offer Card -->
@@ -541,161 +573,203 @@
                 <div class="grid lg:grid-cols-2 h-full">
                     <!-- Left: Image with Overlay -->
                     <div class="relative h-96 lg:h-auto">
-                        <img src="{{ asset('frontend/assets/img/12days.jpeg') }}" alt="Trails of Ramayana" class="absolute inset-0 m-auto max-w-full max-h-full object-contain h-full w-full" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                        <img src="{{ $heroImage }}" alt="{{ $limitedTimeOffer->offer_title }}" class="absolute inset-0 m-auto max-w-full max-h-full object-contain h-full w-full" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                         
                         <!-- Gradient Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         
                         <!-- Floating Badge -->
-                        <div class="absolute top-6 left-6">
-                            <div class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
-                                🔥 HOT DEAL
+                        @if($floatingBadgeText || $floatingBadgeIcon)
+                            <div class="absolute top-6 left-6">
+                                <div class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse flex items-center gap-2">
+                                    @if($floatingBadgeIcon)
+                                        @if($floatingBadgeIconIsClass)
+                                            <i class="{{ $floatingBadgeIcon }}"></i>
+                                        @else
+                                            <span>{{ $floatingBadgeIcon }}</span>
+                                        @endif
+                                    @endif
+                                    @if($floatingBadgeText)
+                                        <span>{{ $floatingBadgeText }}</span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                        
-                        <!-- Countdown Timer moved below pricing -->
+                        @endif
                     </div>
 
                     <!-- Right: Content -->
                     <div class="p-8 lg:p-12 flex flex-col justify-center">
                         <!-- Tour Title -->
                         <div class="mb-8">
-                            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4">Sri Lanka Scenic Escapes</h3>
-                            <p class="text-gray-600 leading-relaxed mb-6">12 Days & 11 Nights Tour in Sri Lanka<br>
-                                <span class="font-semibold text-primary-600">Signature Sri Lanka Experience</span><br>
-                                Explore ancient cities, misty highlands, golden beaches, and vibrant culture with our expertly crafted itinerary. Every day is packed with highlights, comfort, and authentic local experiences.
-                            </p>
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-plane-arrival text-primary-500 mr-3"></i>
-                                    <span>Airport Welcome & Transfers</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-mountain text-primary-500 mr-3"></i>
-                                    <span>Sigiriya Rock Fortress</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-leaf text-primary-500 mr-3"></i>
-                                    <span>Pinnawala Elephant Orphanage</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-spa text-primary-500 mr-3"></i>
-                                    <span>Hot Air Ballooning (Nov-May)</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-tree text-primary-500 mr-3"></i>
-                                    <span>Anuradhapura & Polonnaruwa</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-water text-primary-500 mr-3"></i>
-                                    <span>Village Tour & Tea Safari</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-umbrella-beach text-primary-500 mr-3"></i>
-                                    <span>Beach Relaxation in Galle</span>
-                                </div>
-                                <div class="flex items-center text-sm text-gray-700">
-                                    <i class="fas fa-city text-primary-500 mr-3"></i>
-                                    <span>Colombo City & Shopping Tour</span>
-                                </div>
+                            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4">{{ $limitedTimeOffer->offer_title }}</h3>
+                            <div class="text-gray-600 leading-relaxed mb-6 space-y-2">
+                                @if($limitedTimeOffer->offer_duration)
+                                    <p>{{ $limitedTimeOffer->offer_duration }}</p>
+                                @endif
+                                @if($limitedTimeOffer->offer_highlight)
+                                    <p><span class="font-semibold text-primary-600">{{ $limitedTimeOffer->offer_highlight }}</span></p>
+                                @endif
+                                @if($limitedTimeOffer->offer_summary)
+                                    <div>{!! $limitedTimeOffer->offer_summary !!}</div>
+                                @endif
                             </div>
+                            @if(!empty($highlights))
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    @foreach($highlights as $highlight)
+                                        <div class="flex items-center text-sm text-gray-700">
+                                            @if(!empty($highlight['icon']))
+                                                <i class="{{ $highlight['icon'] }} text-primary-500 mr-3"></i>
+                                            @endif
+                                            <span>{{ $highlight['text'] ?? '' }}</span>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
 
                         <!-- Pricing -->
-                        <div class="mb-8">
-                            <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div>
-                                        <p class="text-sm text-gray-600 mb-1">Regular Price</p>
-                                        <p class="text-lg text-gray-400 line-through">$2,500</p>
+                        @if($formatPrice($limitedTimeOffer->regular_price) || $formatPrice($limitedTimeOffer->special_price) || $limitedTimeOffer->savings_text)
+                            <div class="mb-8">
+                                <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                                        <div>
+                                            <p class="text-sm text-gray-600 mb-1">Regular Price</p>
+                                            <p class="text-lg text-gray-400 line-through">
+                                                {{ $formatPrice($limitedTimeOffer->regular_price) ?? 'N/A' }}
+                                            </p>
+                                        </div>
+                                        <div class="text-left sm:text-right">
+                                            <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
+                                            <p class="text-2xl font-bold text-primary-600">
+                                                {{ $formatPrice($limitedTimeOffer->special_price) ?? 'N/A' }}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="text-right">
-                                        <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
-                                        <p class="text-2xl font-bold text-primary-600">$1,800</p>
-                                    </div>
+                                    @if($limitedTimeOffer->price_note || $limitedTimeOffer->savings_text)
+                                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                            @if($limitedTimeOffer->price_note)
+                                                <span class="text-sm text-gray-600">{{ $limitedTimeOffer->price_note }}</span>
+                                            @endif
+                                            @if($limitedTimeOffer->savings_text)
+                                                <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                                    {{ $limitedTimeOffer->savings_text }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                    @endif
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-sm text-gray-600">Per Person</span>
-                                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                                        Save $700 (28% OFF)
+                            </div>
+                        @endif
+
+                        <!-- Countdown Timer -->
+                        @if($countdownEndsAt)
+                            <div class="mb-8">
+                                <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 text-center" data-countdown-end="{{ $countdownEndsAt }}">
+                                    <p class="text-gray-800 font-semibold mb-4 text-sm">{{ $limitedTimeOffer->countdown_label ?? '⏰ Offer Ends In:' }}</p>
+                                    <div id="countdown" class="grid grid-cols-4 gap-2">
+                                        <div class="text-center">
+                                            <div id="days" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Days</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div id="hours" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Hours</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div id="minutes" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Mins</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div id="seconds" class="text-2xl font-bold text-primary-600 mb-1">0</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Secs</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Countdown Timer (now below pricing) -->
-                        <div class="mb-8">
-                            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 text-center">
-                                <p class="text-gray-800 font-semibold mb-4 text-sm">⏰ Offer Ends In:</p>
-                                <div id="countdown" class="grid grid-cols-4 gap-2">
-                                    <div class="text-center">
-                                        <div id="days" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Days</div>
-                                    </div>
-                                    <div class="text-center">
-                                        <div id="hours" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Hours</div>
-                                    </div>
-                                    <div class="text-center">
-                                        <div id="minutes" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Mins</div>
-                                    </div>
-                                    <div class="text-center">
-                                        <div id="seconds" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                        <div class="text-xs text-gray-600 uppercase tracking-wide">Secs</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
 
                         <!-- Action Buttons -->
                         <div class="space-y-4">
-                            <a href="https://wa.me/94776605054" class="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-orange-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                                <i class="fab fa-whatsapp mr-3 text-lg"></i>
-                                Book This Exclusive Offer
-                            </a>
-                            <div class="flex gap-4">
-                                <a href="#" class="flex-1 inline-flex items-center justify-center px-4 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl hover:border-primary-500 hover:text-primary-600 transition-colors duration-300">
-                                    <i class="fas fa-info-circle mr-2"></i>
-                                    More Details
+                            @if($primaryCtaLabel && $primaryCtaUrl)
+                                <a href="{{ $primaryCtaUrl }}" class="w-full inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-orange-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                    @if($primaryCtaIcon)
+                                        @if($primaryCtaIconIsClass)
+                                            <i class="{{ $primaryCtaIcon }} mr-3 text-lg"></i>
+                                        @else
+                                            <span class="mr-3 text-lg">{{ $primaryCtaIcon }}</span>
+                                        @endif
+                                    @endif
+                                    {{ $primaryCtaLabel }}
                                 </a>
-                                <a href="#" class="flex-1 inline-flex items-center justify-center px-4 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl hover:border-primary-500 hover:text-primary-600 transition-colors duration-300">
-                                    <i class="fas fa-share-alt mr-2"></i>
-                                    Share Offer
-                                </a>
-                            </div>
+                            @endif
+                            @if(!empty($secondaryCtas))
+                                <div class="flex flex-wrap gap-4">
+                                    @foreach($secondaryCtas as $cta)
+                                        @php
+                                            $ctaIcon = $cta['icon'] ?? null;
+                                            $ctaIconIsClass = $ctaIcon && \Illuminate\Support\Str::contains($ctaIcon, 'fa-');
+                                        @endphp
+                                        <a href="{{ $cta['url'] ?? '#' }}" class="flex-1 min-w-[45%] inline-flex items-center justify-center px-4 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl hover:border-primary-500 hover:text-primary-600 transition-colors duration-300">
+                                            @if($ctaIcon)
+                                                @if($ctaIconIsClass)
+                                                    <i class="{{ $ctaIcon }} mr-2"></i>
+                                                @else
+                                                    <span class="mr-2">{{ $ctaIcon }}</span>
+                                                @endif
+                                            @endif
+                                            {{ $cta['label'] ?? '' }}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
 
                         <!-- Trust Indicators -->
-                        <div class="mt-8 pt-6 border-t border-gray-200">
-                            <div class="flex items-center justify-between text-sm text-gray-600">
-                                <div class="flex items-center">
-                                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
-                                    <span>Secure Booking</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-undo text-blue-500 mr-2"></i>
-                                    <span>Free Cancellation</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-headset text-purple-500 mr-2"></i>
-                                    <span>24/7 Support</span>
+                        @if(!empty($trustIndicators))
+                            <div class="mt-8 pt-6 border-t border-gray-200">
+                                <div class="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-600">
+                                    @foreach($trustIndicators as $indicator)
+                                        @php
+                                            $indicatorIcon = $indicator['icon'] ?? null;
+                                            $indicatorIconIsClass = $indicatorIcon && \Illuminate\Support\Str::contains($indicatorIcon, 'fa-');
+                                        @endphp
+                                        <div class="flex items-center gap-2">
+                                            @if($indicatorIcon)
+                                                @if($indicatorIconIsClass)
+                                                    <i class="{{ $indicatorIcon }} text-green-500"></i>
+                                                @else
+                                                    <span>{{ $indicatorIcon }}</span>
+                                                @endif
+                                            @endif
+                                            <span>{{ $indicator['text'] ?? '' }}</span>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
             <!-- Bottom CTA -->
-            <div class="text-center mt-12 scroll-animate">
-                <p class="text-gray-600 mb-4">⚡ Only 5 spots remaining for this exclusive experience!</p>
-                <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
-                    <i class="fas fa-clock mr-2"></i>
-                    Limited time offer - Book now to secure your spot!
+            @if($limitedTimeOffer->bottom_note || $limitedTimeOffer->bottom_badge_text)
+                <div class="text-center mt-12 scroll-animate">
+                    @if($limitedTimeOffer->bottom_note)
+                        <p class="text-gray-600 mb-4">{{ $limitedTimeOffer->bottom_note }}</p>
+                    @endif
+                    @if($limitedTimeOffer->bottom_badge_text)
+                        <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            @if($limitedTimeOffer->bottom_badge_icon)
+                                <i class="{{ $limitedTimeOffer->bottom_badge_icon }} mr-2"></i>
+                            @endif
+                            {{ $limitedTimeOffer->bottom_badge_text }}
+                        </div>
+                    @endif
                 </div>
-            </div>
+            @endif
         </div>
     </section>
+    @endif
 
     <!-- Best Places to Visit Section -->
     <section id="experiences" class="py-16 lg:py-24 bg-gray-50">
@@ -1292,29 +1366,61 @@
         });
 
         // Countdown Timer
-        function countdown() {
-            const endDate = new Date('December 31, 2025 23:59:59').getTime();
-            const now = new Date().getTime();
-            const timeLeft = endDate - now;
+        (function initializeCountdown() {
+            const countdownContainer = document.getElementById('countdown');
+            const countdownWrapper = document.querySelector('[data-countdown-end]');
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days || 0;
-            document.getElementById('hours').textContent = hours || 0;
-            document.getElementById('minutes').textContent = minutes || 0;
-            document.getElementById('seconds').textContent = seconds || 0;
-
-            if (timeLeft < 0) {
-                clearInterval(countdownTimer);
-                document.getElementById('countdown').innerHTML = '<span class="text-base text-primary-600">Offer Expired</span>';
+            if (!countdownContainer || !countdownWrapper) {
+                return;
             }
-        }
 
-        const countdownTimer = setInterval(countdown, 1000);
-        countdown(); // Initial call
+            const targetDate = countdownWrapper.getAttribute('data-countdown-end');
+            if (!targetDate) {
+                return;
+            }
+
+            const targetTime = new Date(targetDate).getTime();
+            if (Number.isNaN(targetTime)) {
+                return;
+            }
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+                return;
+            }
+
+            let timer;
+
+            const updateCountdown = () => {
+                const now = Date.now();
+                const timeLeft = targetTime - now;
+
+                if (timeLeft <= 0) {
+                    if (timer) {
+                        clearInterval(timer);
+                    }
+                    countdownContainer.innerHTML = '<span class="text-base text-primary-600">Offer Expired</span>';
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                daysEl.textContent = Math.max(days, 0);
+                hoursEl.textContent = Math.max(hours, 0);
+                minutesEl.textContent = Math.max(minutes, 0);
+                secondsEl.textContent = Math.max(seconds, 0);
+            };
+
+            updateCountdown();
+            timer = setInterval(updateCountdown, 1000);
+        })();
     </script>
 </body>
 </html>
