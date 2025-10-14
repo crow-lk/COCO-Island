@@ -172,8 +172,8 @@
                 
                 <!-- Legal Links for Homepage -->
                 <div class="border-t border-gray-200 mt-2 pt-2">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Privacy Policy</a>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Terms & Conditions</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">{{ __("messages.legal.privacy") }}</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">{{ __("messages.legal.terms") }}</a>
                 </div>
             @else
                 <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-gray-700 hover:text-primary-600 {{ request()->routeIs('home') ? 'text-primary-500' : '' }}">{{ __('messages.nav.home') }}</a>
@@ -203,8 +203,8 @@
                 
                 <!-- Legal Links -->
                 <div class="border-t border-gray-200 mt-2 pt-2">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Privacy Policy</a>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">Terms & Conditions</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">{{ __("messages.legal.privacy") }}</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600">{{ __("messages.legal.terms") }}</a>
                 </div>
             @endif
             <a href="{{ route('contact', ['locale' => app()->getLocale()]) }}" class="block px-3 py-2 bg-primary-500 text-white rounded-xl mx-3 text-center">{{ __('messages.nav.contact') }}</a>

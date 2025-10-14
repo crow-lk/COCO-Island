@@ -62,19 +62,19 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="about-hero-content text-center">
-                                <h1 class="about-page-title sec-title text-center pt-150">Privacy Policy</h1>
+                                <h1 class="about-page-title sec-title text-center pt-150">{{ __("messages.legal.privacy") }}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    <!-- Privacy Policy Section -->
+    <!-- {{ __("messages.legal.privacy") }} Section -->
     <section class="section pt-70 pb-70 privacy-policy">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
-                    <!-- <h2 class="sec-title text-center mb-40">Privacy Policy</h2> -->
+                    <!-- <h2 class="sec-title text-center mb-40">{{ __("messages.legal.privacy") }}</h2> -->
                     <p class="text-justify">
                         Your privacy matters to us. At <strong>Coco Island Holidays</strong>, we are committed to
                         protecting the personal information you share with us, whether through online inquiries,

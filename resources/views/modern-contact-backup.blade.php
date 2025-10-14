@@ -265,9 +265,9 @@
                                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
                                     </svg>
                                     By submitting this form, you agree to our 
-                                    <a href="{{ route('privacy.policy', app()->getLocale()) }}" class="text-primary hover:text-secondary underline">Privacy Policy</a> 
+                                    <a href="{{ route('privacy.policy', app()->getLocale()) }}" class="text-primary hover:text-secondary underline">{{ __("messages.legal.privacy") }}</a> 
                                     and 
-                                    <a href="{{ route('terms.conditions', app()->getLocale()) }}" class="text-primary hover:text-secondary underline">Terms & Conditions</a>.
+                                    <a href="{{ route('terms.conditions', app()->getLocale()) }}" class="text-primary hover:text-secondary underline">{{ __("messages.legal.terms") }}</a>.
                                     Your personal information will be handled securely and used only to respond to your inquiry.
                                 </p>
                             </div>
@@ -361,9 +361,9 @@
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <div class="mb-4 space-x-6">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">{{ __("messages.legal.terms") }}</a>
                 </div>
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved.</p>
             </div>

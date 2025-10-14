@@ -910,9 +910,9 @@
 
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <div class="mb-4 space-x-6">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.terms") }}</a>
                 </div>
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
             </div>

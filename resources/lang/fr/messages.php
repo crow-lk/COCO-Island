@@ -56,6 +56,28 @@ return [
         'subtitle' => 'Circuits du Sri Lanka sélectionnés avec soin comprenant safaris animaliers, routes du patrimoine culturel et évasions côtières. Parcourez nos itinéraires les plus réservés pour des expériences équilibrées qui combinent nature, histoire et culture locale.',
         'book_now' => 'Réserver Maintenant',
         'inquire_now' => 'Se Renseigner',
+        'fallback_cards' => [
+            'heritage' => [
+                'title' => 'Circuit Patrimoine Culturel',
+                'description' => 'Explorez temples anciens, architecture coloniale et villages traditionnels. Découvrez la riche mosaïque culturelle du Sri Lanka avec des guides locaux experts.',
+                'alt' => 'Circuit Patrimoine Culturel',
+            ],
+            'wildlife' => [
+                'title' => 'Aventure Safari Faune',
+                'description' => 'Vivez la faune incroyable du Sri Lanka : éléphants, léopards et oiseaux exotiques dans des parcs nationaux préservés.',
+                'alt' => 'Aventure Safari Faune',
+            ],
+            'tea_trail' => [
+                'title' => 'Route du Thé des Hautes Terres',
+                'description' => 'Parcourez montagnes brumeuses et plantations de thé émeraude. Découvrez la production de thé de Ceylan et profitez de trajets en train panoramiques.',
+                'alt' => 'Route du Thé des Hautes Terres',
+            ],
+            'coastal' => [
+                'title' => 'Paradis Côtier',
+                'description' => 'Détendez-vous sur des plages immaculées, faites le plein de sports nautiques et explorez de charmantes villes côtières – parfait pour les amoureux de la mer.',
+                'alt' => 'Paradis Côtier',
+            ],
+        ],
     ],
 
     // Special Offers
@@ -64,6 +86,7 @@ return [
         'subtitle' => 'Offre Limitée Dans le Temps',
         'tour_title' => 'Circuit des Sentiers du Ramayana',
         'description' => 'Embarquez pour un voyage spirituel à travers le sentier sacré du Ramayana au Sri Lanka. Vivez 10 jours de temples mystiques, de légendes anciennes et d\'aperçus culturels profonds avec des guides locaux experts qui donnent vie à ces histoires intemporelles.',
+        'default_badge' => 'OFFRE EXCLUSIVE',
         'book_offer' => 'Réserver Cette Offre Exclusive',
         'days_nights' => '10 Jours / 9 Nuits',
         'small_groups' => 'Petits Groupes Seulement',
@@ -75,6 +98,14 @@ return [
         'save_amount' => 'Économisez ₹15,501 (37% DE RÉDUCTION)',
         'spots_remaining' => 'Seulement 5 places restantes pour cette expérience exclusive !',
         'limited_time' => 'Offre limitée dans le temps - Réservez maintenant pour sécuriser votre place !',
+        'countdown_label' => '⏰ Offre se termine dans :',
+        'countdown_units' => [
+            'days' => 'Jours',
+            'hours' => 'Heures',
+            'minutes' => 'Min',
+            'seconds' => 'Sec',
+        ],
+        'offer_expired' => 'Offre expirée',
     ],
 
     // Destinations
@@ -166,6 +197,11 @@ return [
         'title' => 'Termes et conditions',
         'last_updated' => 'Dernière mise à jour',
         'introduction' => 'Ces termes et conditions régissent votre utilisation de notre site web et de nos services.',
+    ],
+
+    'legal' => [
+        'privacy' => 'Politique de confidentialité',
+        'terms' => 'Termes et conditions',
     ],
 
     // Form Elements

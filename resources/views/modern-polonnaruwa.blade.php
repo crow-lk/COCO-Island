@@ -11,10 +11,90 @@
       gtag('config', 'G-Q5TC30C9BX');
     </script>
     
+    @php
+        $destination = destination_content('polonnaruwa');
+        $strings = __('destinations.polonnaruwa');
+        if (!is_array($strings)) {
+            $strings = [];
+        }
+        $sectionMap = [];
+        foreach ($destination['sections'] ?? [] as $sectionItem) {
+            $sectionMap[$sectionItem['key']] = $sectionItem;
+        }
+
+        $defaultTitle = "Polonnaruwa - Sri Lanka's Medieval Garden City";
+        $titleFull = $destination['title']['full'] ?? $defaultTitle;
+        $metaTitle = $titleFull . ' | COCO Island Holidays';
+
+        $defaultDescription = "Stone-carved Buddhas, lotus-ringed tanks, and a royal city planned with elegant symmetry. Experience Polonnaruwa - UNESCO World Heritage medieval capital.";
+        $metaDescriptionSource = $destination['intro'] ?? $defaultDescription;
+        $metaDescription = \Illuminate\Support\Str::limit($metaDescriptionSource, 160, '...');
+
+        $heroTitleMain = $destination['title']['main'] ?? 'Polonnaruwa';
+        $heroTitleHighlight = $destination['title']['highlight'] ?? "Sri Lanka's Medieval Garden City";
+        $heroIntro = $destination['intro'] ?? $defaultDescription;
+        $heroQuickFacts = $strings['hero']['quick_facts'] ?? [];
+
+        $whySection = $sectionMap['why-polonnaruwa-belongs-on-your-itinerary'] ?? ['items' => []];
+        $highlightsSection = $sectionMap['must-see-highlights'] ?? ['items' => []];
+        $experiencesSection = $sectionMap['ways-to-experience-polonnaruwa'] ?? ['items' => []];
+        $bestTimeSection = $sectionMap['best-time-to-visit'] ?? ['items' => []];
+        $practicalSection = $sectionMap['practical-information'] ?? ['items' => []];
+        $howToGetThereSection = $sectionMap['how-to-get-there'] ?? ['items' => []];
+        $pairSection = $sectionMap['pair-it-with'] ?? ['items' => []];
+        $itinerarySection = $sectionMap['sample-one-day-plan-flexible'] ?? ['items' => []];
+        $faqSection = $sectionMap['frequently-asked-questions'] ?? ['items' => []];
+        $responsibleSection = $sectionMap['travel-responsibly'] ?? ['items' => []];
+        $ctaSection = $sectionMap['make-it-seamless-with-coco-island-holidays'] ?? ['items' => []];
+
+        $bestTimeBySlug = [];
+        foreach ($bestTimeSection['items'] ?? [] as $item) {
+            $slug = \Illuminate\Support\Str::slug($item['title'] ?? '');
+            if ($slug) {
+                $bestTimeBySlug[$slug] = $item['description'] ?? '';
+            }
+        }
+
+        $howToGetThereList = array_values(array_filter(array_map(static function ($item) {
+            return $item['description'] ?? null;
+        }, $howToGetThereSection['items'] ?? [])));
+
+        $itinerarySchedules = array_values(array_filter($itinerarySection['items'] ?? [], static function ($item) {
+            return ($item['type'] ?? '') === 'schedule';
+        }));
+        $itineraryNotes = array_values(array_filter($itinerarySection['items'] ?? [], static function ($item) {
+            return ($item['type'] ?? '') === 'note';
+        }));
+
+        $highlightIcons = [
+            'fas fa-crown',
+            'fas fa-square',
+            'fas fa-praying-hands',
+            'fas fa-building',
+            'fas fa-chess-rook',
+            'fas fa-swimming-pool',
+            'fas fa-landmark'
+        ];
+
+        $pairGradients = [
+            'from-green-500 to-emerald-600',
+            'from-orange-500 to-red-600',
+            'from-purple-500 to-indigo-600',
+            'from-blue-500 to-cyan-600',
+        ];
+
+        $pairIcons = [
+            'fas fa-elephant',
+            'fas fa-mountain',
+            'fas fa-place-of-worship',
+            'fas fa-leaf'
+        ];
+    @endphp
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polonnaruwa - Sri Lanka's Medieval Garden City | COCO Island Holidays</title>
-    <meta name="description" content="Stone-carved Buddhas, lotus-ringed tanks, and a royal city planned with elegant symmetry. Experience Polonnaruwa - UNESCO World Heritage medieval capital.">
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDescription }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- Favicon -->
@@ -223,47 +303,42 @@
                 </div>
             </div>
             <h1 class="text-4xl lg:text-7xl font-bold mb-6 leading-tight">
-                Polonnaruwa <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">Medieval Garden City</span>
+                {{ $heroTitleMain }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">{{ $heroTitleHighlight }}</span>
             </h1>
             <p class="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed max-w-4xl mx-auto">
-                Stone-carved Buddhas, lotus-ringed tanks, and a royal city planned with elegant symmetry. UNESCO World Heritage medieval capital of Sri Lanka.
+                {{ $heroIntro }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <a href="{{ route('contact', app()->getLocale()) }}" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-calendar-check mr-3"></i>
-                    Plan Your Visit
+                    {{ $strings['hero']['cta_primary'] ?? 'Plan Your Visit' }}
                 </a>
                 <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <i class="fab fa-whatsapp mr-3"></i>
-                    Contact Heritage Guide
+                    {{ $strings['hero']['cta_secondary'] ?? 'Contact Heritage Guide' }}
                 </a>
             </div>
 
             <!-- Quick Facts -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                    <div class="text-2xl font-bold text-amber-300 mb-1">UNESCO</div>
-                    <div class="text-sm text-white/80">World Heritage</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                    <div class="text-2xl font-bold text-amber-300 mb-1">11th-13th C</div>
-                    <div class="text-sm text-white/80">Medieval Capital</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                    <div class="text-2xl font-bold text-amber-300 mb-1">Garden City</div>
-                    <div class="text-sm text-white/80">Royal Planning</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
-                    <div class="text-2xl font-bold text-amber-300 mb-1">Bicycle</div>
-                    <div class="text-sm text-white/80">Friendly Tours</div>
-                </div>
+                @forelse($heroQuickFacts as $fact)
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
+                        <div class="text-2xl font-bold text-amber-300 mb-1">{{ $fact['value'] ?? '' }}</div>
+                        <div class="text-sm text-white/80">{{ $fact['label'] ?? '' }}</div>
+                    </div>
+                @empty
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center">
+                        <div class="text-2xl font-bold text-amber-300 mb-1">UNESCO</div>
+                        <div class="text-sm text-white/80">World Heritage</div>
+                    </div>
+                @endforelse
             </div>
         </div>
 
         <!-- Scroll Down Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center scroll-animate">
             <div class="flex flex-col items-center text-white/80">
-                <span class="text-sm mb-2">Discover Ancient City</span>
+                <span class="text-sm mb-2">{{ $strings['hero']['scroll_hint'] ?? 'Discover Ancient City' }}</span>
                 <div class="animate-bounce">
                     <i class="fas fa-chevron-down text-xl"></i>
                 </div>
@@ -276,60 +351,26 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 scroll-animate">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Ancient Capital</p>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Why Polonnaruwa Belongs on Your Itinerary</h2>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['why']['preheading'] ?? 'Ancient Capital' }}</p>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">{{ $whySection['heading'] ?? 'Why Polonnaruwa Belongs on Your Itinerary' }}</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    A showcase of hydraulic genius and refined architecture set across leafy, wildlife-friendly grounds.
+                    {{ $strings['sections']['why']['description'] ?? 'A showcase of hydraulic genius and refined architecture set across leafy, wildlife-friendly grounds.' }}
                 </p>
             </div>
 
             <!-- Features Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                
-                <!-- A Complete Ancient City -->
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl">
-                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-city text-white text-xl"></i>
+                @foreach(array_slice($whySection['items'] ?? [], 0, 4) as $whyItem)
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-landmark text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">{{ $whyItem['title'] ?? '' }}</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            {{ $whyItem['description'] ?? '' }}
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">A Complete Ancient City</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Palaces, audience halls, monasteries, image houses, bathing pools, and royal parks—set across leafy, wildlife-friendly grounds.
-                    </p>
-                </div>
-
-                <!-- Masterpieces in Stone -->
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl">
-                    <div class="w-16 h-16 bg-gradient-to-br from-stone-500 to-gray-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-praying-hands text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Masterpieces in Stone</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        The Gal Vihara quartet of Buddha images is among the island's finest rock sculpture masterpieces.
-                    </p>
-                </div>
-
-                <!-- Water & Wellness -->
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-water text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Water & Wellness</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        The city's lifeblood—Parakrama Samudraya ("Sea of Parakrama")—still shimmers beside the ruins.
-                    </p>
-                </div>
-
-                <!-- Easy to Enjoy -->
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-bicycle text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Easy to Enjoy</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Flat terrain, shady trees, and well-marked sites invite gentle cycling and unhurried photography.
-                    </p>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
@@ -339,94 +380,28 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 scroll-animate">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Archaeological Wonders</p>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Must-See Highlights</h2>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['highlights']['preheading'] ?? 'Archaeological Wonders' }}</p>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">{{ $highlightsSection['heading'] ?? 'Must-see highlights' }}</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    From royal palaces to sacred shrines, discover the architectural gems of this medieval capital.
+                    {{ $strings['sections']['highlights']['description'] ?? 'From royal palaces to sacred shrines, discover the architectural gems of this medieval capital.' }}
                 </p>
             </div>
 
             <!-- Highlights Timeline -->
             <div class="relative">
-                
-                <!-- Royal Palace -->
-                <div class="timeline-item flex items-start mb-12 scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-crown text-white text-lg"></i>
+                @foreach($highlightsSection['items'] ?? [] as $index => $highlight)
+                    <div class="timeline-item flex items-start mb-12 scroll-animate">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-orange-600 rounded-full flex items-center justify-center mr-6 relative z-10">
+                            <i class="{{ $highlightIcons[$index % count($highlightIcons)] ?? 'fas fa-landmark' }} text-white text-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ $highlight['title'] ?? '' }}</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                {{ $highlight['description'] ?? ($highlight['details'] ?? '') }}
+                            </p>
+                        </div>
                     </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Royal Palace & Audience Hall</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Tall brick walls and lion-flanked steps where kings held court. Experience the grandeur of Parakramabahu I's royal complex.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- The Quadrangle -->
-                <div class="timeline-item flex items-start mb-12 scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-square text-white text-lg"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">The Quadrangle (Dalada Maluwa)</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            A compact treasure trove—Vatadage (circular relic house), Hatadage and Atadage shrines, Gal Potha (Stone Book), and Nissanka Latha Mandapaya with its lily-stem pillars.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Gal Vihara -->
-                <div class="timeline-item flex items-start mb-12 scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-stone-500 to-gray-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-praying-hands text-white text-lg"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Gal Vihara</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Four sublime Buddha statues carved into a single granite outcrop—seated, standing, and the famous reclining figure. A masterpiece of rock sculpture.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Lankatilaka Image House -->
-                <div class="timeline-item flex items-start mb-12 scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-building text-white text-lg"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Lankatilaka Image House</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Soaring corridor leading to a colossal standing Buddha framed by towering brick walls. An architectural marvel of ancient engineering.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Stupas -->
-                <div class="timeline-item flex items-start mb-12 scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-chess-rook text-white text-lg"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Rankoth Vehera & Kiri Vehera</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Elegant stupas rising above tree canopy—great for perspective shots and understanding Buddhist architecture.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Water Features -->
-                <div class="timeline-item flex items-start scroll-animate">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mr-6 relative z-10">
-                        <i class="fas fa-swimming-pool text-white text-lg"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Lotus Pond & Royal Bath</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Beautiful geometric stoneworks that show off royal leisure and engineering—Nelum Pokuna and Kumara Pokuna demonstrate ancient hydraulic mastery.
-                        </p>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
@@ -440,40 +415,24 @@
                         <i class="fas fa-route text-3xl"></i>
                     </div>
                 </div>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Ways to Experience Polonnaruwa</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <div class="glass-morphism rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4">Cycle the Sacred City</h3>
-                        <p class="text-primary-100 leading-relaxed">
-                            Quality bikes, helmets, cool-box, and a route that strings the highlights together with shady rest stops. Most popular way to explore.
-                        </p>
-                    </div>
-                    <div class="glass-morphism rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4">Archaeology Walk with Expert Guide</h3>
-                        <p class="text-primary-100 leading-relaxed">
-                            Decode moonstones, guardstones, and city planning—from royal ritual to everyday monastic life with licensed guides.
-                        </p>
-                    </div>
-                    <div class="glass-morphism rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4">Golden-Hour Photography Loop</h3>
-                        <p class="text-primary-100 leading-relaxed">
-                            Soft light over stupas and ponds; finish at Parakrama Samudraya's lakeside for spectacular sunset shots.
-                        </p>
-                    </div>
-                    <div class="glass-morphism rounded-2xl p-6">
-                        <h3 class="text-xl font-bold mb-4">Family Adventure</h3>
-                        <p class="text-primary-100 leading-relaxed">
-                            Shorter segments with a "stamp card" (find the lion, the circular shrine, the stone book) to keep kids engaged and learning.
-                        </p>
-                    </div>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">{{ $experiencesSection['heading'] ?? 'Ways to experience Polonnaruwa' }}</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-left">
+                    @foreach($experiencesSection['items'] ?? [] as $experience)
+                        <div class="glass-morphism rounded-2xl p-6">
+                            <h3 class="text-xl font-bold mb-4">{{ $experience['title'] ?? '' }}</h3>
+                            <p class="text-primary-100 leading-relaxed">
+                                {{ $experience['description'] ?? '' }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
                 <div class="glass-morphism rounded-2xl p-8">
-                    <h3 class="text-2xl font-bold mb-4">Experience Medieval Grandeur</h3>
-                    <p class="text-primary-100 mb-6">Explore Sri Lanka's most beautiful open-air museum with expert guides who bring ancient stories to life.</p>
+                    <h3 class="text-2xl font-bold mb-4">{{ $strings['sections']['experiences']['cta_heading'] ?? 'Experience Medieval Grandeur' }}</h3>
+                    <p class="text-primary-100 mb-6">{{ $strings['sections']['experiences']['cta_description'] ?? "Explore Sri Lanka's most beautiful open-air museum with expert guides who bring ancient stories to life." }}</p>
                     <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                         <i class="fab fa-whatsapp mr-3"></i>
-                        Plan Your Ancient City Tour
+                        {{ $strings['sections']['experiences']['cta_button'] ?? 'Plan Your Ancient City Tour' }}
                     </a>
                 </div>
             </div>
@@ -484,7 +443,6 @@
     <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
                 <!-- Best Time to Visit -->
                 <div class="scroll-animate">
                     <div class="bg-white rounded-2xl p-8 shadow-lg h-full">
@@ -492,24 +450,34 @@
                             <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-orange-500 rounded-lg flex items-center justify-center mr-4">
                                 <i class="fas fa-clock text-white text-lg"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Best Time to Visit</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">{{ $strings['sections']['timing']['title'] ?? 'Best Time to Visit' }}</h3>
                         </div>
-                        
                         <div class="space-y-4">
-                            <div class="border-l-4 border-primary-500 pl-4">
-                                <h4 class="font-semibold text-gray-900 mb-2">Time of Day</h4>
-                                <p class="text-gray-600">Early morning for cool air and quiet photos; late afternoon for golden light over ancient structures.</p>
-                            </div>
-                            
-                            <div class="border-l-4 border-orange-500 pl-4">
-                                <h4 class="font-semibold text-gray-900 mb-2">Season</h4>
-                                <p class="text-gray-600">Open year-round; brief showers freshen the grounds. We'll plan breaks at shady tanks during warmer months.</p>
-                            </div>
-                            
-                            <div class="border-l-4 border-blue-500 pl-4">
-                                <h4 class="font-semibold text-gray-900 mb-2">Getting There</h4>
-                                <p class="text-gray-600">1.5-2 hours from Sigiriya/Dambulla. Perfect Cultural Triangle combo with private transfers available.</p>
-                            </div>
+                            @if(isset($bestTimeBySlug['time-of-day']))
+                                <div class="border-l-4 border-primary-500 pl-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">{{ $strings['sections']['timing']['time_of_day'] ?? 'Time of Day' }}</h4>
+                                    <p class="text-gray-600">{{ $bestTimeBySlug['time-of-day'] }}</p>
+                                </div>
+                            @endif
+                            @if(isset($bestTimeBySlug['season']))
+                                <div class="border-l-4 border-orange-500 pl-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">{{ $strings['sections']['timing']['season'] ?? 'Season' }}</h4>
+                                    <p class="text-gray-600">{{ $bestTimeBySlug['season'] }}</p>
+                                </div>
+                            @endif
+                            @if(!empty($howToGetThereList))
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">{{ $strings['sections']['timing']['getting_there'] ?? 'Getting There' }}</h4>
+                                    <ul class="text-gray-600 list-disc list-inside space-y-1 text-sm">
+                                        @foreach(array_slice($howToGetThereList, 0, 3) as $route)
+                                            <li>{{ $route }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @if(count($howToGetThereList) > 3)
+                                        <p class="text-gray-600 text-sm mt-2">{{ $howToGetThereList[count($howToGetThereList) - 1] }}</p>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -521,41 +489,19 @@
                             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
                                 <i class="fas fa-lightbulb text-white text-lg"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Practical Information</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">{{ $strings['sections']['practical']['title'] ?? 'Practical Information' }}</h3>
                         </div>
-                        
+
                         <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i class="fas fa-ticket-alt text-primary-500 mr-3 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Tickets</h4>
-                                    <p class="text-gray-600 text-sm">Buy at the museum/entrance; keep your stub for multiple zones within the archaeological park.</p>
+                            @foreach($practicalSection['items'] ?? [] as $practical)
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-500 mr-3 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">{{ $practical['title'] ?? '' }}</h4>
+                                        <p class="text-gray-600 text-sm">{{ $practical['description'] ?? '' }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="fas fa-tshirt text-primary-500 mr-3 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Dress & Etiquette</h4>
-                                    <p class="text-gray-600 text-sm">Shoulders/knees covered in active shrine areas; remove shoes/hats where signed (socks help on hot paving).</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="fas fa-bicycle text-primary-500 mr-3 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Getting Around</h4>
-                                    <p class="text-gray-600 text-sm">Bicycles or tuk-tuk loops work best; distances are moderate but sites are spread out across the ancient city.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="fas fa-water text-primary-500 mr-3 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Essentials</h4>
-                                    <p class="text-gray-600 text-sm">Water, hat, sunscreen, light scarf for dust, and comfy walking shoes/sandals for temple visits.</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -568,156 +514,84 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 scroll-animate">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Cultural Triangle</p>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Pair it with</h2>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['nearby']['preheading'] ?? 'Cultural Triangle' }}</p>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">{{ $pairSection['heading'] ?? 'Pair it with' }}</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Extend your cultural journey with these complementary ancient sites and wildlife experiences.
+                    {{ $strings['sections']['nearby']['description'] ?? 'Extend your cultural journey with these complementary ancient sites and wildlife experiences.' }}
                 </p>
             </div>
 
             <!-- Attractions Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Minneriya/Kaudulla Safaris -->
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-green-500 to-emerald-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h4 class="font-bold text-lg">Minneriya Safari</h4>
+                @foreach(array_slice($pairSection['items'] ?? [], 0, 4) as $idx => $pair)
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br {{ $pairGradients[$idx % count($pairGradients)] ?? 'from-primary-500 to-orange-500' }} relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="font-bold text-lg">{{ $pair['title'] ?? '' }}</h4>
+                            </div>
+                            <i class="{{ $pairIcons[$idx % count($pairIcons)] ?? 'fas fa-map-marker-alt' }} text-white text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                         </div>
-                        <i class="fas fa-elephant text-white text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Seasonal elephant gatherings on open grasslands near ancient reservoirs.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Sigiriya -->
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h4 class="font-bold text-lg">Sigiriya Rock</h4>
+                        <div class="p-6">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                {{ $pair['description'] ?? '' }}
+                            </p>
                         </div>
-                        <i class="fas fa-mountain text-white text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Frescoes, water gardens, and summit palace views from the Lion Rock fortress.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Dambulla -->
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-purple-500 to-indigo-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h4 class="font-bold text-lg">Dambulla Caves</h4>
-                        </div>
-                        <i class="fas fa-praying-hands text-white text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Cave murals and gilded Buddhas in ancient rock temple complex.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Ritigala -->
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-teal-500 to-cyan-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h4 class="font-bold text-lg">Ritigala Forest</h4>
-                        </div>
-                        <i class="fas fa-tree text-white text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Mossy, meditative ruins amid cool forest monastery complex.
-                        </p>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Sample One-Day Plan -->
+    <!-- Sample Itinerary -->
     <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 scroll-animate">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Perfect Itinerary</p>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Sample One-Day Plan (Flexible)</h2>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['itinerary']['preheading'] ?? 'Perfect Itinerary' }}</p>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">{{ $itinerarySection['heading'] ?? 'Sample One-Day Plan (Flexible)' }}</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    Our thoughtfully planned itinerary designed for the perfect Polonnaruwa archaeological experience.
+                    {{ $strings['sections']['itinerary']['description'] ?? 'Our thoughtfully planned itinerary designed for the perfect Polonnaruwa archaeological experience.' }}
                 </p>
             </div>
 
             <!-- Timeline Schedule -->
             <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate">
                 <div class="space-y-6">
-                    
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">07:30</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Museum & Preparation</h4>
-                            <p class="text-gray-600">Ticket & museum primer; collect bikes and route briefing.</p>
+                    @foreach($itinerarySchedules as $schedule)
+                        @php
+                            $time = $schedule['time'] ?? '';
+                            $details = $schedule['details'] ?? '';
+                            $titleText = $details;
+                            $bodyText = '';
+                            if (str_contains($details, ';')) {
+                                [$titleText, $bodyText] = array_map('trim', explode(';', $details, 2));
+                            } elseif (str_contains($details, '. ')) {
+                                [$titleText, $bodyText] = array_map('trim', explode('. ', $details, 2));
+                            }
+                        @endphp
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">{{ $time }}</div>
+                            <div class="flex-grow">
+                                <h4 class="font-semibold text-gray-900 mb-1">{{ $titleText }}</h4>
+                                @if($bodyText !== '')
+                                    <p class="text-gray-600">{{ $bodyText }}</p>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">08:00</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Royal Complex</h4>
-                            <p class="text-gray-600">Royal Palace → Audience Hall → Quadrangle highlights exploration.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">10:30</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Sacred Stupas</h4>
-                            <p class="text-gray-600">Cycle to Rankoth Vehera & Kiri Vehera; shaded fruit stop under ancient trees.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">12:30</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Lakeside Lunch</h4>
-                            <p class="text-gray-600">Lunch break by Parakrama Samudraya with stunning lake views.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">14:30</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Image Houses</h4>
-                            <p class="text-gray-600">Lankatilaka and nearby image houses with towering Buddha statues.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-20 text-primary-600 font-bold text-lg">16:00</div>
-                        <div class="flex-grow">
-                            <h4 class="font-semibold text-gray-900 mb-1">Gal Vihara Finale</h4>
-                            <p class="text-gray-600">Gal Vihara in soft light; quiet reflection to end the perfect day.</p>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
 
-                <div class="mt-8 p-6 bg-gradient-to-r from-primary-50 to-orange-50 rounded-xl border border-primary-100">
-                    <p class="text-center text-gray-700">
-                        <i class="fas fa-info-circle text-primary-600 mr-2"></i>
-                        <strong>Prefer a slower rhythm?</strong> Split across two half-days, adding Pothgul Vihara and a lakeside sunset.
-                    </p>
-                </div>
+                @if(!empty($itineraryNotes))
+                    <div class="mt-8 p-6 bg-gradient-to-r from-primary-50 to-orange-50 rounded-xl border border-primary-100">
+                        @foreach($itineraryNotes as $note)
+                            <p class="text-center text-gray-700">
+                                <i class="fas fa-info-circle text-primary-600 mr-2"></i>
+                                {{ $note['details'] ?? '' }}
+                            </p>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     </section>
@@ -727,75 +601,54 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 scroll-animate">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">Questions?</p>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['faq']['preheading'] ?? 'Questions?' }}</p>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">{{ $faqSection['heading'] ?? 'Frequently Asked Questions' }}</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    Everything you need to know for your Polonnaruwa archaeological adventure.
+                    {{ $strings['sections']['faq']['description'] ?? 'Everything you need to know for your Polonnaruwa archaeological adventure.' }}
                 </p>
             </div>
 
             <!-- FAQ Items -->
             <div class="space-y-6">
-                
-                <div class="bg-white rounded-2xl shadow-lg scroll-animate">
-                    <button class="w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-semibold text-gray-900">Is Polonnaruwa good for kids or seniors?</h3>
-                            <i class="fas fa-chevron-down text-primary-500 transform transition-transform duration-300"></i>
+                @foreach($faqSection['items'] ?? [] as $faq)
+                    <div class="bg-white rounded-2xl shadow-lg scroll-animate">
+                        <button class="w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-xl font-semibold text-gray-900">{{ $faq['question'] ?? '' }}</h3>
+                                <i class="fas fa-chevron-down text-primary-500 transform transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="hidden px-8 pb-8">
+                            <p class="text-gray-600 leading-relaxed">
+                                {{ $faq['answer'] ?? '' }}
+                            </p>
                         </div>
-                    </button>
-                    <div class="hidden px-8 pb-8">
-                        <p class="text-gray-600 leading-relaxed">
-                            Yes—flat routes, frequent shade, and flexible transport. We tailor distances to comfort levels and can switch between cycling and tuk-tuks anytime.
-                        </p>
                     </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg scroll-animate">
-                    <button class="w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-semibold text-gray-900">Do I need to be very fit to cycle?</h3>
-                            <i class="fas fa-chevron-down text-primary-500 transform transition-transform duration-300"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-8 pb-8">
-                        <p class="text-gray-600 leading-relaxed">
-                            No. The terrain is gentle and flat; we can switch to tuk-tuks anytime. Our quality bikes make exploring comfortable for all fitness levels.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg scroll-animate">
-                    <button class="w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-semibold text-gray-900">Can I fly a drone?</h3>
-                            <i class="fas fa-chevron-down text-primary-500 transform transition-transform duration-300"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-8 pb-8">
-                        <p class="text-gray-600 leading-relaxed">
-                            Restrictions apply at archaeological sites; ask us to check current rules and obtain permits if possible for your specific dates and requirements.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg scroll-animate">
-                    <button class="w-full text-left p-8 focus:outline-none" onclick="toggleFAQ(this)">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-semibold text-gray-900">Are there bathrooms and cafés?</h3>
-                            <i class="fas fa-chevron-down text-primary-500 transform transition-transform duration-300"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-8 pb-8">
-                        <p class="text-gray-600 leading-relaxed">
-                            Facilities exist at key points throughout the archaeological park; we plan stops accordingly and provide refreshments during tours.
-                        </p>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
+
+    @if(!empty($responsibleSection['items']))
+        <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 scroll-animate">
+                    <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4">{{ $strings['sections']['responsible']['preheading'] ?? 'Travel Responsibly' }}</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">{{ $responsibleSection['heading'] ?? 'Travel responsibly' }}</h2>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 scroll-animate">
+                    <ul class="space-y-3">
+                        @foreach($responsibleSection['items'] as $tip)
+                            <li class="flex items-start">
+                                <i class="fas fa-leaf text-primary-500 mr-3 mt-1"></i>
+                                <span class="text-gray-600 leading-relaxed">{{ $tip['details'] ?? '' }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <!-- CTA Section -->
     <section class="py-16 lg:py-24 mirror-effect text-white">
@@ -806,22 +659,21 @@
                         <i class="fas fa-calendar-check text-3xl"></i>
                     </div>
                 </div>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Make it Seamless with Coco Island Holidays</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">{{ $strings['sections']['cta']['heading'] ?? 'Make it Seamless with Coco Island Holidays' }}</h2>
                 <p class="text-xl text-primary-100 mb-12 leading-relaxed">
-                    We arrange tickets, bikes or private tuk-tuks, licensed guides, cool-box water, and photo-friendly pacing—and we'll weave in a Minneriya elephant drive or a Sigiriya sunrise the next day.
+                    {{ $ctaSection['items'][0]['details'] ?? "We arrange tickets, bikes or private tuk-tuks, licensed guides, cool-box water, and photo-friendly pacing—and we'll weave in a Minneriya elephant drive or a Sigiriya sunrise the next day." }}
                 </p>
-                
                 <div class="glass-morphism rounded-2xl p-8">
-                    <h3 class="text-2xl font-bold mb-4">Ready to Explore Ancient Polonnaruwa?</h3>
-                    <p class="text-primary-100 mb-6">Tell us what you love (architecture, photography, wildlife, slow travel), and we'll craft your perfect Polonnaruwa day.</p>
+                    <h3 class="text-2xl font-bold mb-4">{{ $ctaSection['heading'] ?? 'Ready to Explore Ancient Polonnaruwa?' }}</h3>
+                    <p class="text-primary-100 mb-6">{{ $ctaSection['items'][1]['details'] ?? "Tell us what you love (architecture, photography, wildlife, slow travel), and we'll craft your perfect Polonnaruwa day." }}</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                             <i class="fab fa-whatsapp mr-3"></i>
-                            Plan Your Ancient City Tour
+                            {{ $strings['sections']['cta']['button_primary'] ?? 'Plan Your Ancient City Tour' }}
                         </a>
                         <a href="{{ route('contact', app()->getLocale()) }}" class="inline-flex items-center bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                             <i class="fas fa-envelope mr-3"></i>
-                            Get Custom Itinerary
+                            {{ $strings['sections']['cta']['button_secondary'] ?? 'Get Custom Itinerary' }}
                         </a>
                     </div>
                 </div>
@@ -905,9 +757,9 @@
 
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <div class="mb-4 space-x-6">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.terms") }}</a>
                 </div>
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
             </div>
@@ -918,14 +770,18 @@
         // Scroll Progress Bar
         function updateScrollProgress() {
             const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / docHeight) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                progressBar.style.width = `${Math.min(scrolled, 100)}%`;
+            }
         }
 
         window.addEventListener('scroll', updateScrollProgress);
+        window.addEventListener('load', updateScrollProgress);
 
-        // Scroll Animation Observer
+        // Scroll reveal animations
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -933,45 +789,26 @@
                 }
             });
         }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1
         });
 
-        document.querySelectorAll('.scroll-animate').forEach(element => {
-            observer.observe(element);
-        });
+        document.querySelectorAll('.scroll-animate').forEach(element => observer.observe(element));
 
-        // FAQ Toggle Function
+        // FAQ toggles
         function toggleFAQ(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('i');
-            
-            // Close all other FAQ items
-            document.querySelectorAll('.faq-content').forEach(item => {
-                if (item !== content) {
-                    item.classList.add('hidden');
-                    item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
-                }
-            });
-            
-            // Toggle current FAQ
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.classList.add('block');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+                icon.classList.remove('rotate-180');
+            }
         }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        window.toggleFAQ = toggleFAQ;
     </script>
 </body>
 </html>

@@ -231,7 +231,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <a href="#book-now" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-calendar-check mr-3"></i>
-                    Plan Your Pilgrimage
+                    Plan Your Trip
                 </a>
                 <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <i class="fab fa-whatsapp mr-3"></i>
@@ -918,9 +918,9 @@
 
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <div class="mb-4 space-x-6">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.terms") }}</a>
                 </div>
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
             </div>

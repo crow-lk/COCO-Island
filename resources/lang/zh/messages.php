@@ -160,6 +160,11 @@ return [
         'introduction' => '这些条款和条件管理您对我们网站和服务的使用。',
     ],
 
+    'legal' => [
+        'privacy' => '隐私政策',
+        'terms' => '条款与条件',
+    ],
+
     // Form Elements
     'form' => [
         'required' => '必填',

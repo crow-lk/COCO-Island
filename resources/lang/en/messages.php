@@ -36,18 +36,62 @@ return [
         'local_expertise' => [
             'title' => 'Local Expertise',
             'description' => 'Decades of on-the-ground experience with insider knowledge of hidden gems and authentic cultural encounters.',
+            'highlights' => [
+                'Local guides & insider routes',
+                'Authentic experiences',
+                'Community partnerships',
+            ],
         ],
         'tailor_made' => [
             'title' => 'Tailor-Made Tours',
             'description' => 'Custom itineraries designed around your interests, pace, and travel style for truly personal experiences.',
+            'highlights' => [
+                'Custom itineraries',
+                'Flexible scheduling',
+                'Special interest tours',
+            ],
         ],
         'reliable_service' => [
             'title' => 'Reliable Service',
             'description' => 'Professional service with trusted transport, certified guides, and seamless logistics for worry-free travel.',
+            'highlights' => [
+                'Professional coordination',
+                'Trusted partnerships',
+                'Clear communication',
+            ],
         ],
         'safety_comfort' => [
             'title' => 'Safety & Comfort',
             'description' => 'Your wellbeing is our priority with vetted suppliers, safety protocols, and 24/7 support throughout your journey.',
+            'highlights' => [
+                'Vetted transport & guides',
+                'Safety protocols',
+                '24/7 support',
+            ],
+        ],
+        'stats' => [
+            'cards' => [
+                [
+                    'value' => '500+',
+                    'label' => 'Happy Travelers',
+                ],
+                [
+                    'value' => '50+',
+                    'label' => 'Tour Packages',
+                ],
+                [
+                    'value' => '10+',
+                    'label' => 'Years Experience',
+                ],
+                [
+                    'value' => '4.9★',
+                    'label' => 'Average Rating',
+                ],
+            ],
+            'cta' => [
+                'text' => 'Ready to experience the difference? Let our local experts create your perfect Sri Lankan adventure.',
+                'button' => 'Start Planning Your Journey',
+            ],
         ],
     ],
 
@@ -57,6 +101,28 @@ return [
         'subtitle' => 'Handpicked Sri Lanka tours featuring wildlife safaris, cultural heritage routes and coastal escapes. Browse our most-booked itineraries for balanced experiences that combine nature, history and local culture.',
         'book_now' => 'Book Now',
         'inquire_now' => 'Inquire Now',
+        'fallback_cards' => [
+            'heritage' => [
+                'title' => 'Cultural Heritage Tour',
+                'description' => 'Explore ancient temples, colonial architecture, and traditional villages. Discover Sri Lanka\'s rich cultural tapestry with expert local guides.',
+                'alt' => 'Cultural Heritage Tour',
+            ],
+            'wildlife' => [
+                'title' => 'Wildlife Safari Adventure',
+                'description' => 'Experience Sri Lanka\'s incredible wildlife including elephants, leopards, and exotic birds in pristine national parks.',
+                'alt' => 'Wildlife Safari Adventure',
+            ],
+            'tea_trail' => [
+                'title' => 'Hill Country Tea Trail',
+                'description' => 'Journey through misty mountains and emerald tea plantations. Learn about Ceylon tea production and enjoy scenic train rides.',
+                'alt' => 'Hill Country Tea Trail',
+            ],
+            'coastal' => [
+                'title' => 'Coastal Paradise',
+                'description' => 'Relax on pristine beaches, enjoy water sports, and explore historic coastal towns. Perfect for beach lovers and water enthusiasts.',
+                'alt' => 'Coastal Paradise',
+            ],
+        ],
     ],
 
     // Special Offers
@@ -65,6 +131,7 @@ return [
         'subtitle' => 'Limited Time Offer',
         'tour_title' => 'Trails of Ramayana Tour',
         'description' => 'Embark on a spiritual journey through Sri Lanka\'s sacred Ramayana trail. Experience 10 days of mystical temples, ancient legends, and profound cultural insights with expert local guides who bring these timeless stories to life.',
+        'default_badge' => 'HOT DEAL',
         'book_offer' => 'Book This Exclusive Offer',
         'days_nights' => '10 Days / 9 Nights',
         'small_groups' => 'Small Groups Only',
@@ -76,15 +143,84 @@ return [
         'save_amount' => 'Save ₹15,501 (37% OFF)',
         'spots_remaining' => 'Only 5 spots remaining for this exclusive experience!',
         'limited_time' => 'Limited time offer - Book now to secure your spot!',
+        'countdown_label' => '⏰ Offer Ends In:',
+        'countdown_units' => [
+            'days' => 'Days',
+            'hours' => 'Hours',
+            'minutes' => 'Mins',
+            'seconds' => 'Secs',
+        ],
+        'offer_expired' => 'Offer Expired',
     ],
 
     // Destinations
     'destinations' => [
         'title' => 'Best Places to Visit',
         'subtitle' => 'From ancient kingdoms and colonial fortresses to pristine beaches and wildlife sanctuaries, explore Sri Lanka\'s most iconic destinations that showcase the island\'s rich heritage and natural beauty.',
+        'discover_label' => 'Discover Sri Lanka',
+        'featured' => [
+            'badge' => 'UNESCO World Heritage',
+            'cta' => 'Explore Sigiriya',
+        ],
         'sigiriya' => [
             'title' => 'Sigiriya Rock Fortress',
             'description' => 'Marvel at this 5th-century citadel rising 200 meters from the jungle floor. Climb the ancient rock fortress adorned with stunning frescoes and gardens, offering breathtaking panoramic views of Sri Lanka\'s cultural landscape.',
+        ],
+        'grid' => [
+            'anuradhapura' => [
+                'badge' => 'Ancient Kingdom',
+                'title' => 'Anuradhapura',
+                'description' => 'Sacred city with ancient dagobas and the sacred Bodhi Tree, dating back 2,500 years.',
+            ],
+            'nuwaraeliya' => [
+                'badge' => 'Hill Country',
+                'title' => 'Nuwara Eliya',
+                'description' => 'Cool mountain retreat with lush tea plantations and colonial charm in the clouds.',
+            ],
+            'gallefort' => [
+                'badge' => 'Colonial Heritage',
+                'title' => 'Galle Fort',
+                'description' => '16th-century Portuguese fort with cobblestone streets and stunning ocean views.',
+            ],
+            'yala' => [
+                'badge' => 'Wildlife Safari',
+                'title' => 'Yala National Park',
+                'description' => 'Sri Lanka\'s premier wildlife reserve famous for leopards, elephants, and diverse birdlife.',
+            ],
+            'polonnaruwa' => [
+                'badge' => 'Heritage Ruins',
+                'title' => 'Polonnaruwa',
+                'description' => 'Explore ancient royal palaces, sacred temples, and intricately carved stone statues.',
+            ],
+            'hiriketiya' => [
+                'badge' => 'Surf & Chill',
+                'title' => 'Hiriketiya Beach',
+                'description' => 'Laid-back bay perfect for surfing, yoga, and café hopping by the turquoise sea.',
+            ],
+            'colombo' => [
+                'badge' => 'Urban Culture',
+                'title' => 'Colombo',
+                'description' => 'Vibrant capital blending colonial architecture, modern lifestyle, and seaside promenades.',
+            ],
+        ],
+        'experiences' => [
+            'turtle' => [
+                'badge' => 'Wildlife Experience',
+                'title' => 'Turtle Watching',
+                'description' => 'Witness endangered sea turtles nesting on pristine beaches and visit conservation hatcheries.',
+                'location' => 'Hikkaduwa & Bentota',
+            ],
+            'whale' => [
+                'badge' => 'Marine Adventure',
+                'title' => 'Whale Watching',
+                'description' => 'Encounter magnificent blue and sperm whales in their natural habitat off the southern coast.',
+                'location' => 'Mirissa',
+            ],
+        ],
+        'cta' => [
+            'title' => 'Plan Your Journey',
+            'description' => 'Ready to explore these incredible destinations? Let our local experts craft the perfect itinerary for your Sri Lankan adventure.',
+            'button' => 'Start Planning',
         ],
     ],
 
@@ -107,6 +243,49 @@ return [
             'email' => 'Email',
             'hours' => 'Business Hours',
             'hours_text' => 'Monday - Sunday: 8:00 AM - 8:00 PM',
+        ],
+    ],
+
+    // Testimonials
+    'testimonials' => [
+        'title' => 'What Travellers Say About Us',
+        'subtitle' => 'Discover authentic stories from travelers who experienced the magic of Sri Lanka with our expert local guides.',
+        'featured' => [
+            'rating_label' => '5.0 • Featured Review',
+            'quote' => '"Walking the Ramayana trail with Coco Island Holidays was life-changing. Every site was steeped in history, and our guide brought the stories alive. I felt safe, spiritual, and deeply connected to my roots. This wasn\'t just a tour—it was a pilgrimage."',
+            'name' => 'Priya Menon',
+            'role' => 'Web Designer, India',
+            'tour' => 'Ramayana Trail Tour',
+        ],
+        'cards' => [
+            'honeymoon' => [
+                'label' => 'Honeymoon',
+                'quote' => '"Our honeymoon was like a dream! Candle-lit beach dinners, whale watching, and sunsets in Galle—every moment felt curated just for us. Thank you for making it magical."',
+                'name' => 'Aarav & Meera Kapoor',
+                'location' => 'Mumbai, India',
+            ],
+            'adventure' => [
+                'label' => 'Adventure',
+                'quote' => '"From misty hills to coastal forts, this expedition gave me a true taste of Sri Lanka. I appreciated the care put into every detail—professional, seamless, unforgettable."',
+                'name' => 'David Stein',
+                'location' => 'New York, USA',
+            ],
+            'solo' => [
+                'label' => 'Solo Travel',
+                'quote' => '"I needed nature, silence, and luxury. The glamping sites were beautiful and eco-friendly—I felt so grounded. Perfect for soul-searchers."',
+                'name' => 'Sofia Alvarez',
+                'location' => 'Barcelona, Spain',
+            ],
+        ],
+        'stats' => [
+            'rating' => '4.9/5',
+            'label' => 'Average Rating',
+            'based_on' => 'Based on 150+ reviews',
+        ],
+        'cta' => [
+            'title' => 'Share Your Story',
+            'description' => 'Traveled with us? We\'d love to hear about your experience!',
+            'button' => 'Leave a Review',
         ],
     ],
 
@@ -150,6 +329,11 @@ return [
         'title' => 'Terms & Conditions',
         'last_updated' => 'Last updated',
         'introduction' => 'These terms and conditions govern your use of our website and services.',
+    ],
+
+    'legal' => [
+        'privacy' => 'Privacy Policy',
+        'terms' => 'Terms & Conditions',
     ],
 
     // Form Elements
@@ -203,6 +387,22 @@ return [
         'newsletter_text' => 'Subscribe to our newsletter for travel tips and special offers',
         'newsletter_placeholder' => 'Enter your email',
         'subscribe' => 'Subscribe',
-        'copyright' => '© 2024 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism',
+        'plan_trip_title' => 'Let\'s Start Planning',
+        'plan_trip_description' => 'Talk to our travel experts for tailor-made itineraries.',
+        'call_us' => 'Call Us',
+        'message_us' => 'Message Us',
+        'whatsapp_cta' => 'Chat on WhatsApp',
+        'office_hours' => 'Office Hours',
+        'daily_hours' => 'Daily: 8:00 AM - 8:00 PM',
+        'copyright' => '© :year COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism',
+    ],
+
+    'video_not_supported' => 'Your browser does not support the video tag.',
+    'not_available' => 'N/A',
+    'time_units' => [
+        'days' => 'Days',
+        'hours' => 'Hours',
+        'minutes' => 'Minutes',
+        'seconds' => 'Seconds',
     ],
 ];

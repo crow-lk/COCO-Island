@@ -213,13 +213,166 @@
 
     @include('components.header')
 
+    @php
+        $locale = app()->getLocale();
+
+        $fallbackTourCards = [
+            [
+                'image' => asset('frontend/assets/img/best_things/Thalawakale.jpg'),
+                'title' => __('messages.tours.fallback_cards.heritage.title'),
+                'description' => __('messages.tours.fallback_cards.heritage.description'),
+                'alt' => __('messages.tours.fallback_cards.heritage.alt'),
+            ],
+            [
+                'image' => asset('frontend/assets/img/best_things/Goyambokka-beach.jpg'),
+                'title' => __('messages.tours.fallback_cards.wildlife.title'),
+                'description' => __('messages.tours.fallback_cards.wildlife.description'),
+                'alt' => __('messages.tours.fallback_cards.wildlife.alt'),
+            ],
+            [
+                'image' => asset('frontend/assets/img/best_things/Ramboda-Waterfall.jpg'),
+                'title' => __('messages.tours.fallback_cards.tea_trail.title'),
+                'description' => __('messages.tours.fallback_cards.tea_trail.description'),
+                'alt' => __('messages.tours.fallback_cards.tea_trail.alt'),
+            ],
+            [
+                'image' => asset('frontend/assets/img/best_things/Marble-Beach.jpg'),
+                'title' => __('messages.tours.fallback_cards.coastal.title'),
+                'description' => __('messages.tours.fallback_cards.coastal.description'),
+                'alt' => __('messages.tours.fallback_cards.coastal.alt'),
+            ],
+        ];
+
+        $destinationPrimaryCards = [
+            [
+                'route' => route('destinations.anuradhapura', ['locale' => $locale]),
+                'image' => 'https://travelrebels.com/wp-content/uploads/2018/06/anuradhapura-sunset.jpg',
+                'badge_class' => 'bg-orange-500',
+                'badge' => __('messages.destinations.grid.anuradhapura.badge'),
+                'title' => __('messages.destinations.grid.anuradhapura.title'),
+                'description' => __('messages.destinations.grid.anuradhapura.description'),
+            ],
+            [
+                'route' => route('destinations.nuwaraeliya', ['locale' => $locale]),
+                'image' => 'https://lakpura.com/cdn/shop/files/LK951R0000-10-E_4fb5ce5e-c060-481b-9ee3-429c7a3a7b72.jpg?v=1689939550&width=3840',
+                'badge_class' => 'bg-green-500',
+                'badge' => __('messages.destinations.grid.nuwaraeliya.badge'),
+                'title' => __('messages.destinations.grid.nuwaraeliya.title'),
+                'description' => __('messages.destinations.grid.nuwaraeliya.description'),
+            ],
+            [
+                'route' => route('destinations.gallefort', ['locale' => $locale]),
+                'image' => 'https://media.cntravellerme.com/photos/6679185364c11ffe86eb6eeb/16:9/w_3984,h_2241,c_limit/1150415140',
+                'badge_class' => 'bg-blue-500',
+                'badge' => __('messages.destinations.grid.gallefort.badge'),
+                'title' => __('messages.destinations.grid.gallefort.title'),
+                'description' => __('messages.destinations.grid.gallefort.description'),
+            ],
+        ];
+
+        $destinationSecondaryCards = [
+            [
+                'route' => route('destinations.yala', ['locale' => $locale]),
+                'image' => 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg',
+                'badge_class' => 'bg-emerald-500',
+                'badge' => __('messages.destinations.grid.yala.badge'),
+                'title' => __('messages.destinations.grid.yala.title'),
+                'description' => __('messages.destinations.grid.yala.description'),
+            ],
+            [
+                'route' => route('destinations.polonnaruwa', ['locale' => $locale]),
+                'image' => 'https://cdn.getyourguide.com/img/location/5d25327064576.jpeg/88.jpg',
+                'badge_class' => 'bg-amber-500',
+                'badge' => __('messages.destinations.grid.polonnaruwa.badge'),
+                'title' => __('messages.destinations.grid.polonnaruwa.title'),
+                'description' => __('messages.destinations.grid.polonnaruwa.description'),
+            ],
+            [
+                'route' => route('destinations.hiriketiya', ['locale' => $locale]),
+                'image' => 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80',
+                'badge_class' => 'bg-purple-500',
+                'badge' => __('messages.destinations.grid.hiriketiya.badge'),
+                'title' => __('messages.destinations.grid.hiriketiya.title'),
+                'description' => __('messages.destinations.grid.hiriketiya.description'),
+            ],
+            [
+                'route' => route('destinations.colombo', ['locale' => $locale]),
+                'image' => 'https://images.unsplash.com/photo-1548783307-f63adc57535f?auto=format&fit=crop&w=1200&q=80',
+                'badge_class' => 'bg-red-500',
+                'badge' => __('messages.destinations.grid.colombo.badge'),
+                'title' => __('messages.destinations.grid.colombo.title'),
+                'description' => __('messages.destinations.grid.colombo.description'),
+            ],
+        ];
+
+        $whyChooseHighlights = [
+            'local_expertise' => __('messages.why_choose.local_expertise.highlights') ?? [],
+            'tailor_made' => __('messages.why_choose.tailor_made.highlights') ?? [],
+            'reliable_service' => __('messages.why_choose.reliable_service.highlights') ?? [],
+            'safety_comfort' => __('messages.why_choose.safety_comfort.highlights') ?? [],
+        ];
+        $whyChooseStats = __('messages.why_choose.stats.cards') ?? [];
+        $whyChooseCta = __('messages.why_choose.stats.cta') ?? [];
+
+        $destinationExperiences = [
+            [
+                'image' => 'https://static.toiimg.com/photo/58517436/.jpg',
+                'badge_class' => 'bg-teal-500',
+                'badge' => __('messages.destinations.experiences.turtle.badge'),
+                'title' => __('messages.destinations.experiences.turtle.title'),
+                'description' => __('messages.destinations.experiences.turtle.description'),
+                'location' => __('messages.destinations.experiences.turtle.location'),
+            ],
+            [
+                'image' => 'https://whalewatching.navy.lk/assets/template/whale/img/2.jpg',
+                'badge_class' => 'bg-indigo-500',
+                'badge' => __('messages.destinations.experiences.whale.badge'),
+                'title' => __('messages.destinations.experiences.whale.title'),
+                'description' => __('messages.destinations.experiences.whale.description'),
+                'location' => __('messages.destinations.experiences.whale.location'),
+            ],
+        ];
+
+        $testimonialsContent = __('messages.testimonials');
+        $testimonialFeatured = $testimonialsContent['featured'] ?? [];
+        $testimonialCards = [
+            [
+                'label' => $testimonialsContent['cards']['honeymoon']['label'] ?? '',
+                'quote' => $testimonialsContent['cards']['honeymoon']['quote'] ?? '',
+                'name' => $testimonialsContent['cards']['honeymoon']['name'] ?? '',
+                'location' => $testimonialsContent['cards']['honeymoon']['location'] ?? '',
+                'image' => asset('frontend/assets/img/testimonial/Aarav-and-Meera-Kapoor.jpg'),
+            ],
+            [
+                'label' => $testimonialsContent['cards']['adventure']['label'] ?? '',
+                'quote' => $testimonialsContent['cards']['adventure']['quote'] ?? '',
+                'name' => $testimonialsContent['cards']['adventure']['name'] ?? '',
+                'location' => $testimonialsContent['cards']['adventure']['location'] ?? '',
+                'image' => asset('frontend/assets/img/testimonial/David-Stein.jpg'),
+            ],
+            [
+                'label' => $testimonialsContent['cards']['solo']['label'] ?? '',
+                'quote' => $testimonialsContent['cards']['solo']['quote'] ?? '',
+                'name' => $testimonialsContent['cards']['solo']['name'] ?? '',
+                'location' => $testimonialsContent['cards']['solo']['location'] ?? '',
+                'image' => asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg'),
+            ],
+        ];
+        $primaryTestimonialCards = array_slice($testimonialCards, 0, 2);
+        $secondaryTestimonialCard = $testimonialCards[2] ?? null;
+        $testimonialStats = $testimonialsContent['stats'] ?? [];
+        $testimonialCta = $testimonialsContent['cta'] ?? [];
+        $footerContent = __('messages.footer');
+        $specialOfferUnits = __('messages.special_offer.countdown_units');
+    @endphp
+
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center text-white">
         <!-- Background Video -->
         <video class="hero-video" autoplay muted loop playsinline preload="none" poster="{{ asset('frontend/assets/video/0914.mp4.jpg') }}">
             <source src="{{ asset('frontend/assets/video/0914.webm') }}" type="video/webm">
             <source src="{{ asset('frontend/assets/video/0914.mp4') }}" type="video/mp4">
-            Your browser does not support the video tag.
+            {{ __('messages.video_not_supported') }}
         </video>
 
         <!-- Gradient Overlay -->
@@ -299,20 +452,16 @@
                     <div class="pt-8">
                         <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">{{ __('messages.why_choose.local_expertise.title') }}</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ __('messages.why_choose.local_expertise.description') }}</p>
+                        @if(!empty($whyChooseHighlights['local_expertise']))
                         <ul class="space-y-2">
+                            @foreach($whyChooseHighlights['local_expertise'] as $highlight)
                             <li class="flex items-center text-sm text-gray-700">
                                 <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Local guides & insider routes
+                                {{ $highlight }}
                             </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Authentic experiences
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Community partnerships
-                            </li>
+                            @endforeach
                         </ul>
+                        @endif
                     </div>
                 </div>
 
@@ -324,22 +473,18 @@
                         </div>
                     </div>
                     <div class="pt-8">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Tailor-Made Tours</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Custom itineraries designed around your interests, pace, and travel style for truly personal experiences.</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">{{ __('messages.why_choose.tailor_made.title') }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ __('messages.why_choose.tailor_made.description') }}</p>
+                        @if(!empty($whyChooseHighlights['tailor_made']))
                         <ul class="space-y-2">
+                            @foreach($whyChooseHighlights['tailor_made'] as $highlight)
                             <li class="flex items-center text-sm text-gray-700">
                                 <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Custom itineraries
+                                {{ $highlight }}
                             </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Flexible scheduling
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Special interest tours
-                            </li>
+                            @endforeach
                         </ul>
+                        @endif
                     </div>
                 </div>
 
@@ -351,22 +496,18 @@
                         </div>
                     </div>
                     <div class="pt-8">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Reliable Service</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Professional service with trusted transport, certified guides, and seamless logistics for worry-free travel.</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">{{ __('messages.why_choose.reliable_service.title') }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ __('messages.why_choose.reliable_service.description') }}</p>
+                        @if(!empty($whyChooseHighlights['reliable_service']))
                         <ul class="space-y-2">
+                            @foreach($whyChooseHighlights['reliable_service'] as $highlight)
                             <li class="flex items-center text-sm text-gray-700">
                                 <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Professional coordination
+                                {{ $highlight }}
                             </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Trusted partnerships
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Clear communication
-                            </li>
+                            @endforeach
                         </ul>
+                        @endif
                     </div>
                 </div>
 
@@ -378,22 +519,18 @@
                         </div>
                     </div>
                     <div class="pt-8">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">Safety & Comfort</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Your wellbeing is our priority with vetted suppliers, safety protocols, and 24/7 support throughout your journey.</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">{{ __('messages.why_choose.safety_comfort.title') }}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">{{ __('messages.why_choose.safety_comfort.description') }}</p>
+                        @if(!empty($whyChooseHighlights['safety_comfort']))
                         <ul class="space-y-2">
+                            @foreach($whyChooseHighlights['safety_comfort'] as $highlight)
                             <li class="flex items-center text-sm text-gray-700">
                                 <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Vetted transport & guides
+                                {{ $highlight }}
                             </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                Safety protocols
-                            </li>
-                            <li class="flex items-center text-sm text-gray-700">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full mr-3"></div>
-                                24/7 support
-                            </li>
+                            @endforeach
                         </ul>
+                        @endif
                     </div>
                 </div>
 
@@ -401,30 +538,22 @@
 
             <!-- Stats Section -->
             <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 lg:p-12 text-white scroll-animate">
+                @if(!empty($whyChooseStats))
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    @foreach($whyChooseStats as $stat)
                     <div>
-                        <div class="text-2xl lg:text-3xl font-bold mb-2">500+</div>
-                        <div class="text-primary-100 text-sm uppercase tracking-wider">Happy Travelers</div>
+                        <div class="text-2xl lg:text-3xl font-bold mb-2">{{ $stat['value'] ?? '' }}</div>
+                        <div class="text-primary-100 text-sm uppercase tracking-wider">{{ $stat['label'] ?? '' }}</div>
                     </div>
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold mb-2">50+</div>
-                        <div class="text-primary-100 text-sm uppercase tracking-wider">Tour Packages</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold mb-2">10+</div>
-                        <div class="text-primary-100 text-sm uppercase tracking-wider">Years Experience</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold mb-2">4.9★</div>
-                        <div class="text-primary-100 text-sm uppercase tracking-wider">Average Rating</div>
-                    </div>
+                    @endforeach
                 </div>
+                @endif
                 
                 <div class="mt-8 pt-8 border-t border-primary-400 text-center">
-                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">Ready to experience the difference? Let our local experts create your perfect Sri Lankan adventure.</p>
+                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">{{ $whyChooseCta['text'] ?? '' }}</p>
                     <a href="https://wa.me/94776605054" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                         <i class="fas fa-comments mr-3"></i>
-                        Start Planning Your Journey
+                        {{ $whyChooseCta['button'] ?? __('messages.destinations.cta.button') }}
                     </a>
                 </div>
             </div>
@@ -444,11 +573,11 @@
                 @forelse ($popularTours ?? [] as $tour)
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                     <div class="h-64 overflow-hidden">
-                        <img src="{{ $tour->image_url ?? asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="{{ $tour->title ?? 'Cultural Heritage Tour' }}" class="w-full h-full object-cover">
+                        <img src="{{ $tour->image_url ?? asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="{{ $tour->title ?? __('messages.tours.fallback_cards.heritage.title') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold mb-3 text-gray-900">{{ $tour->title ?? 'Cultural Heritage Tour' }}</h4>
-                        <p class="text-gray-600 mb-6 line-clamp-3">{{ $tour->description ?? 'Explore ancient temples, colonial architecture, and traditional villages. Discover Sri Lanka\'s rich cultural tapestry with expert local guides.' }}</p>
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">{{ $tour->title ?? __('messages.tours.fallback_cards.heritage.title') }}</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">{{ $tour->description ?? __('messages.tours.fallback_cards.heritage.description') }}</p>
                         @if($tour->duration)
                             <div class="flex items-center mb-4 text-sm text-gray-500">
                                 <i class="fas fa-clock mr-2"></i>
@@ -456,63 +585,26 @@
                             </div>
                         @endif
                         <a href="{{ route('tours.show', ['locale' => app()->getLocale(), 'slug' => $tour->slug]) }}" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                            View Details
+                            {{ __('messages.view_details') }}
                         </a>
                     </div>
                 </div>
                 @empty
                 <!-- Static Tour Cards -->
+                @foreach($fallbackTourCards as $card)
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                     <div class="h-64 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Thalawakale.jpg') }}" alt="Cultural Heritage Tour" class="w-full h-full object-cover">
+                        <img src="{{ $card['image'] }}" alt="{{ $card['alt'] }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold mb-3 text-gray-900">Cultural Heritage Tour</h4>
-                        <p class="text-gray-600 mb-6 line-clamp-3">Explore ancient temples, colonial architecture, and traditional villages. Discover Sri Lanka's rich cultural tapestry with expert local guides.</p>
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">{{ $card['title'] }}</h4>
+                        <p class="text-gray-600 mb-6 line-clamp-3">{{ $card['description'] }}</p>
                         <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                            Book Now
+                            {{ __('messages.book_now') }}
                         </a>
                     </div>
                 </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-64 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Goyambokka-beach.jpg') }}" alt="Wildlife Safari" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-3 text-gray-900">Wildlife Safari Adventure</h4>
-                        <p class="text-gray-600 mb-6 line-clamp-3">Experience Sri Lanka's incredible wildlife including elephants, leopards, and exotic birds in pristine national parks.</p>
-                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                            Book Now
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-64 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Ramboda-Waterfall.jpg') }}" alt="Hill Country Tea Trail" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-3 text-gray-900">Hill Country Tea Trail</h4>
-                        <p class="text-gray-600 mb-6 line-clamp-3">Journey through misty mountains and emerald tea plantations. Learn about Ceylon tea production and enjoy scenic train rides.</p>
-                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                            Book Now
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-64 overflow-hidden">
-                        <img src="{{ asset('frontend/assets/img/best_things/Marble-Beach.jpg') }}" alt="Coastal Paradise" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold mb-3 text-gray-900">Coastal Paradise</h4>
-                        <p class="text-gray-600 mb-6 line-clamp-3">Relax on pristine beaches, enjoy water sports, and explore historic coastal towns. Perfect for beach lovers and water enthusiasts.</p>
-                        <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-500 text-white font-medium rounded-xl hover:bg-primary-600 transition-colors duration-300">
-                            Book Now
-                        </a>
-                    </div>
-                </div>
+                @endforeach
                 @endforelse
             </div>
         </div>
@@ -526,7 +618,7 @@
                 ? (\Illuminate\Support\Str::startsWith($heroImagePath, ['http://', 'https://']) ? $heroImagePath : asset($heroImagePath))
                 : asset('frontend/assets/img/12days.jpeg');
             $sectionIconClass = $limitedTimeOffer->section_icon ?? 'fas fa-fire';
-            $floatingBadgeText = $limitedTimeOffer->floating_badge_text ?? 'HOT DEAL';
+            $floatingBadgeText = $limitedTimeOffer->floating_badge_text ?? __('messages.special_offer.default_badge');
             $floatingBadgeIcon = $limitedTimeOffer->floating_badge_icon;
             $floatingBadgeIconIsClass = $floatingBadgeIcon && \Illuminate\Support\Str::contains($floatingBadgeIcon, 'fa-');
             $countdownEndsAt = ($limitedTimeOffer->countdown_enabled && $limitedTimeOffer->countdown_ends_at)
@@ -633,15 +725,15 @@
                                 <div class="bg-gradient-to-r from-primary-50 to-orange-50 rounded-2xl p-6 border border-primary-100">
                                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
                                         <div>
-                                            <p class="text-sm text-gray-600 mb-1">Regular Price</p>
+                                            <p class="text-sm text-gray-600 mb-1">{{ __('messages.special_offer.regular_price') }}</p>
                                             <p class="text-lg text-gray-400 line-through">
-                                                {{ $formatPrice($limitedTimeOffer->regular_price) ?? 'N/A' }}
+                                                {{ $formatPrice($limitedTimeOffer->regular_price) ?? __('messages.not_available') }}
                                             </p>
                                         </div>
                                         <div class="text-left sm:text-right">
-                                            <p class="text-sm text-primary-600 font-semibold mb-1">Special Offer Price</p>
+                                            <p class="text-sm text-primary-600 font-semibold mb-1">{{ __('messages.special_offer.offer_price') }}</p>
                                             <p class="text-2xl font-bold text-primary-600">
-                                                {{ $formatPrice($limitedTimeOffer->special_price) ?? 'N/A' }}
+                                                {{ $formatPrice($limitedTimeOffer->special_price) ?? __('messages.not_available') }}
                                             </p>
                                         </div>
                                     </div>
@@ -665,23 +757,23 @@
                         @if($countdownEndsAt)
                             <div class="mb-8">
                                 <div class="bg-white/95 backdrop-blur-md rounded-2xl p-6 text-center" data-countdown-end="{{ $countdownEndsAt }}">
-                                    <p class="text-gray-800 font-semibold mb-4 text-sm">{{ $limitedTimeOffer->countdown_label ?? '⏰ Offer Ends In:' }}</p>
+                                    <p class="text-gray-800 font-semibold mb-4 text-sm">{{ $limitedTimeOffer->countdown_label ?? __('messages.special_offer.countdown_label') }}</p>
                                     <div id="countdown" class="grid grid-cols-4 gap-2">
                                         <div class="text-center">
                                             <div id="days" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Days</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">{{ $specialOfferUnits['days'] ?? __('messages.time_units.days') }}</div>
                                         </div>
                                         <div class="text-center">
                                             <div id="hours" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Hours</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">{{ $specialOfferUnits['hours'] ?? __('messages.time_units.hours') }}</div>
                                         </div>
                                         <div class="text-center">
                                             <div id="minutes" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Mins</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">{{ $specialOfferUnits['minutes'] ?? __('messages.time_units.minutes') }}</div>
                                         </div>
                                         <div class="text-center">
                                             <div id="seconds" class="text-2xl font-bold text-primary-600 mb-1">0</div>
-                                            <div class="text-xs text-gray-600 uppercase tracking-wide">Secs</div>
+                                            <div class="text-xs text-gray-600 uppercase tracking-wide">{{ $specialOfferUnits['seconds'] ?? __('messages.time_units.seconds') }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -775,9 +867,9 @@
     <section id="experiences" class="py-16 lg:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">Discover Sri Lanka</p>
-                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">Best Places to Visit</h1>
-                <p class="text-base text-gray-600 max-w-4xl mx-auto scroll-animate">From ancient kingdoms and colonial fortresses to pristine beaches and wildlife sanctuaries, explore Sri Lanka's most iconic destinations that showcase the island's rich heritage and natural beauty.</p>
+                <p class="text-primary-600 uppercase tracking-widest text-sm font-semibold mb-4 scroll-animate">{{ __('messages.destinations.discover_label') }}</p>
+                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">{{ __('messages.destinations.title') }}</h1>
+                <p class="text-base text-gray-600 max-w-4xl mx-auto scroll-animate">{{ __('messages.destinations.subtitle') }}</p>
             </div>
             
             <!-- Featured Destination -->
@@ -789,12 +881,12 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-8">
                         <div class="max-w-2xl">
-                            <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">UNESCO World Heritage</span>
-                            <h3 class="text-3xl font-bold text-white mb-4">Sigiriya Rock Fortress</h3>
-                            <p class="text-gray-200 text-lg mb-6 leading-relaxed">Marvel at this 5th-century citadel rising 200 meters from the jungle floor. Climb the ancient rock fortress adorned with stunning frescoes and gardens, offering breathtaking panoramic views of Sri Lanka's cultural landscape.</p>
+                            <span class="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">{{ __('messages.destinations.featured.badge') }}</span>
+                            <h3 class="text-3xl font-bold text-white mb-4">{{ __('messages.destinations.sigiriya.title') }}</h3>
+                            <p class="text-gray-200 text-lg mb-6 leading-relaxed">{{ __('messages.destinations.sigiriya.description') }}</p>
                             <a href="{{ route('destinations.sigiriya', ['locale' => app()->getLocale()]) }}" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300">
                                 <i class="fas fa-mountain mr-2"></i>
-                                Explore Sigiriya
+                                {{ __('messages.destinations.featured.cta') }}
                             </a>
                         </div>
                     </div>
@@ -803,157 +895,67 @@
 
             <!-- Destinations Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                
-                <!-- Anuradhapura -->
-                <a href="{{ route('destinations.anuradhapura', ['locale' => app()->getLocale()]) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
+                @foreach($destinationPrimaryCards as $card)
+                <a href="{{ $card['route'] }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://travelrebels.com/wp-content/uploads/2018/06/anuradhapura-sunset.jpg" alt="Anuradhapura Ancient City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="{{ $card['image'] }}" alt="{{ $card['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Ancient Kingdom</span>
-                        <h4 class="text-lg font-bold text-white mb-2">Anuradhapura</h4>
-                        <p class="text-gray-200 text-sm">Sacred city with ancient dagobas and the sacred Bodhi Tree, dating back 2,500 years.</p>
+                        <span class="inline-block {{ $card['badge_class'] }} text-white px-2 py-1 rounded-full text-xs font-medium mb-2">{{ $card['badge'] }}</span>
+                        <h4 class="text-lg font-bold text-white mb-2">{{ $card['title'] }}</h4>
+                        <p class="text-gray-200 text-sm">{{ $card['description'] }}</p>
                     </div>
                 </a>
-
-                <!-- Nuwara Eliya -->
-                <a href="{{ route('destinations.nuwaraeliya', ['locale' => app()->getLocale()]) }}" class="block">
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://lakpura.com/cdn/shop/files/LK951R0000-10-E_4fb5ce5e-c060-481b-9ee3-429c7a3a7b72.jpg?v=1689939550&width=3840" alt="Nuwara Eliya Tea Country" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <span class="inline-block bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Hill Country</span>
-                            <h4 class="text-lg font-bold text-white mb-2">Nuwara Eliya</h4>
-                            <p class="text-gray-200 text-sm">Cool mountain retreat with lush tea plantations and colonial charm in the clouds.</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Galle Fort -->
-                <a href="{{ route('destinations.gallefort', ['locale' => app()->getLocale()]) }}" class="block">
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://media.cntravellerme.com/photos/6679185364c11ffe86eb6eeb/16:9/w_3984,h_2241,c_limit/1150415140" alt="Galle Fort Colonial Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <span class="inline-block bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Colonial Heritage</span>
-                            <h4 class="text-lg font-bold text-white mb-2">Galle Fort</h4>
-                            <p class="text-gray-200 text-sm">16th-century Portuguese fort with cobblestone streets and stunning ocean views.</p>
-                        </div>
-                    </div>
-                </a>
-
+                @endforeach
             </div>
 
             <!-- Second Row -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                
-                <!-- Yala National Park -->
-                <a href="{{ route('destinations.yala', ['locale' => app()->getLocale()]) }}" class="block">
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                        <div class="h-56 overflow-hidden">
-                            <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg" alt="Yala National Park Wildlife" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-4">
-                            <span class="inline-block bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Wildlife</span>
-                            <h4 class="text-lg font-bold text-white mb-1">Yala National Park</h4>
-                            <p class="text-gray-200 text-sm">Sri Lanka's premier wildlife destination with leopards and elephants.</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Polonnaruwa -->
-                <a href="{{ route('destinations.polonnaruwa', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
+                @foreach($destinationSecondaryCards as $card)
+                <a href="{{ $card['route'] }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/d7/27/d9.jpg" alt="Polonnaruwa Ancient Ruins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="{{ $card['image'] }}" alt="{{ $card['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="inline-block bg-amber-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Ancient City</span>
-                        <h4 class="text-lg font-bold text-white mb-1">Polonnaruwa</h4>
-                        <p class="text-gray-200 text-sm">Medieval capital with remarkable stone sculptures and ruins.</p>
+                        <span class="inline-block {{ $card['badge_class'] }} text-white px-2 py-1 rounded-full text-xs font-medium mb-2">{{ $card['badge'] }}</span>
+                        <h4 class="text-lg font-bold text-white mb-1">{{ $card['title'] }}</h4>
+                        <p class="text-gray-200 text-sm">{{ $card['description'] }}</p>
                     </div>
                 </a>
-
-                <!-- Hiriketiya Beach -->
-                <a href="{{ route('destinations.hiriketiya', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
-                    <div class="h-56 overflow-hidden">
-                        <img src="https://wanderon-images.gumlet.io/blogs/new/2024/05/hirketiya.jpg" alt="Hiriketiya Beach Paradise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="inline-block bg-cyan-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Beach Paradise</span>
-                        <h4 class="text-lg font-bold text-white mb-1">Hiriketiya Beach</h4>
-                        <p class="text-gray-200 text-sm">Perfect horseshoe bay for surfing and beach relaxation.</p>
-                    </div>
-                </a>
-
-                <!-- Colombo -->
-                <a href="{{ route('destinations.colombo', app()->getLocale()) }}" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate block">
-                    <div class="h-56 overflow-hidden">
-                        <img src="https://www.reddottours.com/uploads/Weather-by-regions/colombo-header.jpg" alt="Colombo Modern City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <span class="inline-block bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-medium mb-2">Capital City</span>
-                        <h4 class="text-lg font-bold text-white mb-1">Colombo</h4>
-                        <p class="text-gray-200 text-sm">Vibrant capital blending modern skyscrapers with colonial charm.</p>
-                    </div>
-                </a>
-
+                @endforeach
             </div>
 
             <!-- Unique Experiences Row -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Turtle Watching -->
+                @foreach($destinationExperiences as $experience)
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://travellersisle.com/wp-content/uploads/2022/10/Snorkeling-with-turtles-in-pigeon-island.jpg" alt="Sea Turtle Conservation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="{{ $experience['image'] }}" alt="{{ $experience['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-teal-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-3">Wildlife Experience</span>
-                        <h4 class="text-lg font-bold text-white mb-2">Turtle Watching</h4>
-                        <p class="text-gray-200 text-sm mb-4">Witness endangered sea turtles nesting on pristine beaches and visit turtle hatcheries dedicated to conservation.</p>
+                        <span class="inline-block {{ $experience['badge_class'] }} text-white px-3 py-1 rounded-full text-xs font-medium mb-3">{{ $experience['badge'] }}</span>
+                        <h4 class="text-lg font-bold text-white mb-2">{{ $experience['title'] }}</h4>
+                        <p class="text-gray-200 text-sm mb-4">{{ $experience['description'] }}</p>
                         <div class="flex items-center text-gray-300 text-sm">
                             <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>Hikkaduwa & Bentota</span>
+                            <span>{{ $experience['location'] }}</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Whale Watching in Mirissa -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-animate">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://whalewatching.navy.lk/assets/template/whale/img/2.jpg" alt="Whale Watching Mirissa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-3">Marine Adventure</span>
-                        <h4 class="text-lg font-bold text-white mb-2">Whale Watching</h4>
-                        <p class="text-gray-200 text-sm mb-4">Encounter magnificent blue whales and sperm whales in their natural habitat off the southern coast.</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>Mirissa</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
                 <!-- Call to Action Card -->
                 <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-6 text-white scroll-animate flex flex-col justify-center">
                     <div class="text-center">
                         <i class="fas fa-compass text-4xl mb-4 opacity-80"></i>
-                        <h3 class="text-lg font-bold mb-4">Plan Your Journey</h3>
-                        <p class="text-primary-100 text-sm mb-6">Ready to explore these incredible destinations? Let our local experts craft the perfect itinerary for your Sri Lankan adventure.</p>
+                        <h3 class="text-lg font-bold mb-4">{{ __('messages.destinations.cta.title') }}</h3>
+                        <p class="text-primary-100 text-sm mb-6">{{ __('messages.destinations.cta.description') }}</p>
                         <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full bg-white text-primary-600 px-4 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
                             <i class="fab fa-whatsapp mr-2"></i>
-                            Start Planning
+                            {{ __('messages.destinations.cta.button') }}
                         </a>
                     </div>
                 </div>
@@ -970,8 +972,8 @@
                 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6 scroll-animate">
                     <i class="fas fa-heart text-primary-600 text-base"></i>
                 </div>
-                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">What Travellers Say About Us</h1>
-                <p class="text-base text-gray-600 max-w-3xl mx-auto scroll-animate">Discover authentic stories from travelers who experienced the magic of Sri Lanka with our expert local guides.</p>
+                <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900 scroll-animate">{{ $testimonialsContent['title'] ?? '' }}</h1>
+                <p class="text-base text-gray-600 max-w-3xl mx-auto scroll-animate">{{ $testimonialsContent['subtitle'] ?? '' }}</p>
             </div>
 
             <!-- Testimonials Grid -->
@@ -987,29 +989,28 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <span class="text-sm text-gray-500 font-medium">5.0 • Featured Review</span>
+                        <span class="text-sm text-gray-500 font-medium">{{ $testimonialFeatured['rating_label'] ?? '' }}</span>
                     </div>
                     
                     <blockquote class="text-base text-gray-800 leading-relaxed mb-8 font-medium">
-                        "Walking the Ramayana trail with Coco Island Holidays was life-changing. Every site was steeped in history, and our guide brought the stories alive. I felt safe, spiritual, and deeply connected to my roots. This wasn't just a tour—it was a pilgrimage."
+                        {{ $testimonialFeatured['quote'] ?? '' }}
                     </blockquote>
                     
                     <div class="flex items-center">
                         <div class="w-20 h-20 rounded-full overflow-hidden mr-6 ring-4 ring-primary-100">
-                            <img src="{{ asset('frontend/assets/img/testimonial/Priya-Menon.jpg') }}" alt="Priya Menon" class="w-full h-full object-cover">
+                            <img src="{{ asset('frontend/assets/img/testimonial/Priya-Menon.jpg') }}" alt="{{ $testimonialFeatured['name'] ?? 'Guest' }}" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-gray-900">Priya Menon</h4>
-                            <p class="text-gray-600">Web Designer, India</p>
+                            <h4 class="font-bold text-base text-gray-900">{{ $testimonialFeatured['name'] ?? '' }}</h4>
+                            <p class="text-gray-600">{{ $testimonialFeatured['role'] ?? '' }}</p>
                             <div class="flex items-center mt-2 text-sm text-gray-500">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
-                                <span>Ramayana Trail Tour</span>
+                                <span>{{ $testimonialFeatured['tour'] ?? '' }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Regular Testimonial 1 -->
+                @foreach($primaryTestimonialCards as $card)
                 <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 scroll-animate">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex text-yellow-400">
@@ -1020,61 +1021,26 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">
-                            Honeymoon
+                            {{ $card['label'] ?? '' }}
                         </div>
                     </div>
-                    
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        "Our honeymoon was like a dream! Candle-lit beach dinners, whale watching, and sunsets in Galle—every moment felt curated just for us. Thank you for making it magical."
-                    </p>
-                    
+                    <p class="text-gray-700 leading-relaxed mb-6">{{ $card['quote'] ?? '' }}</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="{{ asset('frontend/assets/img/testimonial/Aarav-and-Meera-Kapoor.jpg') }}" alt="Aarav and Meera Kapoor" class="w-full h-full object-cover">
+                            <img src="{{ $card['image'] }}" alt="{{ $card['name'] ?? 'Guest' }}" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900">Aarav & Meera Kapoor</h4>
-                            <p class="text-sm text-gray-600">Mumbai, India</p>
+                            <h4 class="font-semibold text-gray-900">{{ $card['name'] ?? '' }}</h4>
+                            <p class="text-sm text-gray-600">{{ $card['location'] ?? '' }}</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Regular Testimonial 2 -->
-                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 scroll-animate">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-medium">
-                            Adventure
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        "From misty hills to coastal forts, this expedition gave me a true taste of Sri Lanka. I appreciated the care put into every detail—professional, seamless, unforgettable."
-                    </p>
-                    
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="{{ asset('frontend/assets/img/testimonial/David-Stein.jpg') }}" alt="David Stein" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">David Stein</h4>
-                            <p class="text-sm text-gray-600">New York, USA</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+                @endforeach
 
             <!-- Additional Testimonials Row -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Testimonial 3 -->
+                @if($secondaryTestimonialCard)
                 <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 scroll-animate">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex text-yellow-400 text-sm">
@@ -1084,29 +1050,26 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded-full text-xs font-medium">Solo Travel</span>
+                        <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded-full text-xs font-medium">{{ $secondaryTestimonialCard['label'] ?? '' }}</span>
                     </div>
-                    
-                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
-                        "I needed nature, silence, and luxury. The glamping sites were beautiful and eco-friendly—I felt so grounded. Perfect for soul-searchers."
-                    </p>
-                    
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">{{ $secondaryTestimonialCard['quote'] ?? '' }}</p>
                     <div class="flex items-center">
                         <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
-                            <img src="{{ asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg') }}" alt="Sofia Alvarez" class="w-full h-full object-cover">
+                            <img src="{{ $secondaryTestimonialCard['image'] ?? asset('frontend/assets/img/testimonial/Sofia-Alvarez.jpg') }}" alt="{{ $secondaryTestimonialCard['name'] ?? 'Guest' }}" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm text-gray-900">Sofia Alvarez</h4>
-                            <p class="text-xs text-gray-600">Barcelona, Spain</p>
+                            <h4 class="font-semibold text-sm text-gray-900">{{ $secondaryTestimonialCard['name'] ?? '' }}</h4>
+                            <p class="text-xs text-gray-600">{{ $secondaryTestimonialCard['location'] ?? '' }}</p>
                         </div>
                     </div>
                 </div>
+                @endif
                 
                 <!-- Stats Card -->
                 <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-6 text-white scroll-animate">
                     <div class="text-center">
-                        <div class="text-lg font-bold mb-2">4.9/5</div>
-                        <div class="text-primary-100 text-sm mb-4">Average Rating</div>
+                        <div class="text-lg font-bold mb-2">{{ $testimonialStats['rating'] ?? '4.9/5' }}</div>
+                        <div class="text-primary-100 text-sm mb-4">{{ $testimonialStats['label'] ?? '' }}</div>
                         <div class="flex justify-center text-yellow-300 mb-4">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -1114,18 +1077,18 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <div class="text-sm text-primary-100">Based on 150+ reviews</div>
+                        <div class="text-sm text-primary-100">{{ $testimonialStats['based_on'] ?? '' }}</div>
                     </div>
                 </div>
                 
                 <!-- CTA Card -->
                 <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white scroll-animate">
                     <div class="text-center">
-                        <h3 class="font-bold mb-2">Share Your Story</h3>
-                        <p class="text-gray-300 text-sm mb-4">Traveled with us? We'd love to hear about your experience!</p>
+                        <h3 class="font-bold mb-2">{{ $testimonialCta['title'] ?? '' }}</h3>
+                        <p class="text-gray-300 text-sm mb-4">{{ $testimonialCta['description'] ?? '' }}</p>
                         <a href="https://wa.me/94776605054" class="inline-flex items-center text-primary-400 hover:text-primary-600 text-sm font-medium">
                             <i class="fas fa-comment-dots mr-2"></i>
-                            Leave a Review
+                            {{ $testimonialCta['button'] ?? '' }}
                         </a>
                     </div>
                 </div>
@@ -1141,7 +1104,7 @@
                 <!-- Company Info -->
                 <div>
                     <h3 class="text-base font-bold mb-4 text-primary-400">COCO Island Holidays</h3>
-                    <p class="text-gray-300 mb-4">Authentic Sri Lanka tours with local expertise. Creating unforgettable experiences for over a decade.</p>
+                    <p class="text-gray-300 mb-4">{{ $footerContent['company_description'] ?? '' }}</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-primary-400 hover:text-primary-600 transition-colors duration-300">
                             <i class="fab fa-facebook-f text-base"></i>
@@ -1160,59 +1123,63 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ $footerContent['quick_links'] ?? '' }}</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
-                        <li><a href="#tours" class="text-gray-300 hover:text-white transition-colors duration-300">Tours</a></li>
-                        <li><a href="#experiences" class="text-gray-300 hover:text-white transition-colors duration-300">Experiences</a></li>
-                        <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.nav.home') }}</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.nav.about') }}</a></li>
+                        <li><a href="#tours" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.nav.tours') }}</a></li>
+                        <li><a href="#experiences" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.nav.experiences') }}</a></li>
+                        <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.nav.reviews') }}</a></li>
                     </ul>
                 </div>
 
                 <!-- Tours -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Popular Tours</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ $footerContent['popular_tours'] ?? '' }}</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Cultural Heritage</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Wildlife Safari</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Tea Trail</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Coastal Paradise</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Ramayana Trail</a></li>
+                        @foreach($fallbackTourCards as $card)
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">{{ $card['title'] }}</a></li>
+                        @endforeach
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">{{ __('messages.special_offer.tour_title') }}</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Get In Touch</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ $footerContent['get_in_touch'] ?? '' }}</h4>
                     <div class="space-y-2 text-gray-300">
                         <p class="flex items-center">
                             <i class="fas fa-phone mr-2 text-primary-400"></i>
-                            +94 77 660 5054
+                            {{ $footerContent['phone'] ?? '' }}: +94 77 660 5054
                         </p>
                         <p class="flex items-center">
                             <i class="fas fa-envelope mr-2 text-primary-400"></i>
-                            info@cocoislandholidays.com
+                            {{ $footerContent['email'] ?? '' }}: info@cocoislandholidays.com
                         </p>
                         <p class="flex items-start">
                             <i class="fas fa-map-marker-alt mr-2 text-primary-400 mt-1"></i>
                             Colombo, Sri Lanka
                         </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-clock mr-2 text-primary-400"></i>
+                            {{ $footerContent['office_hours'] ?? '' }}: {{ $footerContent['daily_hours'] ?? '' }}
+                        </p>
                     </div>
-                    <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full mt-4 px-4 py-2 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 transition-colors duration-300">
+                    <p class="text-sm text-gray-400 mt-4">{{ $footerContent['plan_trip_description'] ?? '' }}</p>
+                    <a href="https://wa.me/94776605054" class="inline-flex items-center justify-center w-full mt-3 px-4 py-2 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 transition-colors duration-300">
                         <i class="fab fa-whatsapp mr-2"></i>
-                        Chat on WhatsApp
+                        {{ $footerContent['whatsapp_cta'] ?? '' }}
                     </a>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <div class="mb-4 space-x-6">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors duration-300">{{ __("messages.legal.terms") }}</a>
                 </div>
-                <p>&copy; 2025 COCO Island Holidays. All rights reserved. | Crafted with ❤️ for Sri Lankan tourism</p>
+                <p>{{ __('messages.footer.copyright', ['year' => now()->year]) }}</p>
             </div>
         </div>
     </footer>
@@ -1225,6 +1192,7 @@
     <script src="{{ asset('frontend/assets/js/countdown.js') }}"></script>
 
     <script>
+        const offerExpiredText = @json(__('messages.special_offer.offer_expired'));
         // Page Load Animation Trigger
         document.addEventListener('DOMContentLoaded', function() {
             // Ensure hero animations trigger properly
@@ -1403,7 +1371,7 @@
                     if (timer) {
                         clearInterval(timer);
                     }
-                    countdownContainer.innerHTML = '<span class="text-base text-primary-600">Offer Expired</span>';
+                    countdownContainer.innerHTML = '<span class="text-base text-primary-600">' + offerExpiredText + '</span>';
                     return;
                 }
 

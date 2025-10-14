@@ -13,7 +13,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions | COCO Island Holidays - Travel Agency</title>
+    <title>{{ __("messages.legal.terms") }} | COCO Island Holidays - Travel Agency</title>
     <meta name="description" content="Read our terms and conditions for booking and using COCO Island Holidays services.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -102,12 +102,12 @@
     <!-- Hero Section -->
     <section class="hero-bg relative h-96 flex items-center justify-center mt-16">
         <div class="text-center text-white">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);">Terms & Conditions</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);">{{ __("messages.legal.terms") }}</h1>
             <p class="text-xl md:text-2xl opacity-90" style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Important information for your booking</p>
         </div>
     </section>
 
-    <!-- Terms & Conditions Content -->
+    <!-- {{ __("messages.legal.terms") }} Content -->
     <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
@@ -240,9 +240,9 @@
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 COCO Island Holidays. All rights reserved.</p>
                 <div class="mt-2 space-x-4">
-                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">{{ __("messages.legal.privacy") }}</a>
                     <span>•</span>
-                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="{{ route('terms.conditions', ['locale' => app()->getLocale()]) }}" class="hover:text-white transition-colors">{{ __("messages.legal.terms") }}</a>
                 </div>
             </div>
         </div>

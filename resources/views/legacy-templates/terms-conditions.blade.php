@@ -60,14 +60,14 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="about-hero-content text-center">
-                                <h1 class="about-page-title sec-title text-center pt-150">Terms & Conditions</h1>
+                                <h1 class="about-page-title sec-title text-center pt-150">{{ __("messages.legal.terms") }}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    <!-- Terms & Conditions -->
+    <!-- {{ __("messages.legal.terms") }} -->
     <section class="section pt-70 pb-70 terms-and-conditions" id="terms">
         <div class="container">
             <div class="row justify-content-center">
