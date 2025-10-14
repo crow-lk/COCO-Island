@@ -404,64 +404,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-base font-bold text-primary mb-4">COCO Island Holidays</h3>
-                    <p class="text-gray-400 mb-4">
-                        Experience the wonder of Sri Lanka with our carefully crafted tours and personalized service.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
-                            <i class="fab fa-facebook-f text-base"></i>
-                        </a>
-                        <a href="https://www.instagram.com/coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
-                            <i class="fab fa-instagram text-base"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
-                            <i class="fab fa-tiktok text-base"></i>
-                        </a>
-                        <a href="https://wa.me/94776605054" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
-                            <i class="fab fa-whatsapp text-base"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="{{ route('packages') }}" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-phone mr-2"></i> +94 77 660 5054</li>
-                        <li><i class="fas fa-envelope mr-2"></i> info@cocoislandholidays.com</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> Kaluthara, Sri Lanka</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 COCO Island Holidays. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/94776605054" 
-       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transform hover:scale-110 transition-all duration-300 z-30"
-       target="_blank" 
-       aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp text-base"></i>
-    </a>
+        @include('components.footer')
 
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" 

@@ -295,56 +295,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-2xl font-bold text-primary-500 mb-4">COCO Island Holidays</h3>
-                    <p class="text-gray-400 mb-4 text-lg leading-relaxed">
-                        Experience the wonder of Sri Lanka with our carefully crafted tours and personalized service.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary-500 transition-colors">
-                            <i class="fab fa-facebook-f text-2xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary-500 transition-colors">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@coco.island.holidays" target="_blank" class="text-gray-400 hover:text-primary-500 transition-colors">
-                            <i class="fab fa-tiktok text-2xl"></i>
-                        </a>
-                        <a href="https://wa.me/94776605054" target="_blank" class="text-gray-400 hover:text-primary-500 transition-colors">
-                            <i class="fab fa-whatsapp text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-white transition-colors text-lg">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Tours</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">About</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="text-lg"><i class="fas fa-phone mr-2"></i> +94 77 660 5054</li>
-                        <li class="text-lg"><i class="fas fa-envelope mr-2"></i> info@cocoislandholidays.com</li>
-                        <li class="text-lg"><i class="fas fa-map-marker-alt mr-2"></i> Kaluthara, Sri Lanka</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p class="text-lg">&copy; 2025 COCO Island Holidays. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        @include('components.footer')
 
     <!-- Image Modal -->
     <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4">
@@ -355,14 +306,6 @@
             <img id="modalImage" src="" alt="Gallery Image" class="w-full h-auto rounded-lg">
         </div>
     </div>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/94776605054?text=Hi! I'm interested in the {{ urlencode($tour->title) }} tour." 
-       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transform hover:scale-110 transition-all duration-300 z-30"
-       target="_blank" 
-       aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
 
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" 
