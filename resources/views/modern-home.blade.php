@@ -316,7 +316,7 @@
 
         $destinationExperiences = [
             [
-                'image' => 'https://static.toiimg.com/photo/58517436/.jpg',
+                'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/d8/3e/39.jpg',
                 'badge_class' => 'bg-teal-500',
                 'badge' => __('messages.destinations.experiences.turtle.badge'),
                 'title' => __('messages.destinations.experiences.turtle.title'),
@@ -1036,6 +1036,7 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
 
             <!-- Additional Testimonials Row -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
